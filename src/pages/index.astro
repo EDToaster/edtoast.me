@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Base from "~/layouts/Base.astro";
 import Icon from "~/components/Icon.astro";
+import CompanyLogo from "~/components/CompanyLogo.astro";
 import EntryList from "~/components/EntryList.astro";
 import { site, heroLinks } from "~/data/site";
 import { roles, education } from "~/data/resume";
@@ -59,8 +60,12 @@ const sections = [
           roles.map((r) => (
             <li class="timeline-item">
               <span class="timeline-date">{r.period}</span>
-              <div class:list={["timeline-body", { current: r.current }]}>
-                <div class="timeline-company">{r.company}</div>
+              <div class:list={["timeline-body", { current: r.current, upcoming: r.upcoming }]}>
+                <div class="timeline-company">
+                  {r.logo && <CompanyLogo company={r.logo} />}
+                  <span>{r.company}</span>
+                  {r.upcoming && <span class="tag">Upcoming</span>}
+                </div>
                 <div class="timeline-role">{r.title}</div>
                 {r.features && (
                   <div class="timeline-features">
@@ -278,8 +283,17 @@ const sections = [
   .timeline-body.current {
     border-left-color: var(--accent);
   }
+  .timeline-body.upcoming {
+    border-left: 2px dashed var(--accent);
+  }
+  .timeline-company .tag {
+    font-weight: 400;
+  }
   .timeline-company {
-    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
     font-weight: 600;
     font-size: var(--text-base);
   }

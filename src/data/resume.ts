@@ -4,20 +4,26 @@
 */
 export type Ref = { label: string; href: string };
 export type Feature = { text: string; refs?: Ref[] };
+import type { CompanyKey } from "~/components/CompanyLogo.astro";
+
 export type Role = {
   period: string; // display string, e.g. "2021 – 2024"
   company: string;
+  logo?: CompanyKey;
   title: string;
   current?: boolean;
+  upcoming?: boolean;
   features?: Feature[];
 };
 
 export const roles: Role[] = [
-  { period: "2025 – Present", company: "Instacart", title: "Software Engineer", current: true },
-  { period: "2024", company: "Meta", title: "Production Engineer II" },
+  { period: "Nov 2026", company: "Perplexity AI", logo: "perplexity", title: "Member of Technical Staff", upcoming: true },
+  { period: "2025 – 2026", company: "Instacart", logo: "instacart", title: "Software Engineer" },
+  { period: "2024", company: "Meta", logo: "meta", title: "Production Engineer II" },
   {
     period: "2021 – 2024",
     company: "Amazon Web Services EC2 Auto Scaling",
+    logo: "aws",
     title: "Software Engineer II",
     features: [
       {
@@ -48,12 +54,14 @@ export const roles: Role[] = [
   {
     period: "Summer 2020",
     company: "Amazon Web Services EC2 Auto Scaling",
+    logo: "aws",
     title: "Junior Software Engineer",
     features: [{ text: "Developed Custom Termination Policies" }],
   },
   {
     period: "Summer 2019",
     company: "Amazon Web Services Forecasting Platform",
+    logo: "aws",
     title: "Junior Software Engineer",
     features: [{ text: "Designed customer debugging tools" }],
   },
