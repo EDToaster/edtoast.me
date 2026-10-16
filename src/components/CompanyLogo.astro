@@ -1,0 +1,49 @@
+---
+/*
+  Small two-colour company tile for the work timeline: a brand-coloured
+  square with the mark knocked out on top. Marks come from Simple Icons
+  (CC0) and Font Awesome brands, inlined as SVG at build time.
+*/
+import { siInstacart, siMeta, siPerplexity } from "simple-icons";
+import { faAws } from "@fortawesome/free-brands-svg-icons";
+
+export type CompanyKey = "perplexity" | "instacart" | "meta" | "aws";
+
+const fa = (icon: typeof faAws) => {
+  const [w, h, , , p] = icon.icon;
+  return { viewBox: `0 0 ${w} ${h}`, path: Array.isArray(p) ? p.join(" ") : p };
+};
+const si = (icon: typeof siMeta) => ({ viewBox: "0 0 24 24", path: icon.path });
+
+const logos: Record<CompanyKey, { viewBox: string; path: string; bg: string; fg: string; scale?: number }> = {
+  perplexity: { ...si(siPerplexity), bg: "#091717", fg: "#20B8CD" },
+  instacart: { ...si(siInstacart), bg: "#43B02A", fg: "#ffffff" },
+  meta: { ...si(siMeta), bg: "#0467DF", fg: "#ffffff" },
+  aws: { ...fa(faAws), bg: "#232F3E", fg: "#FF9900", scale: 0.78 },
+};
+
+interface Props {
+  company: CompanyKey;
+}
+const logo = logos[Astro.props.company];
+const size = `${(logo.scale ?? 0.62) * 100}%`;
+---
+
+<span class="logo" style={`background:${logo.bg}`} aria-hidden="true">
+  <svg viewBox={logo.viewBox} width={size} height={size} fill={logo.fg}><path d={logo.path}></path></svg>
+</span>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: var(--radius-sm);
+    flex: none;
+  }
+  svg {
+    display: block;
+  }
+</style>
