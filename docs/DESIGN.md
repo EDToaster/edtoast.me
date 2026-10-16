@@ -1,51 +1,42 @@
 # Design rules
 
-The goal is a site that looks like a person made it on purpose. Most
-"AI-generated" sites share the same defaults: Inter or Geist everywhere, a
-purple-to-blue gradient hero, a centred headline with two CTA buttons, a row
-of three rounded cards with icons, soft shadows on everything, all-caps
-section labels, and copy that could describe anyone. These rules exist to
-keep all of that out.
+The look follows Howard's original site (edtoaster.github.io, shown at
+howardchen.ca): white page, light grey secondary text, one blue accent,
+thin borders. Light mode only. All values live in `src/styles/tokens.css`.
 
-## The look: warm paper
+## Tokens
 
-| Token | Light | Dark | Use |
-| --- | --- | --- | --- |
-| `--paper` | `#f4efe6` | `#1a1714` | Page background |
-| `--paper-sunk` | `#ebe4d7` | `#24201b` | Game boards, code |
-| `--ink` | `#1f1b16` | `#ece4d6` | Body text (14.9:1 / 14.1:1) |
-| `--ink-soft` | `#5c5348` | `#a89d8c` | Secondary text (6.6:1 / 6.7:1) |
-| `--rule` | `#d6ccbb` | `#3a342c` | Hairlines |
-| `--accent` | `#a8481a` | `#e58a52` | Links, one highlight (5.1:1 / 6.9:1) |
+| Token | Value | Use |
+| --- | --- | --- |
+| `--bg` | `#ffffff` | Page background |
+| `--text` | `#111111` | Primary text |
+| `--muted` | `#6b7280` | Secondary text, dates, labels, nav |
+| `--accent` | `#0055cc` | Inline links, current-role marker, game highlights |
+| `--border` | `#e5e7eb` | Timeline rules, project/entry outlines |
+| `--border-strong` | `#c4c9d4` | Border on hover |
+| `--surface` | `#f3f4f6` | Tags, game boards, inline code |
 
-Type: **Source Serif 4** for everything you read, **IBM Plex Mono** for
-small metadata (dates, counters, the theme toggle). Self-hosted via
-Fontsource, so no Google Fonts request.
+Type: **Roboto Light (300)** for the name and page titles only;
+**Red Hat Text** (400/500/600) for everything else. Root size is 15px. Both
+fonts are self-hosted through Fontsource. Icons are Font Awesome, rendered
+to inline SVG at build time (`src/components/Icon.astro`).
 
-## Do
+## Patterns
 
-- Left-align. One reading column (`--measure`, ~36rem). Games may go wider.
-- Use the token scale for every size and space. No one-off pixel values.
-- Separate things with 1px rules or whitespace, not boxes.
-- One accent colour, used for links and at most one highlight per screen.
-- Write specific copy: names, dates, numbers. Say what the thing does.
-- Respect `prefers-color-scheme` and `prefers-reduced-motion`.
+- **Sections:** the home page is a stack of full-height sections (intro,
+  work, education, projects, games & demos) with a dot nav on the right.
+  Content sits in a 600px column.
+- **Section labels:** tiny uppercase, wide letter-spacing, muted.
+- **Timeline:** date column on the left, 2px left border on the body; the
+  current role's border is the accent colour.
+- **Lists of things:** 1px bordered boxes with a 6px radius, no shadow;
+  border darkens on hover. Tags are small grey pills.
+- **Links:** blue for inline links, muted-to-black for nav and icon links.
+  Hover is a colour or opacity change, nothing that moves.
 
-## Don't
+## Avoid
 
-- Gradients of any kind, especially on text or hero backgrounds.
-- Inter, Geist, Roboto, Space Grotesk, Instrument Serif.
-- Purple/indigo/violet anywhere.
-- Cards with shadows, glassmorphism, glows, large border radii (we use 2px).
-- Three-up feature grids, bento grids, emoji or generic line icons as decoration.
-- All-caps eyebrow labels, "Get started" / "Learn more" button pairs.
-- Hover animations that bounce, scale, or slide. Underline changes are enough.
-- Filler copy, sentence triads ("Fast. Simple. Secure."), fake testimonials.
-
-## Sources
-
-- https://dezzayn.com/guides/make-your-website-not-look-ai-generated
-- https://www.925studios.co/blog/ai-slop-design-tells
-- https://www.developersdigest.tech/blog/ai-design-slop-and-how-to-spot-it
-- https://thanor.ai/blog/how-to-make-ai-websites-not-look-like-ai
-- https://www.joshuasnoddy.com/blog/make-ai-built-site-not-look-ai/
+- Dark mode, gradients, drop shadows, glows.
+- Extra accent colours. Blue is the only one.
+- Animated or bouncing hover effects.
+- Filler copy. Say what the thing is and what it does.

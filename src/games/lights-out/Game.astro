@@ -4,7 +4,7 @@ const SIZE = 5;
 
 <div class="lights-out" data-size={SIZE}>
   <div class="board" role="grid" aria-label="Lights Out board"></div>
-  <p class="bar mono">
+  <p class="bar">
     <span data-moves>0 moves</span>
     <button type="button" data-reset>New board</button>
   </p>
@@ -68,17 +68,20 @@ const SIZE = 5;
     gap: var(--space-1);
     width: min(100%, 20rem);
     padding: var(--space-2);
-    background: var(--paper-sunk);
-    border: var(--rule-width) solid var(--rule);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
   }
   .board :global(.cell) {
     aspect-ratio: 1;
-    border: var(--rule-width) solid var(--rule);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    background: var(--paper);
+    background: var(--bg);
     cursor: pointer;
     padding: 0;
+  }
+  .board :global(.cell:hover) {
+    border-color: var(--border-strong);
   }
   .board :global(.cell[data-on="true"]) {
     background: var(--accent);
@@ -88,8 +91,8 @@ const SIZE = 5;
     display: flex;
     gap: var(--space-3);
     align-items: baseline;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
+    font-size: var(--text-md);
+    color: var(--muted);
     margin-top: var(--space-2);
   }
   .bar button {
@@ -98,8 +101,6 @@ const SIZE = 5;
     border: none;
     padding: 0;
     color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
     cursor: pointer;
   }
   .done {

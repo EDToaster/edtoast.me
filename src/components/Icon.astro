@@ -1,0 +1,30 @@
+---
+/* Renders a Font Awesome icon as inline SVG at build time (no icon font, no CDN). */
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+interface Props {
+  icon: IconDefinition;
+  label?: string;
+}
+const { icon, label } = Astro.props;
+const [w, h, , , path] = icon.icon;
+const d = Array.isArray(path) ? path.join(" ") : path;
+---
+
+<svg
+  class="icon"
+  viewBox={`0 0 ${w} ${h}`}
+  width="1em"
+  height="1em"
+  fill="currentColor"
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}><path d={d}></path></svg
+>
+
+<style>
+  .icon {
+    display: inline-block;
+    vertical-align: -0.125em;
+    flex: none;
+  }
+</style>
