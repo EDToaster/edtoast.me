@@ -3,8 +3,8 @@ import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
 export const site = {
   name: "Howard Chen",
-  title: "Software Engineer II",
-  employer: "Instacart",
+  title: "Incoming Member of Technical Staff", // drop "Incoming" after Nov 2026
+  employer: "Perplexity",
   description: "Howard Chen, software engineer. Work history, projects, and small browser games.",
   url: "https://edtoast.me",
 };
