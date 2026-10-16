@@ -18,11 +18,11 @@ npm run build    # astro check + static build into dist/
 
 ```
 src/
-  pages/            routes: /, /resume, /games, /games/[slug], /demos, /demos/[slug], 404
+  pages/            routes: / (intro, work, education, projects), /games, /games/[slug], /demos, /demos/[slug], 404
   layouts/Base.astro
-  components/       Header, Footer, ThemeToggle, EntryList
-  styles/           tokens.css (all colours/sizes), global.css
-  data/             site.ts (name, links), resume.ts (work history)
+  components/       Header, Footer, Icon, EntryList
+  styles/           tokens.css (all colours/sizes, light only), global.css
+  data/             site.ts (name, hero links), resume.ts (work, education), projects.ts
   content/games/    one .md per game: frontmatter = listing metadata, body = about text
   content/demos/    same shape as games; set `href` for demos hosted elsewhere
   games/<slug>/     Game.astro + logic.ts for each game

@@ -5,8 +5,8 @@ import EntryList from "~/components/EntryList.astro";
 const games = await getCollection("games");
 ---
 
-<Base title="Games" description="Small browser games.">
-  <h1>Games</h1>
-  <p>Small things that run in the browser. No accounts, no tracking.</p>
+<Base title="Games" description="Small browser games by Howard Chen.">
+  <h1 class="page-title">Games</h1>
+  <p class="page-intro">Small things that run in the browser. No accounts, no tracking.</p>
   <EntryList entries={games} empty="No games yet." />
 </Base>

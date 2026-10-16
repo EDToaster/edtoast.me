@@ -1,37 +1,401 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Base from "~/layouts/Base.astro";
+import Icon from "~/components/Icon.astro";
 import EntryList from "~/components/EntryList.astro";
-import { site, links } from "~/data/site";
+import { site, heroLinks } from "~/data/site";
+import { roles, education } from "~/data/resume";
+import { projects } from "~/data/projects";
+import instacart from "~/assets/instacart.png";
 
-const recent = [...(await getCollection("games")), ...(await getCollection("demos"))]
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 5);
+const play = [...(await getCollection("games")), ...(await getCollection("demos"))];
+
+const sections = [
+  { id: "hero", label: "Intro" },
+  { id: "work", label: "Work" },
+  { id: "education", label: "Education" },
+  { id: "projects", label: "Projects" },
+  { id: "play", label: "Games & demos" },
+];
 ---
 
-<Base>
-  <h1>Hi, I'm Howard.</h1>
-  <p class="lede">{site.intro}</p>
-  <p class="links">
-    {links.map((l, i) => (
-      <>
-        {i > 0 && <span aria-hidden="true"> / </span>}
-        <a href={l.href}>{l.label}</a>
-      </>
-    ))}
-  </p>
+<Base home>
+  <nav class="dot-nav" aria-label="Page sections">
+    {sections.map((s, i) => <a class:list={["dot", { active: i === 0 }]} href={`#${s.id}`} aria-label={s.label} />)}
+  </nav>
 
-  <h2>Recently</h2>
-  <EntryList entries={recent} empty="Nothing here yet." />
+  <section id="hero">
+    <div class="section-content">
+      <h1 class="hero-name">{site.name}</h1>
+      <p class="hero-title">
+        {site.title} &middot;
+        <Image src={instacart} alt={site.employer} class="company-logo" height={30} />
+      </p>
+      <div class="hero-links">
+        {
+          heroLinks.map((l) =>
+            l.href ? (
+              <a href={l.href} rel="me noopener" target="_blank">
+                <Icon icon={l.icon} /> {l.label}
+              </a>
+            ) : (
+              <span>
+                <Icon icon={l.icon} /> {l.label}
+              </span>
+            ),
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-content">
+      <p class="section-label">Work</p>
+      <ul class="timeline">
+        {
+          roles.map((r) => (
+            <li class="timeline-item">
+              <span class="timeline-date">{r.period}</span>
+              <div class:list={["timeline-body", { current: r.current }]}>
+                <div class="timeline-company">{r.company}</div>
+                <div class="timeline-role">{r.title}</div>
+                {r.features && (
+                  <div class="timeline-features">
+                    {r.features.map((f) => (
+                      <div class="timeline-feature">
+                        {f.text}
+                        {f.refs && (
+                          <>
+                            {" — "}
+                            {f.refs.map((ref, i) => (
+                              <>
+                                {i > 0 && ", "}
+                                <a class="link" href={ref.href} target="_blank" rel="noopener">
+                                  {ref.label}
+                                </a>
+                              </>
+                            ))}
+                          </>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-content">
+      <p class="section-label">Education</p>
+      {
+        education.map((e) => (
+          <div class="edu-item">
+            {e.lines.map((l) => (
+              <div class="edu-degree">{l}</div>
+            ))}
+            <div class="edu-school">{e.school}</div>
+            <div class="edu-year">{e.year}</div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-content">
+      <p class="section-label">Projects</p>
+      <ul class="project-list">
+        {
+          projects.map((p) => (
+            <li class="project-item">
+              <div class="project-name">{p.name}</div>
+              <div class="project-tags">
+                {p.tags.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+              <p class="project-desc">{p.description}</p>
+              <div class="project-links">
+                {p.links.map((l) => (
+                  <a class="link" href={l.href} target="_blank" rel="noopener">
+                    <Icon icon={faGithub} /> {l.label}
+                  </a>
+                ))}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="play">
+    <div class="section-content">
+      <p class="section-label">Games &amp; demos</p>
+      <EntryList entries={play} empty="Nothing here yet." />
+      <p class="more">
+        <a class="link" href="/games">All games</a>
+        <a class="link" href="/demos">All demos</a>
+        <a class="muted" href="https://github.com/EDToaster/edtoast.me">source</a>
+      </p>
+    </div>
+  </section>
 </Base>
 
-<style>
-  .lede {
-    font-size: var(--step-1);
-    line-height: 1.4;
-    max-width: 32rem;
+<script>
+  const dots = document.querySelectorAll<HTMLAnchorElement>(".dot");
+  const sections = [...document.querySelectorAll<HTMLElement>("main > section")];
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const i = sections.indexOf(entry.target as HTMLElement);
+        dots.forEach((d, j) => d.classList.toggle("active", i === j));
+      }
+    },
+    { threshold: 0.5 },
+  );
+  sections.forEach((s) => observer.observe(s));
+</script>
+
+<style is:global>
+  html.home {
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
   }
-  .links {
-    color: var(--ink-soft);
+</style>
+
+<style>
+  section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+  }
+  .section-content {
+    width: 100%;
+    max-width: var(--content);
+  }
+
+  /* Dot nav */
+  .dot-nav {
+    position: fixed;
+    right: 1.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 10;
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid var(--muted);
+    transition:
+      background 0.2s,
+      border-color 0.2s;
+  }
+  .dot.active {
+    background: var(--text);
+    border-color: var(--text);
+  }
+
+  /* Hero */
+  .hero-name {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-hero);
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    margin-bottom: 0.6rem;
+  }
+  .hero-title {
+    font-size: var(--text-base);
+    color: var(--muted);
+    margin-bottom: 2.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .company-logo {
+    height: 1em;
+    width: auto;
+    border-radius: 3px;
+  }
+  .hero-links {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .hero-links a,
+  .hero-links span {
+    color: var(--muted);
+    font-size: var(--text-md);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.15s;
+  }
+  .hero-links a:hover {
+    color: var(--text);
+  }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0 1.25rem;
+  }
+  .timeline-date {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: right;
+    padding-top: 0.15rem;
+    line-height: 1.4;
+  }
+  .timeline-body {
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+  }
+  .timeline-body.current {
+    border-left-color: var(--accent);
+  }
+  .timeline-company {
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    font-size: var(--text-base);
+  }
+  .timeline-role {
+    font-size: var(--text-md);
+    color: var(--muted);
+  }
+  .timeline-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+  .timeline-feature {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Education */
+  .edu-item {
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+  }
+  .edu-degree {
+    font-weight: 600;
+    font-size: var(--text-base);
+    margin-bottom: 0.2rem;
+  }
+  .edu-school {
+    font-size: var(--text-md);
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .edu-year {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* Projects */
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .project-item {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.15s;
+  }
+  .project-item:hover {
+    border-color: var(--border-strong);
+  }
+  .project-name {
+    font-weight: 600;
+    font-size: var(--text-base);
+    margin-bottom: 0.4rem;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.55rem;
+  }
+  .project-desc {
+    font-size: var(--text-md);
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0.65rem;
+  }
+  .project-links {
+    display: flex;
+    gap: var(--space-3);
+    font-size: 0.8rem;
+  }
+  .project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* Play */
+  .more {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+    font-size: var(--text-md);
+  }
+  .muted {
+    color: var(--muted);
+    margin-left: auto;
+  }
+  .muted:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 520px) {
+    .hero-name {
+      font-size: 2.5rem;
+    }
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+    .timeline-date {
+      text-align: left;
+    }
+    .timeline-body {
+      padding-left: 0.75rem;
+    }
+    .dot-nav {
+      display: none;
+    }
+    section {
+      padding: 3rem 1.5rem;
+    }
   }
 </style>

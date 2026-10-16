@@ -1,16 +1,18 @@
+import { faGithub, faLinkedin, faCanadianMapleLeaf } from "@fortawesome/free-brands-svg-icons";
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+
 export const site = {
   name: "Howard Chen",
-  handle: "edtoast",
-  // One plain sentence. Say what you actually do; no taglines.
-  intro: "I'm a software engineer. This is where I keep my resume, small games, and whatever I'm building on weekends.",
+  title: "Software Engineer II",
+  employer: "Instacart",
+  description: "Howard Chen, software engineer. Work history, projects, and small browser games.",
   url: "https://edtoast.me",
 };
 
-export type Link = { label: string; href: string };
+export type HeroLink = { label: string; href?: string; icon: IconDefinition };
 
-// TODO(howard): add LinkedIn URL and any contact address you want public.
-export const links: Link[] = [
-  { label: "GitHub", href: "https://github.com/EDToaster" },
-  // { label: "LinkedIn", href: "https://www.linkedin.com/in/<you>" },
-  { label: "Resume", href: "/resume" },
+export const heroLinks: HeroLink[] = [
+  { label: "edtoaster", href: "https://github.com/edtoaster", icon: faGithub },
+  { label: "howchen", href: "https://www.linkedin.com/in/howchen", icon: faLinkedin },
+  { label: "vancouver", icon: faCanadianMapleLeaf },
 ];

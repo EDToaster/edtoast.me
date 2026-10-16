@@ -22,9 +22,9 @@ const { Content } = await render(demo);
 ---
 
 <Base title={demo.data.title} description={demo.data.summary} wide>
-  <p class="crumb"><a href="/demos">Demos</a></p>
-  <h1>{demo.data.title}</h1>
-  <p>{demo.data.summary}</p>
+  <p class="section-label"><a href="/demos">Demos</a></p>
+  <h1 class="page-title">{demo.data.title}</h1>
+  <p class="page-intro">{demo.data.summary}</p>
   <DemoComponent />
   <section class="about">
     <Content />
@@ -32,14 +32,11 @@ const { Content } = await render(demo);
 </Base>
 
 <style>
-  .crumb {
-    font-size: var(--step--1);
-    margin-bottom: var(--space-2);
-  }
   .about {
     margin-top: var(--space-5);
-    max-width: var(--measure);
-    color: var(--ink-soft);
-    font-size: var(--step--1);
+    max-width: var(--content);
+    color: var(--muted);
+    font-size: var(--text-md);
+    line-height: 1.6;
   }
 </style>
