@@ -1,0 +1,64 @@
+/*
+  Design tokens. Everything visual comes from here, including the games.
+  See docs/DESIGN.md for the rules behind these values.
+*/
+:root {
+  /* Palette: warm paper. Neutrals lean warm; never pure grey, never pure black/white. */
+  --paper: #f4efe6;
+  --paper-sunk: #ebe4d7; /* code blocks, game boards */
+  --ink: #1f1b16;
+  --ink-soft: #5c5348; /* secondary text, still AA on --paper */
+  --rule: #d6ccbb; /* hairlines */
+  --accent: #a8481a; /* toast. Links and one highlight per screen, nothing else */
+  --accent-ink: #f4efe6; /* text on --accent */
+
+  /* Type */
+  --font-text: "Source Serif 4 Variable", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Scale: 1.25 ratio from 18px. Only these sizes. */
+  --step--1: 0.9rem;
+  --step-0: 1.125rem;
+  --step-1: 1.406rem;
+  --step-2: 1.758rem;
+  --step-3: 2.197rem;
+  --step-4: 2.747rem;
+
+  /* Space: 4px unit. Only these values. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+
+  --measure: 36rem;
+  --radius: 2px; /* nearly square on purpose */
+  --rule-width: 1px;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #1a1714;
+  --paper-sunk: #24201b;
+  --ink: #ece4d6;
+  --ink-soft: #a89d8c;
+  --rule: #3a342c;
+  --accent: #e58a52;
+  --accent-ink: #1a1714;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1a1714;
+    --paper-sunk: #24201b;
+    --ink: #ece4d6;
+    --ink-soft: #a89d8c;
+    --rule: #3a342c;
+    --accent: #e58a52;
+    --accent-ink: #1a1714;
+    color-scheme: dark;
+  }
+}

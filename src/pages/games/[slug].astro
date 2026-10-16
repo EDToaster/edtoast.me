@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "~/layouts/Base.astro";
+
+/*
+  Each game lives in src/games/<slug>/Game.astro. A Markdown file with the
+  same slug in src/content/games/ registers it. Missing either half fails
+  the build, which is what we want.
+*/
+const components = import.meta.glob<{ default: any }>("../../games/*/Game.astro", { eager: true });
+
+export async function getStaticPaths() {
+  const games = await getCollection("games");
+  return games.filter((g) => !g.data.href).map((g) => ({ params: { slug: g.id }, props: { game: g } }));
+}
+
+const { game } = Astro.props;
+const mod = components[`../../games/${game.id}/Game.astro`];
+if (!mod) throw new Error(`No component at src/games/${game.id}/Game.astro`);
+const GameComponent = mod.default;
+const { Content } = await render(game);
+---
+
+<Base title={game.data.title} description={game.data.summary} wide>
+  <p class="crumb"><a href="/games">Games</a></p>
+  <h1>{game.data.title}</h1>
+  <p>{game.data.summary}</p>
+  <GameComponent />
+  <section class="about">
+    <Content />
+  </section>
+</Base>
+
+<style>
+  .crumb {
+    font-size: var(--step--1);
+    margin-bottom: var(--space-2);
+  }
+  .about {
+    margin-top: var(--space-5);
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    font-size: var(--step--1);
+  }
+</style>

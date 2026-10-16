@@ -1,0 +1,108 @@
+---
+const SIZE = 5;
+---
+
+<div class="lights-out" data-size={SIZE}>
+  <div class="board" role="grid" aria-label="Lights Out board"></div>
+  <p class="bar mono">
+    <span data-moves>0 moves</span>
+    <button type="button" data-reset>New board</button>
+  </p>
+  <p class="done" data-done hidden>Solved.</p>
+</div>
+
+<script>
+  import { scramble, toggle, isSolved, type Board } from "./logic";
+
+  for (const root of document.querySelectorAll<HTMLElement>(".lights-out")) {
+    const size = Number(root.dataset.size);
+    const boardEl = root.querySelector<HTMLElement>(".board")!;
+    const movesEl = root.querySelector<HTMLElement>("[data-moves]")!;
+    const doneEl = root.querySelector<HTMLElement>("[data-done]")!;
+    boardEl.style.setProperty("--size", String(size));
+
+    let board: Board = [];
+    let moves = 0;
+
+    const cells = Array.from({ length: size * size }, (_, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "cell";
+      b.addEventListener("click", () => {
+        if (isSolved(board)) return;
+        board = toggle(board, size, i);
+        moves++;
+        draw();
+      });
+      boardEl.append(b);
+      return b;
+    });
+
+    function draw() {
+      cells.forEach((c, i) => {
+        c.dataset.on = String(board[i]);
+        c.setAttribute("aria-label", `Row ${Math.floor(i / size) + 1}, column ${(i % size) + 1}, ${board[i] ? "on" : "off"}`);
+      });
+      movesEl.textContent = `${moves} ${moves === 1 ? "move" : "moves"}`;
+      doneEl.hidden = !isSolved(board);
+    }
+
+    function reset() {
+      board = scramble(size);
+      moves = 0;
+      draw();
+    }
+
+    root.querySelector("[data-reset]")!.addEventListener("click", reset);
+    reset();
+  }
+</script>
+
+<style>
+  .lights-out {
+    margin: var(--space-4) 0;
+  }
+  .board {
+    display: grid;
+    grid-template-columns: repeat(var(--size), 1fr);
+    gap: var(--space-1);
+    width: min(100%, 20rem);
+    padding: var(--space-2);
+    background: var(--paper-sunk);
+    border: var(--rule-width) solid var(--rule);
+    border-radius: var(--radius);
+  }
+  .board :global(.cell) {
+    aspect-ratio: 1;
+    border: var(--rule-width) solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--paper);
+    cursor: pointer;
+    padding: 0;
+  }
+  .board :global(.cell[data-on="true"]) {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .bar {
+    display: flex;
+    gap: var(--space-3);
+    align-items: baseline;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: var(--space-2);
+  }
+  .bar button {
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    cursor: pointer;
+  }
+  .done {
+    font-weight: 600;
+  }
+</style>
