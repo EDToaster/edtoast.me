@@ -1,0 +1,35 @@
+---
+import { links } from "~/data/site";
+const year = new Date().getFullYear();
+const external = links.filter((l) => l.href.startsWith("http"));
+---
+
+<footer>
+  <p>
+    {external.map((l, i) => (
+      <>
+        {i > 0 && " · "}
+        <a href={l.href} rel="me">{l.label}</a>
+      </>
+    ))}
+    {" · "}
+    <a href="https://github.com/EDToaster/edtoast.me">Source</a>
+  </p>
+  <p class="mono">© {year} Howard Chen</p>
+</footer>
+
+<style>
+  footer {
+    margin-top: var(--space-6);
+    padding-top: var(--space-3);
+    border-top: var(--rule-width) solid var(--rule);
+    color: var(--ink-soft);
+    font-size: var(--step--1);
+  }
+  footer p {
+    margin: 0 0 var(--space-1);
+  }
+  .mono {
+    font-size: 0.78rem;
+  }
+</style>

@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+import Base from "~/layouts/Base.astro";
+import EntryList from "~/components/EntryList.astro";
+const demos = await getCollection("demos");
+---
+
+<Base title="Demos" description="Experiments and prototypes.">
+  <h1>Demos</h1>
+  <p>Experiments, prototypes and things I wanted to see working.</p>
+  <EntryList entries={demos} empty="Nothing here yet. The first one is on its way." />
+</Base>

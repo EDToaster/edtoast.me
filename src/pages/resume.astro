@@ -1,0 +1,83 @@
+---
+import Base from "~/layouts/Base.astro";
+import { roles, education, formatPeriod } from "~/data/resume";
+---
+
+<Base title="Resume" description="Work history for Howard Chen.">
+  <h1>Resume</h1>
+
+  <h2>Work</h2>
+  <ol class="roles">
+    {
+      roles.map((r) => (
+        <li>
+          <div class="head">
+            <h3>{r.company}</h3>
+            {formatPeriod(r) && <span class="mono period">{formatPeriod(r)}</span>}
+          </div>
+          <p class="title">
+            {r.title}
+            {r.location && <span> · {r.location}</span>}
+          </p>
+          {r.notes.length > 0 && (
+            <ul>
+              {r.notes.map((n) => (
+                <li>{n}</li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+
+  {
+    education.length > 0 && (
+      <>
+        <h2>Education</h2>
+        <ul class="plain">
+          {education.map((e) => (
+            <li>
+              {e.school}, {e.detail} <span class="mono period">{e.end}</span>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</Base>
+
+<style>
+  .roles,
+  .plain {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .roles > li {
+    padding: var(--space-3) 0;
+    border-top: var(--rule-width) solid var(--rule);
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-3);
+  }
+  .head h3 {
+    margin: 0;
+  }
+  .period {
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .title {
+    color: var(--ink-soft);
+    margin: var(--space-1) 0 0;
+  }
+  .roles ul {
+    margin: var(--space-2) 0 0;
+    padding-left: var(--space-4);
+  }
+</style>

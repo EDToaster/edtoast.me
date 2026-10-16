@@ -1,0 +1,60 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import { site } from "~/data/site";
+
+const nav = [
+  { href: "/games", label: "Games" },
+  { href: "/demos", label: "Demos" },
+  { href: "/resume", label: "Resume" },
+];
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === href || path.startsWith(href + "/");
+---
+
+<header>
+  <a class="name" href="/">{site.name}</a>
+  <nav aria-label="Main">
+    {
+      nav.map((n) => (
+        <a href={n.href} aria-current={isCurrent(n.href) ? "page" : undefined}>
+          {n.label}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-5);
+    border-bottom: var(--rule-width) solid var(--rule);
+  }
+  .name {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    font-size: var(--step--1);
+  }
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  nav a:hover,
+  nav a[aria-current="page"] {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+  }
+</style>

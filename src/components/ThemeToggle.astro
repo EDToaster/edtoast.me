@@ -1,0 +1,53 @@
+<button type="button" class="toggle mono" data-theme-toggle aria-label="Toggle colour theme">
+  <span class="when-light">dark</span><span class="when-dark">light</span>
+</button>
+
+<script>
+  const root = document.documentElement;
+  const current = () =>
+    root.dataset.theme ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = current() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem("theme", next);
+      } catch {}
+    });
+  });
+</script>
+
+<style>
+  .toggle {
+    font: inherit;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background: none;
+    border: var(--rule-width) solid var(--rule);
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    padding: 0 var(--space-2);
+    cursor: pointer;
+  }
+  .toggle:hover {
+    color: var(--ink);
+    border-color: var(--ink-soft);
+  }
+  .when-dark {
+    display: none;
+  }
+  :global(:root[data-theme="dark"]) .when-dark {
+    display: inline;
+  }
+  :global(:root[data-theme="dark"]) .when-light {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .when-dark {
+      display: inline;
+    }
+    :global(:root:not([data-theme="light"])) .when-light {
+      display: none;
+    }
+  }
+</style>

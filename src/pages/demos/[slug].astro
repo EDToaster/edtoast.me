@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "~/layouts/Base.astro";
+
+/*
+  Each demo lives in src/demos/<slug>/Demo.astro. A Markdown file with the
+  same slug in src/content/demos/ registers it. Demos with an external href skip this page. Missing either half fails
+  the build, which is what we want.
+*/
+const components = import.meta.glob<{ default: any }>("../../demos/*/Demo.astro", { eager: true });
+
+export async function getStaticPaths() {
+  const demos = await getCollection("demos");
+  return demos.filter((d) => !d.data.href).map((d) => ({ params: { slug: d.id }, props: { demo: d } }));
+}
+
+const { demo } = Astro.props;
+const mod = components[`../../demos/${demo.id}/Demo.astro`];
+if (!mod) throw new Error(`No component at src/demos/${demo.id}/Demo.astro`);
+const DemoComponent = mod.default;
+const { Content } = await render(demo);
+---
+
+<Base title={demo.data.title} description={demo.data.summary} wide>
+  <p class="crumb"><a href="/demos">Demos</a></p>
+  <h1>{demo.data.title}</h1>
+  <p>{demo.data.summary}</p>
+  <DemoComponent />
+  <section class="about">
+    <Content />
+  </section>
+</Base>
+
+<style>
+  .crumb {
+    font-size: var(--step--1);
+    margin-bottom: var(--space-2);
+  }
+  .about {
+    margin-top: var(--space-5);
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    font-size: var(--step--1);
+  }
+</style>
