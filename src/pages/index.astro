@@ -22,7 +22,14 @@ const sections = [
 
 <Base home>
   <nav class="dot-nav" aria-label="Page sections">
-    {sections.map((s, i) => <a class:list={["dot", { active: i === 0 }]} href={`#${s.id}`} aria-label={s.label} />)}
+    {
+      sections.map((s, i) => (
+        <a class:list={["dot-item", { active: i === 0 }]} href={`#${s.id}`}>
+          <span class="dot-label">{s.label}</span>
+          <span class="dot" aria-hidden="true" />
+        </a>
+      ))
+    }
   </nav>
 
   <section id="hero">
@@ -154,7 +161,7 @@ const sections = [
 </Base>
 
 <script>
-  const dots = document.querySelectorAll<HTMLAnchorElement>(".dot");
+  const dots = document.querySelectorAll<HTMLAnchorElement>(".dot-item");
   const sections = [...document.querySelectorAll<HTMLElement>("main > section")];
   const observer = new IntersectionObserver(
     (entries) => {
@@ -190,7 +197,7 @@ const sections = [
     max-width: var(--content);
   }
 
-  /* Dot nav */
+  /* Dot nav — dots only at rest; on hover, labels slide out and dots magnify like the macOS Dock */
   .dot-nav {
     position: fixed;
     right: 1.75rem;
@@ -198,21 +205,92 @@ const sections = [
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    align-items: flex-end;
     z-index: 10;
+  }
+  .dot-item {
+    --scale: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 7px;
+    margin: 0.3rem 0;
+    transition: margin 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     border: 1.5px solid var(--muted);
+    transform: scale(var(--scale));
     transition:
+      transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
       background 0.2s,
       border-color 0.2s;
   }
-  .dot.active {
+  .dot-item.active .dot {
     background: var(--text);
     border-color: var(--text);
+  }
+  .dot-label {
+    position: absolute;
+    right: calc(100% + 0.5rem);
+    white-space: nowrap;
+    font-size: var(--text-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0;
+    transform: translateX(6px) scale(0.92);
+    transform-origin: right center;
+    pointer-events: none;
+    transition:
+      opacity 0.2s,
+      transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+      color 0.15s;
+  }
+  .dot-item.active .dot-label {
+    color: var(--text);
+  }
+
+  /* Expanded state */
+  .dot-nav:hover .dot-item,
+  .dot-nav:focus-within .dot-item {
+    margin: 0.55rem 0;
+  }
+  .dot-nav:hover .dot-label,
+  .dot-nav:focus-within .dot-label {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  .dot-nav:hover .dot-item:hover .dot-label,
+  .dot-item:focus-visible .dot-label {
+    color: var(--text);
+    transform: scale(1.08);
+  }
+
+  /* Dock-style magnification: hovered dot biggest, neighbours slightly larger */
+  .dot-nav:hover .dot-item {
+    --scale: 1.15;
+  }
+  .dot-nav .dot-item:has(+ .dot-item:hover),
+  .dot-nav .dot-item:hover + .dot-item {
+    --scale: 1.4;
+  }
+  .dot-nav .dot-item:hover,
+  .dot-nav .dot-item:focus-visible {
+    --scale: 1.8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dot-item,
+    .dot,
+    .dot-label {
+      transition: opacity 0.15s;
+    }
   }
 
   /* Hero */
