@@ -215,9 +215,11 @@ const sections = [
     align-items: center;
     justify-content: center;
     width: 15px;
+    /* Padding (not margin) so each link's hit area fills its whole row; neighbours touch with no dead zone */
     height: 7px;
-    margin: 0.3rem 0;
-    transition: margin 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-sizing: content-box;
+    padding: 0.3rem 0;
+    transition: padding 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .dot {
     width: 7px;
@@ -235,8 +237,14 @@ const sections = [
     border-color: var(--text);
   }
   .dot-label {
+    /* Spans the full row height and runs right up to the dot, so the label-to-dot gap is clickable too */
     position: absolute;
-    right: calc(100% + 0.5rem);
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem 0 0.75rem;
     white-space: nowrap;
     font-size: var(--text-label);
     letter-spacing: 0.08em;
@@ -258,7 +266,7 @@ const sections = [
   /* Expanded state */
   .dot-nav:hover .dot-item,
   .dot-nav:focus-within .dot-item {
-    margin: 0.55rem 0;
+    padding: 0.55rem 0;
   }
   .dot-nav:hover .dot-label,
   .dot-nav:focus-within .dot-label {
