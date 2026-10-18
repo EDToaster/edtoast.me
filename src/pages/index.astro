@@ -6,7 +6,7 @@ import Icon from "~/components/Icon.astro";
 import CompanyLogo from "~/components/CompanyLogo.astro";
 import EntryList from "~/components/EntryList.astro";
 import { site, heroLinks } from "~/data/site";
-import { roles, education } from "~/data/resume";
+import { roles, education, stats, skills, emphasize } from "~/data/resume";
 import { projects } from "~/data/projects";
 
 const play = [...(await getCollection("games")), ...(await getCollection("demos"))];
@@ -60,6 +60,17 @@ const sections = [
   <section id="work">
     <div class="section-content">
       <p class="section-label">Work</p>
+      <ul class="stats">
+        {
+          stats.map((s) => (
+            <li class="stat">
+              <div class="stat-value">{s.value}</div>
+              <div class="stat-label">{s.label}</div>
+              <div class="stat-where">{s.where}</div>
+            </li>
+          ))
+        }
+      </ul>
       <ul class="timeline">
         {
           roles.map((r) => (
@@ -71,34 +82,74 @@ const sections = [
                   <span>{r.company}</span>
                   {r.upcoming && <span class="tag">Upcoming</span>}
                 </div>
-                <div class="timeline-role">{r.title}</div>
-                {r.features && (
-                  <div class="timeline-features">
-                    {r.features.map((f) => (
-                      <div class="timeline-feature">
-                        {f.text}
-                        {f.refs && (
-                          <>
-                            {" — "}
-                            {f.refs.map((ref, i) => (
+                <div class="timeline-role">
+                  {r.title}
+                  {r.location && <span class="timeline-loc">{r.location}</span>}
+                </div>
+                {r.highlights || r.features ? (
+                  <details class="timeline-details">
+                    <summary>
+                      <span>{r.summary}</span>
+                      <span class="toggle" aria-hidden="true">
+                        <span class="toggle-more">More</span>
+                        <span class="toggle-less">Less</span>
+                      </span>
+                    </summary>
+                    {r.highlights && (
+                      <ul class="highlights">
+                        {r.highlights.map((h) => (
+                          <li set:html={emphasize(h)} />
+                        ))}
+                      </ul>
+                    )}
+                    {r.features && (
+                      <div class="timeline-features">
+                        {r.features.map((f) => (
+                          <div class="timeline-feature">
+                            {f.text}
+                            {f.refs && (
                               <>
-                                {i > 0 && ", "}
-                                <a class="link" href={ref.href} target="_blank" rel="noopener">
-                                  {ref.label}
-                                </a>
+                                {" — "}
+                                {f.refs.map((ref, i) => (
+                                  <>
+                                    {i > 0 && ", "}
+                                    <a class="link" href={ref.href} target="_blank" rel="noopener">
+                                      {ref.label}
+                                    </a>
+                                  </>
+                                ))}
                               </>
-                            ))}
-                          </>
-                        )}
+                            )}
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    )}
+                    {r.stack && (
+                      <div class="stack">
+                        {r.stack.map((t) => (
+                          <span class="tag">{t}</span>
+                        ))}
+                      </div>
+                    )}
+                  </details>
+                ) : (
+                  r.summary && <p class="timeline-summary">{r.summary}</p>
                 )}
               </div>
             </li>
           ))
         }
       </ul>
+      <div class="toolbox">
+        <p class="section-label">Toolbox</p>
+        <div class="stack">
+          {
+            skills.map((t) => (
+              <span class="tag">{t}</span>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </section>
 
@@ -404,6 +455,122 @@ const sections = [
     line-height: 1.4;
   }
 
+  /* Work: headline stat tiles */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: var(--space-5);
+  }
+  .stat {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 0.85rem;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 1.85rem;
+    line-height: 1;
+    margin-bottom: 0.45rem;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .stat-where {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Work: expandable role details */
+  .timeline-loc::before {
+    content: " · ";
+  }
+  .timeline-summary,
+  .timeline-details summary {
+    margin-top: 0.4rem;
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .timeline-details summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .timeline-details summary::-webkit-details-marker {
+    display: none;
+  }
+  .timeline-details[open] summary {
+    color: var(--text);
+  }
+  .toggle {
+    margin-left: 0.5rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+  .toggle::after {
+    content: " ▾";
+  }
+  .timeline-details[open] .toggle::after {
+    content: " ▴";
+  }
+  .toggle-less,
+  .timeline-details[open] .toggle-more {
+    display: none;
+  }
+  .timeline-details[open] .toggle-less {
+    display: inline;
+  }
+  summary:hover .toggle {
+    opacity: 0.75;
+  }
+  .highlights {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .highlights li {
+    position: relative;
+    padding-left: 0.9rem;
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--border-strong);
+  }
+  .highlights :global(strong) {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+  }
+  .toolbox {
+    margin-top: var(--space-5);
+  }
+  .toolbox .section-label {
+    margin-bottom: 0.75rem;
+  }
+
   /* Education */
   .edu-item {
     padding-left: 1rem;
@@ -483,6 +650,9 @@ const sections = [
   }
 
   @media (max-width: 520px) {
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .hero-name {
       font-size: 2.5rem;
     }
