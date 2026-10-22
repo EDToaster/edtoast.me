@@ -2,10 +2,32 @@ export type Project = {
   name: string;
   tags: string[];
   description: string;
+  /** Short bullets for what makes the project unusual. */
+  highlights?: string[];
+  /** Small screenshot shown in the card (path under /public). */
+  image?: { src: string; alt: string; width: number; height: number };
   links: { label: string; href: string }[];
 };
 
 export const projects: Project[] = [
+  {
+    name: "toastty",
+    tags: ["Rust", "wgpu", "Terminal"],
+    description:
+      "A lightweight, GPU-accelerated terminal emulator. A careful xterm/VT core speaks the modern protocols (kitty keyboard and graphics, Sixel, synchronized output, grapheme clustering), plus a few things other terminals don't have:",
+    highlights: [
+      "Markdown rendered in the scrollback: `toastty md` draws tables, highlighted code, LaTeX math and Mermaid diagrams, and lays them out again when the window resizes.",
+      "Real 3D: an early adopter of the Ratty Graphics Protocol, rendering OBJ/GLB meshes in a wgpu pass that shares a depth buffer with the text.",
+      "Inline images over kitty graphics and Sixel that stay attached to their text through scrolling and reflow.",
+    ],
+    image: {
+      src: "/projects/toastty-markdown.webp",
+      alt: "A Markdown document rendered inside toastty, showing display maths and a Mermaid flowchart",
+      width: 1100,
+      height: 490,
+    },
+    links: [{ label: "Source", href: "https://github.com/EDToaster/toastty" }],
+  },
   {
     name: "hive",
     tags: ["Rust", "AI", "MCP"],
