@@ -184,6 +184,24 @@ const sections = [
                 ))}
               </div>
               <p class="project-desc">{p.description}</p>
+              {p.highlights && (
+                <ul class="project-highlights">
+                  {p.highlights.map((h) => (
+                    <li set:html={h.replace(/`([^`]+)`/g, "<code>$1</code>")} />
+                  ))}
+                </ul>
+              )}
+              {p.image && (
+                <img
+                  class="project-shot"
+                  src={p.image.src}
+                  alt={p.image.alt}
+                  width={p.image.width}
+                  height={p.image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
               <div class="project-links">
                 {p.links.map((l) => (
                   <a class="link" href={l.href} target="_blank" rel="noopener">
@@ -622,6 +640,32 @@ const sections = [
     color: var(--muted);
     line-height: 1.5;
     margin-bottom: 0.65rem;
+  }
+  .project-highlights {
+    list-style: disc;
+    padding-left: 1.1rem;
+    margin: -0.25rem 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .project-highlights :global(code) {
+    font-size: 0.9em;
+    padding: 0.05em 0.3em;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+  }
+  .project-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
   }
   .project-links {
     display: flex;
