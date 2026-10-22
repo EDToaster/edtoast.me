@@ -32,7 +32,7 @@ export const stats: Stat[] = [
 export const skills = ["Go", "Rust", "Java", "Kotlin", "SQL", "C / C++", "Python", "Ruby", "Verilog", "Postgres", "AWS", "EC2 Auto Scaling"];
 
 export const roles: Role[] = [
-  { period: "Nov 2026", company: "Perplexity AI", logo: "perplexity", title: "Member of Technical Staff", upcoming: true },
+  { period: "Nov 2026", company: "Perplexity AI", logo: "perplexity", title: "Senior Member of Technical Staff", upcoming: true },
   {
     period: "2025 – 2026",
     company: "Instacart",
