@@ -1,0 +1,757 @@
+[
+  {
+    "id":"cityhall-august-tie-in","published":"2026-08-28","effective":"2026-08-30","firstSeen":"2026-11-21T19:50:35Z",
+    "title":"Permanent utility tie-in beside the Canada Line",
+    "summary":"The Broadway Subway project scheduled two nights of utility installation beside the existing Broadway–City Hall station. This was construction work, not a change to Canada Line passenger service.",
+    "projects":["broadway"],"lines":["millennium"],"stations":["broadway-city-hall"],"segments":[],"sources":["aug-cityhall"]
+  },
+  {
+    "id": "evergreen-open",
+    "published": "2016-12-02",
+    "effective": "2016-12-02",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Evergreen Extension opens to passengers",
+    "summary": "The Millennium Line began carrying passengers between Lougheed Town Centre and Lafarge Lake–Douglas.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "lougheed-town-centre",
+      "burquitlam",
+      "moody-centre",
+      "inlet-centre",
+      "coquitlam-central",
+      "lincoln",
+      "lafarge-lake-douglas"
+    ],
+    "segments": [],
+    "sources": [
+      "evergreen"
+    ]
+  },
+  {
+    "id": "broadway-funds",
+    "published": "2018-09-04",
+    "effective": "2018-09-04",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Broadway Subway receives construction funding",
+    "summary": "Ottawa and B.C. announced funding for the six-station extension from VCC–Clark to Arbutus.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bspfund"
+    ]
+  },
+  {
+    "id": "poco-study",
+    "published": "2019-11-29",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Port Coquitlam outlines a feasibility study",
+    "summary": "Mayor Brad West described a possible Millennium Line branch near Coquitlam Central. The city had not selected station sites.",
+    "projects": [
+      "poco"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "pocostudy"
+    ]
+  },
+  {
+    "id": "broadway-build",
+    "published": "2021-05-13",
+    "effective": "2021-05-13",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Major construction begins on Broadway",
+    "summary": "The Province announced the start of major construction following site preparation and utility relocation.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bspstart"
+    ]
+  },
+  {
+    "id": "north-model",
+    "published": "2021-10-19",
+    "effective": "2021-08",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Two North Shore rail alternatives modelled",
+    "summary": "Researchers compared Gold (Waterfront) and Purple (Metrotown) using SkyTrain as a modelling assumption. Neither was a technology decision.",
+    "projects": [
+      "north-gold",
+      "north-purple"
+    ],
+    "lines": [
+      "expo",
+      "study"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "northpublic",
+      "birtstudy"
+    ]
+  },
+  {
+    "id": "ubc-endorsement",
+    "published": "2022-05-26",
+    "effective": "2022-04-22",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Mayors’ Council records its UBC route decision",
+    "summary": "Published meeting papers record the April vote on the horizontal alignment and station areas. Vertical alignment and funding remained unresolved.",
+    "projects": [
+      "ubcx"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "ubcmotion",
+      "ubc"
+    ]
+  },
+  {
+    "id": "langley-funds",
+    "published": "2022-07-14",
+    "effective": "2022-07-14",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Province approves Surrey–Langley project funding",
+    "summary": "The released business case and government funding commitments cover the Expo Line extension to Langley City Centre.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "fundsls"
+    ]
+  },
+  {
+    "id": "cambie-planning",
+    "published": "2022-07-07",
+    "effective": "2018-05-01",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Cambie infill remains a planning item",
+    "summary": "A City update revisits the adopted corridor plan. Its planning reports consider potential Canada Line stations at 33rd and 57th; provision is not project funding.",
+    "projects": [
+      "cambie"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "w33",
+      "w57"
+    ],
+    "segments": [],
+    "sources": [
+      "cambie",
+      "cambier"
+    ]
+  },
+  {
+    "id": "capstan-open",
+    "published": "2024-12-20",
+    "effective": "2024-12-20",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Capstan opens on the Canada Line",
+    "summary": "Passenger service began at Capstan, between Bridgeport and Aberdeen on the Richmond branch.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "capstan"
+    ],
+    "segments": [],
+    "sources": [
+      "capopen"
+    ]
+  },
+  {
+    "id": "langley-build",
+    "published": "2025-02-28",
+    "effective": "2024-11",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Guideway columns rise along Fraser Highway",
+    "summary": "B.C. reported that major works had begun in November 2024 and columns were visible at multiple sites. The start day was not specified.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "slsstart"
+    ]
+  },
+  {
+    "id": "poco-plan",
+    "published": "2026-06-09",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Port Coquitlam reports business-plan work",
+    "summary": "The City’s 2025 annual report records work with TransLink on a SkyTrain business plan. It does not announce construction funding or a station location.",
+    "projects": [
+      "poco"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "pocorelease",
+      "poco"
+    ]
+  },
+  {
+    "id": "langley-stations",
+    "published": "2026-05-08",
+    "effective": "2026-05-08",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "All eight Surrey–Langley stations under construction",
+    "summary": "Six station foundations were complete. Work continued at 152 Street and began at Willowbrook; Fleetwood and Green Timbers had visible above-ground structures.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "green-timbers",
+      "152-street",
+      "fleetwood",
+      "bakerview-166-street",
+      "hillcrest-184-street",
+      "clayton",
+      "willowbrook",
+      "langley-city-centre"
+    ],
+    "segments": [],
+    "sources": [
+      "slsstat"
+    ]
+  },
+  {
+    "id": "broadway-test",
+    "published": "2026-05-29",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Train testing starts on the elevated guideway",
+    "summary": "Test vehicles were running on the extension. The tests do not constitute the start of passenger service.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": ["millennium:vcc-clark~great-northern-way-emily-carr"],
+    "sources": [
+      "testing"
+    ]
+  },
+  {
+    "id": "oak-deck",
+    "published": "2026-08-20",
+    "effective": "2026-08-23",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Oak–VGH prepares for traffic-deck removal",
+    "summary": "The project scheduled a utility inspection for August 23 and a traffic shift for August 27 to make room for deck removal.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "oak-vgh"
+    ],
+    "segments": [],
+    "sources": [
+      "augoak"
+    ]
+  },
+  {
+    "id": "emily-fill",
+    "published": "2026-09-08",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Backfilling brings truck traffic to East 1st Avenue",
+    "summary": "Crews planned gravel deliveries to fill the space between the station roof and the surface.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "great-northern-way-emily-carr"
+    ],
+    "segments": [],
+    "sources": [
+      "b1"
+    ]
+  },
+  {
+    "id": "langley-fall",
+    "published": "2026-09-14",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Fall advisory details guideway and station work",
+    "summary": "The project office outlined rail installation, guideway assembly and station construction for September through November.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "slsfall"
+    ]
+  },
+  {
+    "id": "barrett-name",
+    "published": "2026-09-15",
+    "effective": "2026-09-15",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Surrey–Langley extension named for Dave Barrett",
+    "summary": "The Province named the extension after the former premier. It remains part of the Expo Line.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "rename"
+    ]
+  },
+  {
+    "id": "broadway-track",
+    "published": "2026-09-21",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Final track installation approaches on Broadway",
+    "summary": "B.C. expected the remaining trackwork to finish that week. It also confirmed the traffic deck at Broadway–City Hall had been removed in August.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "broadway-city-hall"
+    ],
+    "segments": [],
+    "sources": [
+      "tracks"
+    ]
+  },
+  {
+    "id": "langley-gantry",
+    "published": "2026-09-21",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Langley Launcher reaches the eastern terminus",
+    "summary": "The launching gantry reached Langley City Centre. B.C. reported guideway construction was roughly 65% complete.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "langley-city-centre"
+    ],
+    "segments": [],
+    "sources": [
+      "launcher"
+    ]
+  },
+  {
+    "id": "fleetwood-pour",
+    "published": "2026-10-07",
+    "effective": "2026-10-09",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Concrete pour scheduled at Fleetwood",
+    "summary": "The project extended site hours for a continuous pour at the future station.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "fleetwood"
+    ],
+    "segments": [],
+    "sources": [
+      "s1"
+    ]
+  },
+  {
+    "id": "152-pour",
+    "published": "2026-10-16",
+    "effective": "2026-10-20",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Longer shifts for concrete work at 152 Street",
+    "summary": "The project scheduled extended hours on October 20 and 21 for continuous concrete work.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "152-street"
+    ],
+    "segments": [],
+    "sources": [
+      "s0"
+    ]
+  },
+  {
+    "id": "granville-deck",
+    "published": "2026-10-19",
+    "effective": "2026-10-22",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "South Granville moves into deck removal",
+    "summary": "A traffic shift was scheduled to make space for panel removal and backfilling. Interior finishing and equipment tests continued.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "south-granville"
+    ],
+    "segments": [],
+    "sources": [
+      "b8"
+    ]
+  },
+  {
+    "id": "two-stations-rebar",
+    "published": "2026-10-22",
+    "effective": "2026-10-25",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Sunday shifts for two station structures",
+    "summary": "Rebar, concrete and structural work prompted additional shifts at Bakerview–166 Street and Hillcrest–184 Street.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "bakerview-166-street",
+      "hillcrest-184-street"
+    ],
+    "segments": [],
+    "sources": [
+      "s4"
+    ]
+  },
+  {
+    "id": "arbutus-deck",
+    "published": "2026-10-23",
+    "effective": "2026-11-02",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Arbutus prepares to remove its remaining deck",
+    "summary": "The project scheduled a traffic shift on Broadway so crews could remove deck panels and girders on the south side.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "arbutus"
+    ],
+    "segments": [],
+    "sources": [
+      "b9"
+    ]
+  },
+  {
+    "id": "oak-utilities",
+    "published": "2026-10-23",
+    "effective": "2026-10-25",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Oak–VGH prepares a permanent water connection",
+    "summary": "Crews planned overnight preparation on Broadway while road restoration continued above the station.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "oak-vgh"
+    ],
+    "segments": [],
+    "sources": [
+      "b6"
+    ]
+  },
+  {
+    "id": "granville-pipes",
+    "published": "2026-10-29",
+    "effective": "2026-10-29",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Permanent utility work resumes at Hemlock",
+    "summary": "South Granville crews planned overnight utility locating and pipe work alongside backfilling and road restoration.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "south-granville"
+    ],
+    "segments": [],
+    "sources": [
+      "b7"
+    ]
+  },
+  {
+    "id": "hillcrest-pour",
+    "published": "2026-10-30",
+    "effective": "2026-11-03",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Hillcrest schedules a continuous concrete pour",
+    "summary": "The project announced an extended shift for structural concrete at Hillcrest–184 Street.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "hillcrest-184-street"
+    ],
+    "segments": [],
+    "sources": [
+      "s3"
+    ]
+  },
+  {
+    "id": "oak-tie",
+    "published": "2026-11-03",
+    "effective": "2026-11-02",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Water-main tie-in advances at Oak–VGH",
+    "summary": "A new notice detailed two weeks of overnight work to finish preparation and install the connections.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "oak-vgh"
+    ],
+    "segments": [],
+    "sources": [
+      "b5"
+    ]
+  },
+  {
+    "id": "clayton-supports",
+    "published": "2026-11-05",
+    "effective": "2026-11-11",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Temporary supports to come down at Clayton",
+    "summary": "The project scheduled removal of supports from completed concrete structures. Station construction continued.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "clayton"
+    ],
+    "segments": [],
+    "sources": [
+      "s5"
+    ]
+  },
+  {
+    "id": "emily-interior",
+    "published": "2026-11-06",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Interior finishes go in at Great Northern Way",
+    "summary": "Crews were fitting wall tiles, ceilings and masonry. Roof waterproofing and backfilling were next on the fall work program.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "great-northern-way-emily-carr"
+    ],
+    "segments": [],
+    "sources": [
+      "b0"
+    ]
+  },
+  {
+    "id": "bakerview-pour",
+    "published": "2026-11-06",
+    "effective": "2026-11-09",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Bakerview schedules continuous concrete work",
+    "summary": "The project announced an early start on November 9 for a concrete pour at the future station.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "bakerview-166-street"
+    ],
+    "segments": [],
+    "sources": [
+      "s2"
+    ]
+  },
+  {
+    "id": "newton-motion",
+    "published": "2026-11-10",
+    "effective": "2026-11-09",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Surrey directs staff to advance SkyTrain to Newton",
+    "summary": "Council adopted a King George Boulevard extension as a priority and directed staff to advance it. The motion did not fund construction.",
+    "projects": [
+      "newton"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "newton"
+    ]
+  },
+  {
+    "id": "cityhall-water",
+    "published": "2026-11-17",
+    "effective": "2026-11-19",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Permanent water main scheduled at City Hall",
+    "summary": "The project announced five nights of water-main installation between Cambie and Yukon as the street above the station is rebuilt.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "broadway-city-hall"
+    ],
+    "segments": [],
+    "sources": [
+      "b4"
+    ]
+  },
+  {
+    "id": "langley-track",
+    "published": "2026-11-19",
+    "effective": "2026-11-24",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Track installation moves along Industrial Avenue",
+    "summary": "The project scheduled a November 24 road closure for concrete work and track installation on the elevated guideway.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": ["expo:willowbrook~langley-city-centre"],
+    "sources": [
+      "slsnow"
+    ]
+  },
+  {
+    "id": "cityhall-sidewalk",
+    "published": "2026-11-20",
+    "effective": "2026-11-23",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Sidewalk rebuilding moves to Broadway–City Hall",
+    "summary": "The project scheduled sidewalk demolition for November 23. Pedestrian access will be detoured as restoration continues into 2027.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "broadway-city-hall"
+    ],
+    "segments": [],
+    "sources": [
+      "b3"
+    ]
+  },
+  {
+    "id": "newton-premier",
+    "published": "2026-11-20",
+    "effective": "2026-11-20",
+    "firstSeen": "2026-11-21T19:47:29Z",
+    "title": "Premier reiterates commitment to Newton extension",
+    "summary": "The incoming premier cited Newton in naming a parliamentary secretary for TransLink. He did not announce construction funding or a start date.",
+    "projects": [
+      "newton"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "newtprem"
+    ]
+  }
+]

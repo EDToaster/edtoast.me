@@ -14,7 +14,7 @@ const entry = z.object({
   status: z.enum(["playable", "wip", "archived"]).default("playable"),
   tags: z.array(z.string()).default([]),
   // External demos (hosted elsewhere) set this instead of shipping code here.
-  href: z.url().optional(),
+  href: z.union([z.url(), z.string().regex(/^\/(?!\/)[a-z0-9/-]+$/)]).optional(),
 });
 
 export const collections = {

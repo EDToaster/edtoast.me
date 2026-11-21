@@ -1,0 +1,62 @@
+[
+  {
+    "id": "gtfs",
+    "name": "TransLink static feed",
+    "url": "https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-data",
+    "check": "Read feed date and archive permalink; compare named rail patterns, stops and shapes if changed. Never interpret a future feed or a temporary outage as an opening/closure."
+  },
+  {
+    "id": "translink",
+    "name": "TransLink newsroom",
+    "url": "https://www.translink.ca/news",
+    "check": "Search TransLink releases, The Buzzer and Mayors’ Council minutes for SkyTrain-specific decisions and openings."
+  },
+  {
+    "id": "broadway",
+    "name": "Broadway Subway project office",
+    "url": "https://www.broadwaysubway.ca/construction/current-work/",
+    "check": "Read linked new notices and the construction-notice archive; include meaningful works, not repeated traffic text."
+  },
+  {
+    "id": "langley",
+    "name": "Surrey Langley project office",
+    "url": "https://surreylangleyskytrain.gov.bc.ca/current-work/",
+    "check": "Check the notice archive, advisories, station and alignment pages. Also search Dave Barrett Extension."
+  },
+  {
+    "id": "province",
+    "name": "B.C. government news",
+    "url": "https://news.gov.bc.ca/",
+    "check": "Search the releases for SkyTrain, Broadway Subway, Dave Barrett Extension, Surrey Langley, UBC and Newton."
+  },
+  {
+    "id": "surrey",
+    "name": "Surrey council",
+    "url": "https://www.surrey.ca/news-events/news",
+    "check": "Search council decisions and budget motions on King George Boulevard. Distinguish Newton SkyTrain from BRT."
+  },
+  {
+    "id": "poco",
+    "name": "Port Coquitlam",
+    "url": "https://www.portcoquitlam.ca/our-government/reports-plans-publications/annual-report",
+    "check": "Search council reports and press releases for business plan, spur and financing. A tail track is not a passenger branch."
+  },
+  {
+    "id": "ubc",
+    "name": "UBC extension and Vancouver",
+    "url": "https://skytrain.ubc.ca/project-status/",
+    "check": "Also check Vancouver council for the regional base scope, Cambie infill, and project decisions."
+  },
+  {
+    "id": "north",
+    "name": "Burrard Inlet studies",
+    "url": "https://vancouver.ca/streets-transportation/burrard-inlet-rapid-transit.aspx",
+    "check": "Check North Shore Connects and Metro Vancouver municipalities. Explicit SkyTrain study cases only; keep mode-undecided programs off the map."
+  },
+  {
+    "id": "local",
+    "name": "Local coverage discovery",
+    "url": "https://dailyhive.com/vancouver/mapped",
+    "check": "Search Daily Hive, CBC British Columbia, CityNews Vancouver or North Shore News for new coverage. Read the article and check underlying authority. A publisher homepage alone is not a successful discovery pass."
+  }
+]

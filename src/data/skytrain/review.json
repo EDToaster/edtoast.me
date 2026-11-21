@@ -1,0 +1,27 @@
+[
+  {
+    "id": "newton-funding",
+    "projects": [
+      "newton"
+    ],
+    "sources": [
+      "newtprem",
+      "newton"
+    ],
+    "reason": "Political commitment and unspecified work do not establish an authorized construction budget or physical passenger-project work. Retain proposed.",
+    "firstSeen": "2026-11-21T19:47:29Z"
+  },
+  {
+    "id": "north-mode",
+    "projects": [
+      "north-gold",
+      "north-purple"
+    ],
+    "sources": [
+      "birtcity",
+      "birtstudy"
+    ],
+    "reason": "The regional priority corridor did not choose a rail technology. Preserve the historical comparison only; await an explicit mode decision.",
+    "firstSeen": "2026-11-21T19:47:29Z"
+  }
+]

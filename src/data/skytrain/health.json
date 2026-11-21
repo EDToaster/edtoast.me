@@ -1,0 +1,13 @@
+{
+  "coverageStart": "2026-08-20",
+  "lastAttempt": "2026-11-21T19:47:29Z",
+  "lastSuccessful": null,
+  "seededAt": "2026-11-21T19:47:29Z",
+  "outcome": "Seed backfill",
+  "sources": {},
+  "gaps": [
+    "Coverage is selective from 20 August 2026. Earlier entries establish individual decisions, not a complete daily archive.",
+    "Station-specific construction can be evidenced later than the project start. Before an entity’s first evidence its status is unknown. Month-only dates take effect here at month-end.",
+    "Routine diversions and repeat traffic bulletins are not a service-alert feed. North Shore study overlays are historical SkyTrain scenarios, not the current mode-undecided program."
+  ]
+}

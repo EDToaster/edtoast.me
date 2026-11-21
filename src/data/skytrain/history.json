@@ -1,0 +1,223 @@
+[
+  {"id":"broadway-east-boxes","targets":["millennium:great-northern-way-emily-carr","millennium:mount-pleasant"],"state":"construction","basis":"physical-construction","effective":"2022-12-31","sources":["bspjul"],"event":null,"note":"Retrospective evidence: the July 2026 report dates both station box excavations to 2022. Year-end is a conservative by-date, not a claimed start day."},
+  {"id":"broadway-west-boxes","targets":["millennium:broadway-city-hall","millennium:oak-vgh","millennium:south-granville","millennium:arbutus"],"state":"construction","basis":"physical-construction","effective":"2023-12-31","sources":["bspjul"],"event":null,"note":"Retrospective evidence: the July 2026 report dates these four station box excavations to 2023. Year-end is a conservative by-date, not a claimed start day."},
+  {
+    "id": "network-baseline",
+    "targets": [
+      "network"
+    ],
+    "state": "operating",
+    "basis": "passenger-service",
+    "effective": "2026-01-05",
+    "sources": [
+      "timetable",
+      "ops",
+      "gtfs"
+    ],
+    "event": null,
+    "note": "Dated operating timetable; baseline is not an opening date."
+  },
+  {
+    "id": "evergreen-service",
+    "targets": [
+      "millennium:burquitlam",
+      "millennium:moody-centre",
+      "millennium:inlet-centre",
+      "millennium:coquitlam-central",
+      "millennium:lincoln",
+      "millennium:lafarge-lake-douglas"
+    ],
+    "state": "operating",
+    "basis": "passenger-service",
+    "effective": "2016-12-02",
+    "sources": [
+      "evergreen"
+    ],
+    "event": "evergreen-open",
+    "note": "Federal opening announcement."
+  },
+  {
+    "id": "capstan-service",
+    "targets": [
+      "canada:capstan"
+    ],
+    "state": "operating",
+    "basis": "passenger-service",
+    "effective": "2024-12-20",
+    "sources": [
+      "capopen"
+    ],
+    "event": "capstan-open",
+    "note": "TransLink confirmed public opening."
+  },
+  {
+    "id": "broadway-funded",
+    "targets": [
+      "broadway"
+    ],
+    "state": "approved",
+    "basis": "construction-funding",
+    "effective": "2018-09-04",
+    "sources": [
+      "bspfund"
+    ],
+    "event": "broadway-funds",
+    "note": "Government construction commitments for the passenger project."
+  },
+  {
+    "id": "broadway-construction",
+    "targets": [
+      "broadway"
+    ],
+    "state": "construction",
+    "basis": "physical-construction",
+    "effective": "2021-05-13",
+    "sources": [
+      "bspstart"
+    ],
+    "event": "broadway-build",
+    "note": "Major construction launch."
+  },
+  {
+    "id": "broadway-station-baseline",
+    "targets": [
+      "millennium:great-northern-way-emily-carr",
+      "millennium:mount-pleasant",
+      "millennium:broadway-city-hall",
+      "millennium:oak-vgh",
+      "millennium:south-granville",
+      "millennium:arbutus"
+    ],
+    "state": "construction",
+    "basis": "physical-construction",
+    "effective": "2026-07",
+    "sources": [
+      "bspjul"
+    ],
+    "event": null,
+    "note": "July project status report documents station structures and work fronts."
+  },
+  {
+    "id": "sls-funded",
+    "targets": [
+      "langley"
+    ],
+    "state": "approved",
+    "basis": "construction-funding",
+    "effective": "2022-07-14",
+    "sources": [
+      "fundsls"
+    ],
+    "event": "langley-funds",
+    "note": "Formal business case and construction funding."
+  },
+  {
+    "id": "sls-construction",
+    "targets": [
+      "langley"
+    ],
+    "state": "construction",
+    "basis": "physical-construction",
+    "effective": "2024-11",
+    "sources": [
+      "slsstart"
+    ],
+    "event": "langley-build",
+    "note": "Major works began in November; exact day not reported."
+  },
+  {
+    "id": "sls-stations",
+    "targets": [
+      "expo:green-timbers",
+      "expo:152-street",
+      "expo:fleetwood",
+      "expo:bakerview-166-street",
+      "expo:hillcrest-184-street",
+      "expo:clayton",
+      "expo:willowbrook",
+      "expo:langley-city-centre"
+    ],
+    "state": "construction",
+    "basis": "physical-construction",
+    "effective": "2026-05-08",
+    "sources": [
+      "slsstat"
+    ],
+    "event": "langley-stations",
+    "note": "Province explicitly confirms all eight stations under construction."
+  },
+  {
+    "id": "ubc-base",
+    "targets": [
+      "ubcx"
+    ],
+    "state": "proposed",
+    "basis": "documented-proposal",
+    "effective": "2022-04-22",
+    "sources": [
+      "ubcmotion",
+      "ubc"
+    ],
+    "event": "ubc-endorsement",
+    "note": "Endorsed regional planning concept."
+  },
+  {
+    "id": "newton-priority",
+    "targets": [
+      "newton"
+    ],
+    "state": "proposed",
+    "basis": "documented-proposal",
+    "effective": "2026-11-09",
+    "sources": [
+      "newton"
+    ],
+    "event": "newton-motion",
+    "note": "Municipal priority; no funded construction authority."
+  },
+  {
+    "id": "poco-study",
+    "targets": [
+      "poco"
+    ],
+    "state": "proposed",
+    "basis": "documented-proposal",
+    "effective": "2019-11-29",
+    "sources": [
+      "pocostudy",
+      "pocorelease"
+    ],
+    "event": "poco-study",
+    "note": "Mayor’s study announcement; subsequently corroborated by City report."
+  },
+  {
+    "id": "cambie-infill",
+    "targets": [
+      "cambie"
+    ],
+    "state": "proposed",
+    "basis": "documented-proposal",
+    "effective": "2018-05-01",
+    "sources": [
+      "cambier",
+      "cambie"
+    ],
+    "event": "cambie-planning",
+    "note": "Locations safeguarded in corridor planning; no funding confirmation."
+  },
+  {
+    "id": "north-options",
+    "targets": [
+      "north-gold",
+      "north-purple"
+    ],
+    "state": "proposed",
+    "basis": "documented-proposal",
+    "effective": "2021-08",
+    "sources": [
+      "birtstudy"
+    ],
+    "event": "north-model",
+    "note": "Study alternatives, never approved routes."
+  }
+]

@@ -1,0 +1,831 @@
+{
+  "projects": [
+    {
+      "id": "network",
+      "name": "Passenger network",
+      "line": "",
+      "detail": "Timetabled passenger service. GTFS stop platforms are grouped into physical stations.",
+      "sources": [
+        "ops",
+        "gtfs",
+        "timetable"
+      ],
+      "geometry": "TransLink GTFS rail shapes",
+      "archive": false
+    },
+    {
+      "id": "broadway",
+      "name": "Broadway Subway",
+      "line": "millennium",
+      "detail": "Six underground station connections from VCC–Clark to Arbutus. Broadway–City Hall is an existing Canada Line station.",
+      "sources": [
+        "bspstations",
+        "bspboards",
+        "bspstart",
+        "bspwork"
+      ],
+      "geometry": "Generalized from official station maps",
+      "archive": false
+    },
+    {
+      "id": "langley",
+      "name": "Surrey–Langley · Dave Barrett Extension",
+      "line": "expo",
+      "detail": "Eight stations along Fraser Highway, from King George to Langley City Centre.",
+      "sources": [
+        "slsgeo",
+        "slsmap",
+        "slsstat",
+        "rename"
+      ],
+      "geometry": "Generalized from official guideway map",
+      "archive": false
+    },
+    {
+      "id": "ubcx",
+      "name": "Arbutus to UBC",
+      "line": "millennium",
+      "detail": "Endorsed regional base scope, not construction funding. Macdonald, Alma, Jericho and UBC are planning locations, not final station names.",
+      "sources": [
+        "ubc",
+        "ubcmotion",
+        "ubcmap"
+      ],
+      "geometry": "Approximate corridor, not final alignment",
+      "archive": false
+    },
+    {
+      "id": "newton",
+      "name": "King George Boulevard to Newton",
+      "line": "expo",
+      "detail": "Surrey council priority. A provincial commitment does not establish a funded construction start or fix a junction or station site.",
+      "sources": [
+        "newton",
+        "newtprem"
+      ],
+      "geometry": "Approximate corridor, junction not chosen",
+      "archive": false
+    },
+    {
+      "id": "poco",
+      "name": "Port Coquitlam extension",
+      "line": "millennium",
+      "detail": "Municipal planning concept. The City reports business-plan work with TransLink; the junction provision is not construction of passenger service.",
+      "sources": [
+        "pocorelease",
+        "poco",
+        "pocostudy"
+      ],
+      "geometry": "Approximate destination corridor only",
+      "archive": false
+    },
+    {
+      "id": "cambie",
+      "name": "Cambie corridor infill",
+      "line": "canada",
+      "detail": "City planning identifies possible stops at 33rd and 57th avenues. Cross streets are location descriptions, not official station names.",
+      "sources": [
+        "cambier",
+        "cambie"
+      ],
+      "geometry": "Approximate proposed infill locations",
+      "archive": false
+    },
+    {
+      "id": "north-gold",
+      "name": "North Shore · Gold study option",
+      "line": "expo",
+      "detail": "Archived 2021 modelling alternative: Park Royal to Waterfront via Second Narrows and Hastings. The study assumed an Expo extension; no mode or alignment was approved.",
+      "sources": [
+        "birtstudy",
+        "birtcity"
+      ],
+      "geometry": "Archived study corridor only",
+      "archive": true
+    },
+    {
+      "id": "north-purple",
+      "name": "North Shore · Purple study option",
+      "line": "study",
+      "detail": "Archived 2021 modelling alternative: Park Royal to Metrotown via Second Narrows and Willingdon. This model tested a separate SkyTrain line. The current mode-undecided corridor is not plotted.",
+      "sources": [
+        "birtstudy",
+        "birtcity"
+      ],
+      "geometry": "Archived study corridor only",
+      "archive": true
+    }
+  ],
+  "stations": [
+    {
+      "id": "great-northern-way-emily-carr",
+      "name": "Great Northern Way–Emily Carr",
+      "at": [
+        49.267,
+        -123.0929
+      ]
+    },
+    {
+      "id": "mount-pleasant",
+      "name": "Mount Pleasant",
+      "at": [
+        49.2625,
+        -123.1014
+      ]
+    },
+    {
+      "id": "oak-vgh",
+      "name": "Oak–VGH",
+      "at": [
+        49.26347,
+        -123.1242
+      ]
+    },
+    {
+      "id": "south-granville",
+      "name": "South Granville",
+      "at": [
+        49.2638,
+        -123.1381
+      ]
+    },
+    {
+      "id": "arbutus",
+      "name": "Arbutus",
+      "at": [
+        49.2642,
+        -123.1525
+      ]
+    },
+    {
+      "id": "green-timbers",
+      "name": "Green Timbers",
+      "at": [
+        49.1808,
+        -122.8345
+      ]
+    },
+    {
+      "id": "152-street",
+      "name": "152 Street",
+      "at": [
+        49.1661,
+        -122.8014
+      ]
+    },
+    {
+      "id": "fleetwood",
+      "name": "Fleetwood",
+      "at": [
+        49.157,
+        -122.7781
+      ]
+    },
+    {
+      "id": "bakerview-166-street",
+      "name": "Bakerview–166 Street",
+      "at": [
+        49.1506,
+        -122.7615
+      ]
+    },
+    {
+      "id": "hillcrest-184-street",
+      "name": "Hillcrest–184 Street",
+      "at": [
+        49.1288,
+        -122.7131
+      ]
+    },
+    {
+      "id": "clayton",
+      "name": "Clayton",
+      "at": [
+        49.1214,
+        -122.6959
+      ]
+    },
+    {
+      "id": "willowbrook",
+      "name": "Willowbrook",
+      "at": [
+        49.1137,
+        -122.6794
+      ]
+    },
+    {
+      "id": "langley-city-centre",
+      "name": "Langley City Centre",
+      "at": [
+        49.1056,
+        -122.6575
+      ]
+    },
+    {
+      "id": "w33",
+      "name": "W 33rd Avenue (study site)",
+      "at": [
+        49.2417,
+        -123.116
+      ]
+    },
+    {
+      "id": "w57",
+      "name": "W 57th Avenue (study site)",
+      "at": [
+        49.2193,
+        -123.1166
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "millennium:great-northern-way-emily-carr",
+      "station": "great-northern-way-emily-carr",
+      "line": "millennium",
+      "project": "broadway"
+    },
+    {
+      "id": "millennium:mount-pleasant",
+      "station": "mount-pleasant",
+      "line": "millennium",
+      "project": "broadway"
+    },
+    {
+      "id": "millennium:broadway-city-hall",
+      "station": "broadway-city-hall",
+      "line": "millennium",
+      "project": "broadway"
+    },
+    {
+      "id": "millennium:oak-vgh",
+      "station": "oak-vgh",
+      "line": "millennium",
+      "project": "broadway"
+    },
+    {
+      "id": "millennium:south-granville",
+      "station": "south-granville",
+      "line": "millennium",
+      "project": "broadway"
+    },
+    {
+      "id": "millennium:arbutus",
+      "station": "arbutus",
+      "line": "millennium",
+      "project": "broadway"
+    },
+    {
+      "id": "expo:green-timbers",
+      "station": "green-timbers",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:152-street",
+      "station": "152-street",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:fleetwood",
+      "station": "fleetwood",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:bakerview-166-street",
+      "station": "bakerview-166-street",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:hillcrest-184-street",
+      "station": "hillcrest-184-street",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:clayton",
+      "station": "clayton",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:willowbrook",
+      "station": "willowbrook",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "expo:langley-city-centre",
+      "station": "langley-city-centre",
+      "line": "expo",
+      "project": "langley"
+    },
+    {
+      "id": "canada:w33",
+      "station": "w33",
+      "line": "canada",
+      "project": "cambie"
+    },
+    {
+      "id": "canada:w57",
+      "station": "w57",
+      "line": "canada",
+      "project": "cambie"
+    }
+  ],
+  "segments": [
+    {
+      "id": "millennium:vcc-clark~great-northern-way-emily-carr",
+      "line": "millennium",
+      "project": "broadway",
+      "ends": [
+        "vcc-clark",
+        "great-northern-way-emily-carr"
+      ],
+      "path": [
+        [
+          49.265845,
+          -123.079069
+        ],
+        [
+          49.2662,
+          -123.083
+        ],
+        [
+          49.26665,
+          -123.088
+        ],
+        [
+          49.267,
+          -123.0929
+        ]
+      ]
+    },
+    {
+      "id": "millennium:great-northern-way-emily-carr~mount-pleasant",
+      "line": "millennium",
+      "project": "broadway",
+      "ends": [
+        "great-northern-way-emily-carr",
+        "mount-pleasant"
+      ],
+      "path": [
+        [
+          49.267,
+          -123.0929
+        ],
+        [
+          49.2669,
+          -123.0965
+        ],
+        [
+          49.2652,
+          -123.0985
+        ],
+        [
+          49.2628,
+          -123.0996
+        ],
+        [
+          49.2625,
+          -123.1014
+        ]
+      ]
+    },
+    {
+      "id": "millennium:mount-pleasant~broadway-city-hall",
+      "line": "millennium",
+      "project": "broadway",
+      "ends": [
+        "mount-pleasant",
+        "broadway-city-hall"
+      ],
+      "path": [
+        [
+          49.2625,
+          -123.1014
+        ],
+        [
+          49.262717,
+          -123.114822
+        ]
+      ]
+    },
+    {
+      "id": "millennium:broadway-city-hall~oak-vgh",
+      "line": "millennium",
+      "project": "broadway",
+      "ends": [
+        "broadway-city-hall",
+        "oak-vgh"
+      ],
+      "path": [
+        [
+          49.262717,
+          -123.114822
+        ],
+        [
+          49.26347,
+          -123.1242
+        ]
+      ]
+    },
+    {
+      "id": "millennium:oak-vgh~south-granville",
+      "line": "millennium",
+      "project": "broadway",
+      "ends": [
+        "oak-vgh",
+        "south-granville"
+      ],
+      "path": [
+        [
+          49.26347,
+          -123.1242
+        ],
+        [
+          49.2638,
+          -123.1381
+        ]
+      ]
+    },
+    {
+      "id": "millennium:south-granville~arbutus",
+      "line": "millennium",
+      "project": "broadway",
+      "ends": [
+        "south-granville",
+        "arbutus"
+      ],
+      "path": [
+        [
+          49.2638,
+          -123.1381
+        ],
+        [
+          49.2642,
+          -123.1525
+        ]
+      ]
+    },
+    {
+      "id": "expo:king-george~green-timbers",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "king-george",
+        "green-timbers"
+      ],
+      "path": [
+        [
+          49.18279,
+          -122.844737
+        ],
+        [
+          49.1808,
+          -122.8345
+        ]
+      ]
+    },
+    {
+      "id": "expo:green-timbers~152-street",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "green-timbers",
+        "152-street"
+      ],
+      "path": [
+        [
+          49.1808,
+          -122.8345
+        ],
+        [
+          49.1661,
+          -122.8014
+        ]
+      ]
+    },
+    {
+      "id": "expo:152-street~fleetwood",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "152-street",
+        "fleetwood"
+      ],
+      "path": [
+        [
+          49.1661,
+          -122.8014
+        ],
+        [
+          49.157,
+          -122.7781
+        ]
+      ]
+    },
+    {
+      "id": "expo:fleetwood~bakerview-166-street",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "fleetwood",
+        "bakerview-166-street"
+      ],
+      "path": [
+        [
+          49.157,
+          -122.7781
+        ],
+        [
+          49.1506,
+          -122.7615
+        ]
+      ]
+    },
+    {
+      "id": "expo:bakerview-166-street~hillcrest-184-street",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "bakerview-166-street",
+        "hillcrest-184-street"
+      ],
+      "path": [
+        [
+          49.1506,
+          -122.7615
+        ],
+        [
+          49.1288,
+          -122.7131
+        ]
+      ]
+    },
+    {
+      "id": "expo:hillcrest-184-street~clayton",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "hillcrest-184-street",
+        "clayton"
+      ],
+      "path": [
+        [
+          49.1288,
+          -122.7131
+        ],
+        [
+          49.1214,
+          -122.6959
+        ]
+      ]
+    },
+    {
+      "id": "expo:clayton~willowbrook",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "clayton",
+        "willowbrook"
+      ],
+      "path": [
+        [
+          49.1214,
+          -122.6959
+        ],
+        [
+          49.1137,
+          -122.6794
+        ]
+      ]
+    },
+    {
+      "id": "expo:willowbrook~langley-city-centre",
+      "line": "expo",
+      "project": "langley",
+      "ends": [
+        "willowbrook",
+        "langley-city-centre"
+      ],
+      "path": [
+        [
+          49.1137,
+          -122.6794
+        ],
+        [
+          49.1113,
+          -122.674
+        ],
+        [
+          49.1109,
+          -122.671
+        ],
+        [
+          49.1064,
+          -122.66
+        ],
+        [
+          49.1056,
+          -122.6575
+        ]
+      ]
+    },
+    {
+      "id": "corridor:ubcx",
+      "line": "millennium",
+      "project": "ubcx",
+      "ends": [],
+      "path": [
+        [
+          49.2642,
+          -123.1525
+        ],
+        [
+          49.2643,
+          -123.168
+        ],
+        [
+          49.2644,
+          -123.185
+        ],
+        [
+          49.2625,
+          -123.195
+        ],
+        [
+          49.2635,
+          -123.202
+        ],
+        [
+          49.264,
+          -123.214
+        ],
+        [
+          49.2658,
+          -123.247
+        ]
+      ]
+    },
+    {
+      "id": "corridor:newton",
+      "line": "expo",
+      "project": "newton",
+      "ends": [],
+      "path": [
+        [
+          49.186,
+          -122.845
+        ],
+        [
+          49.171,
+          -122.845
+        ],
+        [
+          49.158,
+          -122.845
+        ],
+        [
+          49.144,
+          -122.845
+        ],
+        [
+          49.134,
+          -122.845
+        ]
+      ]
+    },
+    {
+      "id": "corridor:poco",
+      "line": "millennium",
+      "project": "poco",
+      "ends": [],
+      "path": [
+        [
+          49.27434,
+          -122.800421
+        ],
+        [
+          49.271,
+          -122.785
+        ],
+        [
+          49.264,
+          -122.779
+        ],
+        [
+          49.26,
+          -122.774
+        ]
+      ]
+    },
+    {
+      "id": "corridor:north-gold",
+      "line": "expo",
+      "project": "north-gold",
+      "ends": [],
+      "path": [
+        [
+          49.326,
+          -123.137
+        ],
+        [
+          49.318,
+          -123.117
+        ],
+        [
+          49.311,
+          -123.081
+        ],
+        [
+          49.31,
+          -123.041
+        ],
+        [
+          49.306,
+          -123.027
+        ],
+        [
+          49.291,
+          -123.026
+        ],
+        [
+          49.282,
+          -123.025
+        ],
+        [
+          49.281,
+          -123.075
+        ],
+        [
+          49.283,
+          -123.099
+        ],
+        [
+          49.285687,
+          -123.111773
+        ]
+      ]
+    },
+    {
+      "id": "corridor:north-purple",
+      "line": "study",
+      "project": "north-purple",
+      "ends": [],
+      "path": [
+        [
+          49.326,
+          -123.137
+        ],
+        [
+          49.318,
+          -123.117
+        ],
+        [
+          49.311,
+          -123.081
+        ],
+        [
+          49.31,
+          -123.041
+        ],
+        [
+          49.306,
+          -123.027
+        ],
+        [
+          49.291,
+          -123.026
+        ],
+        [
+          49.282,
+          -123.025
+        ],
+        [
+          49.281,
+          -123.003
+        ],
+        [
+          49.267,
+          -123.003
+        ],
+        [
+          49.248,
+          -123.003
+        ],
+        [
+          49.23,
+          -123.003
+        ],
+        [
+          49.225825,
+          -123.00392
+        ]
+      ]
+    }
+  ]
+}
