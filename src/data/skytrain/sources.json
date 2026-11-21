@@ -278,5 +278,55 @@
     "url": "https://vancouver.ca/files/cov/2022-07-07-cambie-corridor-plan-implementation-update-year-end-2021.pdf",
     "publisher": "City of Vancouver",
     "authority": true
+  },
+  "flyer-section-finish": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261109-Traffic-Update-at-Fraser-Highway-and-152-St.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "authority": true
+  },
+  "flyer-disassembly": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261116-Traffic-Update-Eastbound-Fraser-Highway-152-St-88-Ave.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "authority": true
+  },
+  "fleetwood-utilities": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261120-Traffic-Update-at-Fraser-Highway-and-158159.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "authority": true
+  },
+  "clayton-road-restoration": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261120-Traffic-Update-at-Fraser-Highway-and-68Ave.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "authority": true
+  },
+  "western-beams": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/updated-local-access-only-on-fraser-highway-between-whalley-boulevard-and-140-street/",
+    "publisher": "Surrey Langley SkyTrain",
+    "authority": true
+  },
+  "western-local": {
+    "url": "https://dailyhive.com/vancouver/surrey-langley-skytrain-construction-highway-traffic-restrictions",
+    "publisher": "Daily Hive",
+    "authority": false
+  },
+  "tl-29th-lift": {
+    "url": "https://www.translink.ca/news/2026/september/elevator%20replacement%20begins%20at%2029th%20avenue%20skytrain%20station",
+    "publisher": "TransLink",
+    "authority": true
+  },
+  "tl-patterson-lift": {
+    "url": "https://www.translink.ca/news/2026/october/translink%20replacing%2040-year-old%20elevator%20at%20patterson%20skytrain%20station",
+    "publisher": "TransLink",
+    "authority": true
+  },
+  "tl-overnight-test": {
+    "url": "https://www.translink.ca/news/2026/september/skytrain%20begins%20overnight%20testing%20ahead%20of%20%20major%20network%20expansion",
+    "publisher": "TransLink",
+    "authority": true
+  },
+  "tl-oakridge-access": {
+    "url": "https://www.translink.ca/news/2026/august/oakridge%2041st%20avenue%20canada%20line%20station%20closing%20early",
+    "publisher": "TransLink",
+    "authority": true
   }
 }

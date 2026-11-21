@@ -1,10 +1,71 @@
 {
   "coverageStart": "2026-08-20",
-  "lastAttempt": "2026-11-21T19:47:29Z",
-  "lastSuccessful": null,
+  "lastAttempt": "2026-11-21T19:58:02Z",
+  "lastSuccessful": "2026-11-21T19:58:02Z",
   "seededAt": "2026-11-21T19:47:29Z",
-  "outcome": "Seed backfill",
-  "sources": {},
+  "outcome": "Verified updates",
+  "sources": {
+    "gtfs": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Read static feed publication index and reproduced all 54 operating stations, connections and shapes from 26SEP_20261120; unchanged from seed."
+    },
+    "translink": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Rendered the release index; read station elevator notices, the September control-centre testing release, and November economic-research news. Also checked The Buzzer and the Nov 19 Mayors’ Council agenda."
+    },
+    "broadway": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Read current-work notices and the Nov 17 utility and Nov 20 City Hall sidewalk PDFs; both already recorded."
+    },
+    "langley": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Read the project index, Nov 9/16/19/20 notices and underlying construction PDFs; grouped the weekly recap with the original records."
+    },
+    "province": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Reviewed BC News and the Premier’s newsroom and searched for extension decisions; no new formal construction funding or public opening found."
+    },
+    "surrey": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Reviewed city newsroom and Nov 10 council release. The Nov 9 Newton priority is already recorded; not a construction authorization."
+    },
+    "poco": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Checked annual report, public notices and municipal search. Business-plan work is documented; no new construction decision found."
+    },
+    "ubc": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Checked UBC project timeline, local interview and municipal planning search. No change in the evidence for a planning or funding decision."
+    },
+    "north": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "Read City of Vancouver and City of North Vancouver corridor/study pages and searched municipal decisions. Historical SkyTrain modelling is not an active mode decision."
+    },
+    "local": {
+      "ok": true,
+      "checked": "2026-11-21T19:58:02Z",
+      "lastOK": "2026-11-21T19:58:02Z",
+      "note": "The registry’s category URL failed. Used publisher-specific search and read the full Daily Hive beam-lifting and Newton stories; both were reconciled to primary notices or existing events."
+    }
+  },
   "gaps": [
     "Coverage is selective from 20 August 2026. Earlier entries establish individual decisions, not a complete daily archive.",
     "Station-specific construction can be evidenced later than the project start. Before an entity’s first evidence its status is unknown. Month-only dates take effect here at month-end.",

@@ -1,9 +1,24 @@
 [
   {
-    "id":"cityhall-august-tie-in","published":"2026-08-28","effective":"2026-08-30","firstSeen":"2026-11-21T19:50:35Z",
-    "title":"Permanent utility tie-in beside the Canada Line",
-    "summary":"The Broadway Subway project scheduled two nights of utility installation beside the existing Broadway–City Hall station. This was construction work, not a change to Canada Line passenger service.",
-    "projects":["broadway"],"lines":["millennium"],"stations":["broadway-city-hall"],"segments":[],"sources":["aug-cityhall"]
+    "id": "cityhall-august-tie-in",
+    "published": "2026-08-28",
+    "effective": "2026-08-30",
+    "firstSeen": "2026-11-21T19:50:35Z",
+    "title": "Permanent utility tie-in beside the Canada Line",
+    "summary": "The Broadway Subway project scheduled two nights of utility installation beside the existing Broadway–City Hall station. This was construction work, not a change to Canada Line passenger service.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "broadway-city-hall"
+    ],
+    "segments": [],
+    "sources": [
+      "aug-cityhall"
+    ]
   },
   {
     "id": "evergreen-open",
@@ -275,7 +290,9 @@
       "millennium"
     ],
     "stations": [],
-    "segments": ["millennium:vcc-clark~great-northern-way-emily-carr"],
+    "segments": [
+      "millennium:vcc-clark~great-northern-way-emily-carr"
+    ],
     "sources": [
       "testing"
     ]
@@ -709,7 +726,9 @@
       "expo"
     ],
     "stations": [],
-    "segments": ["expo:willowbrook~langley-city-centre"],
+    "segments": [
+      "expo:willowbrook~langley-city-centre"
+    ],
     "sources": [
       "slsnow"
     ]
@@ -752,6 +771,193 @@
     "segments": [],
     "sources": [
       "newtprem"
+    ]
+  },
+  {
+    "id": "fleetwood-flyer-section-complete",
+    "published": "2026-11-09",
+    "effective": null,
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Fleetwood Flyer finishes its section of guideway",
+    "summary": "The project confirmed the gantry had finished its section east of 152 Street. A revised notice moved turn restrictions for its removal to November 16–December 19.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:152-street~fleetwood"
+    ],
+    "sources": [
+      "flyer-section-finish"
+    ]
+  },
+  {
+    "id": "western-guideway-beam-lifts",
+    "published": "2026-11-09",
+    "effective": "2026-11-12",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Western guideway beam lifts to include Sundays",
+    "summary": "An updated notice restricted Fraser Highway to local access between Whalley Boulevard and 140 Street for beam installation, November 12–December 12.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:king-george~green-timbers"
+    ],
+    "sources": [
+      "western-beams",
+      "western-local"
+    ]
+  },
+  {
+    "id": "fleetwood-flyer-removal-window",
+    "published": "2026-11-16",
+    "effective": "2026-11-26",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Removal window set for the Fleetwood Flyer",
+    "summary": "Crews scheduled disassembly of the launching gantry east of 152 Street from November 26 to 30. The project had already confirmed the gantry’s guideway segment was complete.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:152-street~fleetwood"
+    ],
+    "sources": [
+      "flyer-disassembly"
+    ]
+  },
+  {
+    "id": "fleetwood-158-159-guideway",
+    "published": "2026-11-20",
+    "effective": "2026-11-23",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Guideway and signal work set for 158 and 159 streets",
+    "summary": "The project scheduled temporary access changes north of Fraser Highway for guideway work and future traffic-signal utilities. The first work window starts November 23.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:152-street~fleetwood"
+    ],
+    "sources": [
+      "fleetwood-utilities"
+    ]
+  },
+  {
+    "id": "68-avenue-road-restoration",
+    "published": "2026-11-20",
+    "effective": "2026-11-23",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Road restoration scheduled at 68 Avenue",
+    "summary": "The project scheduled daytime access restrictions at 68 Avenue and Fraser Highway on November 23 and December 3 for roadway restoration.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "clayton-road-restoration"
+    ]
+  },
+  {
+    "id": "29th-access-lift-replacement",
+    "published": "2026-09-16",
+    "effective": "2026-09-29",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "29th Avenue elevator scheduled for replacement",
+    "summary": "TransLink announced a roughly four-month elevator closure starting September 29. The work affects accessible station access, not Expo Line passenger-service status.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "29th-avenue"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-29th-lift"
+    ]
+  },
+  {
+    "id": "patterson-access-lift-replacement",
+    "published": "2026-10-20",
+    "effective": "2026-11-03",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Patterson’s original elevator to be replaced",
+    "summary": "TransLink scheduled the elevator closure for November 3 and expected the larger replacement in spring 2027. The announcement applies to the elevator, not the station.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "patterson"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-patterson-lift"
+    ]
+  },
+  {
+    "id": "control-centre-overnight-testing",
+    "published": "2026-09-29",
+    "effective": "2026-10-03",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Overnight tests planned for the new control centre",
+    "summary": "TransLink scheduled about five months of testing on the Expo and Millennium lines. The tests run without passengers outside regular service hours.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo",
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "tl-overnight-test"
+    ]
+  },
+  {
+    "id": "oakridge-upgrades-late-access",
+    "published": "2026-08-17",
+    "effective": "2026-08-24",
+    "firstSeen": "2026-11-21T19:58:02Z",
+    "title": "Oakridge–41st Avenue prepares for entrance upgrades",
+    "summary": "TransLink scheduled early closures on selected nights from August 24 to September 22 for concrete, glass and security-barrier work. Daytime passenger service continued.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "oakridge-41st-avenue"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-oakridge-access"
     ]
   }
 ]
