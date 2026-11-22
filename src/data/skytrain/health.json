@@ -67,8 +67,8 @@
     }
   },
   "gaps": [
-    "Coverage is selective from 20 August 2026. Earlier entries establish individual decisions, not a complete daily archive.",
-    "Station-specific construction can be evidenced later than the project start. Before an entity’s first evidence its status is unknown. Month-only dates take effect here at month-end.",
-    "Routine diversions and repeat traffic bulletins are not a service-alert feed. North Shore study overlays are historical SkyTrain scenarios, not the current mode-undecided program."
+    "The timeline covers major decisions and construction notices. Some older reports and routine traffic changes are missing.",
+    "A station appears once a source confirms its status. If a source gives only a month, the map uses the last day of that month.",
+    "Turn on Archived studies to see the two North Shore routes tested in 2021. The region has yet to choose a technology for the crossing."
   ]
 }

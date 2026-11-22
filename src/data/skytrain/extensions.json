@@ -2,117 +2,117 @@
   "projects": [
     {
       "id": "network",
-      "name": "Passenger network",
+      "name": "SkyTrain in service",
       "line": "",
-      "detail": "Timetabled passenger service. GTFS stop platforms are grouped into physical stations.",
+      "detail": "The map groups platforms at the same station under one name.",
       "sources": [
         "ops",
         "gtfs",
         "timetable"
       ],
-      "geometry": "TransLink GTFS rail shapes",
+      "geometry": "Routes follow TransLink’s scheduled SkyTrain service.",
       "archive": false
     },
     {
       "id": "broadway",
       "name": "Broadway Subway",
       "line": "millennium",
-      "detail": "Six underground station connections from VCC–Clark to Arbutus. Broadway–City Hall is an existing Canada Line station.",
+      "detail": "The extension adds six underground Millennium Line stations between VCC–Clark and Arbutus. Riders will be able to change to the Canada Line at Broadway–City Hall.",
       "sources": [
         "bspstations",
         "bspboards",
         "bspstart",
         "bspwork"
       ],
-      "geometry": "Generalized from official station maps",
+      "geometry": "The route follows the Broadway Subway station maps.",
       "archive": false
     },
     {
       "id": "langley",
-      "name": "Surrey–Langley · Dave Barrett Extension",
+      "name": "Surrey–Langley (Dave Barrett Extension)",
       "line": "expo",
-      "detail": "Eight stations along Fraser Highway, from King George to Langley City Centre.",
+      "detail": "The Expo Line extension follows Fraser Highway from King George to Langley City Centre, with eight new stations.",
       "sources": [
         "slsgeo",
         "slsmap",
         "slsstat",
         "rename"
       ],
-      "geometry": "Generalized from official guideway map",
+      "geometry": "The route follows the project’s guideway map.",
       "archive": false
     },
     {
       "id": "ubcx",
       "name": "Arbutus to UBC",
       "line": "millennium",
-      "detail": "Endorsed regional base scope, not construction funding. Macdonald, Alma, Jericho and UBC are planning locations, not final station names.",
+      "detail": "The Mayors’ Council endorsed a Millennium Line extension with stops near Macdonald, Alma, Jericho and UBC. The station names and construction funding are still open.",
       "sources": [
         "ubc",
         "ubcmotion",
         "ubcmap"
       ],
-      "geometry": "Approximate corridor, not final alignment",
+      "geometry": "The dotted line shows the approximate route.",
       "archive": false
     },
     {
       "id": "newton",
       "name": "King George Boulevard to Newton",
       "line": "expo",
-      "detail": "Surrey council priority. A provincial commitment does not establish a funded construction start or fix a junction or station site.",
+      "detail": "Surrey council wants to extend the Expo Line south along King George Boulevard. The province has pledged support. Funding, station sites and the connection to the existing line are still open.",
       "sources": [
         "newton",
         "newtprem"
       ],
-      "geometry": "Approximate corridor, junction not chosen",
+      "geometry": "The dotted line follows King George Boulevard.",
       "archive": false
     },
     {
       "id": "poco",
       "name": "Port Coquitlam extension",
       "line": "millennium",
-      "detail": "Municipal planning concept. The City reports business-plan work with TransLink; the junction provision is not construction of passenger service.",
+      "detail": "Port Coquitlam and TransLink have worked on a business plan for a Millennium Line branch near Coquitlam Central. Station sites and construction funding remain undecided.",
       "sources": [
         "pocorelease",
         "poco",
         "pocostudy"
       ],
-      "geometry": "Approximate destination corridor only",
+      "geometry": "The dotted line shows the general direction of the proposed branch.",
       "archive": false
     },
     {
       "id": "cambie",
-      "name": "Cambie corridor infill",
+      "name": "Possible stations on Cambie Street",
       "line": "canada",
-      "detail": "City planning identifies possible stops at 33rd and 57th avenues. Cross streets are location descriptions, not official station names.",
+      "detail": "Vancouver’s Cambie Corridor Plan identifies possible Canada Line stops at West 33rd and West 57th avenues. The map labels them by cross street.",
       "sources": [
         "cambier",
         "cambie"
       ],
-      "geometry": "Approximate proposed infill locations",
+      "geometry": "The markers show the approximate study sites.",
       "archive": false
     },
     {
       "id": "north-gold",
-      "name": "North Shore · Gold study option",
+      "name": "North Shore: Gold study route",
       "line": "expo",
-      "detail": "Archived 2021 modelling alternative: Park Royal to Waterfront via Second Narrows and Hastings. The study assumed an Expo extension; no mode or alignment was approved.",
+      "detail": "A 2021 study tested an Expo Line extension from Waterfront to Park Royal via Hastings Street and the Second Narrows. The region has yet to choose a technology for the crossing.",
       "sources": [
         "birtstudy",
         "birtcity"
       ],
-      "geometry": "Archived study corridor only",
+      "geometry": "The map shows the approximate route from the 2021 study.",
       "archive": true
     },
     {
       "id": "north-purple",
-      "name": "North Shore · Purple study option",
+      "name": "North Shore: Purple study route",
       "line": "study",
-      "detail": "Archived 2021 modelling alternative: Park Royal to Metrotown via Second Narrows and Willingdon. This model tested a separate SkyTrain line. The current mode-undecided corridor is not plotted.",
+      "detail": "A 2021 study tested a separate SkyTrain line from Metrotown to Park Royal via Willingdon Avenue and the Second Narrows. The region has yet to choose a technology for the crossing.",
       "sources": [
         "birtstudy",
         "birtcity"
       ],
-      "geometry": "Archived study corridor only",
+      "geometry": "The map shows the approximate route from the 2021 study.",
       "archive": true
     }
   ],

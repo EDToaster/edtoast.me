@@ -5,40 +5,40 @@ import { events, sources, lines, stations, projects, health, dayText } from "~/d
 const liveLines=Object.entries(lines).filter(([id])=>id!=="study");
 const sorted=[...stations].sort((a,b)=>a.name.localeCompare(b.name));
 ---
-<Base title="SkyTrain atlas" description="A geographic record of Metro Vancouver’s SkyTrain network, construction and proposals." wide>
+<Base title="SkyTrain atlas" description="Map of Metro Vancouver’s SkyTrain stations, with construction news and plans for new lines." wide>
 <article class="atlas">
-  <div class="folio"><a href="/demos">Demos</a><span>/</span> Transit field notes <span class="sheet">49° N · 123° W</span></div>
+  <div class="folio"><a href="/demos">Demos</a><span>/</span> Metro Vancouver</div>
   <h1 class="page-title">SkyTrain atlas<span class="ink-strokes" aria-hidden="true"><i></i><i></i><i></i></span></h1>
-  <p class="page-intro">Metro Vancouver’s railway, from passenger service to lines on paper.</p>
+  <p class="page-intro">Select a station or a stretch of track for its history and latest updates.</p>
   <section aria-label="Network map">
     <div class="mapbar"><label class="search-label"><span aria-hidden="true">⌕</span><input id="search" list="station-names" placeholder="Find a station…" aria-label="Find a station" autocomplete="off"/></label>
     <datalist id="station-names">{sorted.map(s=><option value={s.name}/>)}</datalist>
     <label>Line<select id="line"><option value="">All lines</option>{Object.entries(lines).map(([id,name])=><option value={id}>{name}</option>)}</select></label>
-    <label>Status<select id="status"><option value="">All statuses</option><option value="operating">Operating</option><option value="construction">Under construction</option><option value="approved">Approved, not started</option><option value="proposed">Proposed / upcoming</option></select></label>
+    <label>Status<select id="status"><option value="">All statuses</option><option value="operating">Operating</option><option value="construction">Under construction</option><option value="approved">Approved, awaiting construction</option><option value="proposed">Proposed</option></select></label>
     <label>As of<input type="date" id="asof" aria-label="Map as of"/></label></div>
     <p id="historical" role="status" hidden></p>
-    <div class="map-frame"><div id="railmap" aria-label="Interactive geographic map of SkyTrain. Use the station and segment index below for a keyboard alternative."></div>
-    <div class="map-id" aria-hidden="true">FIG. 01 <b>/</b> NETWORK</div><button id="fit" title="Show the entire region" type="button">Fit region</button><a class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a></div>
+    <div class="map-frame"><div id="railmap" aria-label="SkyTrain map. To explore by keyboard, open the station and track list below."></div>
+    <div class="map-id" aria-hidden="true">SkyTrain network</div><button id="fit" title="Zoom out to the whole network" type="button">Show whole map</button><a class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a></div>
     <div class="key"><div class="line-key">{liveLines.map(([id,name])=><span><i class={id}></i>{name}</span>)}</div>
-    <div class="status-key"><span><i></i>Operating</span><span><i class="construction"></i>Building</span><span><i class="approved"></i>Approved</span><span><i class="proposed"></i>Proposed</span></div></div>
-    <div class="indexrow"><details id="index"><summary>Station &amp; segment index</summary><div id="index-content"></div></details><label class="check"><input type="checkbox" id="studies"/> Archived studies</label></div>
+    <div class="status-key"><span><i></i>Operating</span><span><i class="construction"></i>Under construction</span><span><i class="approved"></i>Approved</span><span><i class="proposed"></i>Proposed</span></div></div>
+    <div class="indexrow"><details id="index"><summary>Stations and track sections</summary><div id="index-content"></div></details><label class="check"><input type="checkbox" id="studies"/> Archived studies</label></div>
     <div id="detail" hidden aria-live="polite"></div>
   </section>
-  <section id="updates" aria-labelledby="news-title"><div class="folio ruled">Field notes <span class="sheet">Vancouver local dates</span></div>
-    <div class="sectionhead"><h2 id="news-title">Update log</h2><button type="button" id="reset">Reset view</button></div>
+  <section id="updates" aria-labelledby="news-title"><div class="folio ruled"><span class="sheet">By publication date · Vancouver time</span></div>
+    <div class="sectionhead"><h2 id="news-title">SkyTrain updates</h2><button type="button" id="reset">Reset filters</button></div>
     <p id="scope" aria-live="polite"></p>
     <div class="newsbar"><label>Station<select id="station"><option value="">All stations</option>{sorted.map(s=><option value={s.id}>{s.name}</option>)}</select></label>
     <label>Project<select id="project"><option value="">All projects</option>{projects.map(p=><option value={p.id}>{p.name}</option>)}</select></label>
     <details id="dates"><summary>Date range</summary><div><label>From<input type="date" id="from"/></label><label>Through<input type="date" id="to"/></label></div></details>
     <label class="check"><input type="checkbox" id="changes"/> Status changes only</label></div>
     <div id="timeline"></div>
-    <noscript><p>The interactive map and filters need JavaScript. All recorded updates are listed below.</p>{events.map(e=><p>{e.published} · {e.title}. {e.summary} <a class="link" href={sources[e.sources[0]].url}>{sources[e.sources[0]].publisher}</a></p>)}<h3>Station index</h3>{sorted.map(s=><p>{s.name}</p>)}</noscript>
+    <noscript><p>Turn on JavaScript to use the map and filters. You can still read the updates and station list below.</p>{events.map(e=><p>{e.published} · {e.title}. {e.summary} <a class="link" href={sources[e.sources[0]].url}>{sources[e.sources[0]].label ?? sources[e.sources[0]].publisher}</a></p>)}<h3>Station list</h3>{sorted.map(s=><p>{s.name}</p>)}</noscript>
   </section>
-  <section class="collection"><h2>Coverage &amp; sources</h2><p>News backfill starts {dayText(health.coverageStart)}. Earlier decisions appear where evidence is available.</p><p id="collection-health"></p>
-    <details><summary>Evidence, map credits &amp; known gaps</summary><ul>{health.gaps.map(g=><li>{g}</li>)}</ul>
-    <p>Operating geometry: <a href={sources.gtfs.url}>TransLink GTFS</a>. Future routes are generalized from <a href={sources.bspboards.url}>Broadway station maps</a> and the <a href={sources.slsgeo.url}>Surrey–Langley guideway map</a>. Dotted corridors are planning illustrations, not surveyed track. A station can have connections in different states.</p>
-    <p>Basemap: <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors (ODbL)</a>, via <a href="https://openfreemap.org/">OpenFreeMap</a>. Independent field guide, not an official TransLink service.</p>
-    <p><a href="https://github.com/EDToaster/edtoast.me/blob/main/docs/skytrain/RUNBOOK.md">Collection method and source registry ↗</a></p></details>
+  <section class="collection"><h2>Coverage &amp; sources</h2><p>Regular coverage starts {dayText(health.coverageStart)}. The timeline also includes earlier openings, funding decisions and route studies.</p><p id="collection-health"></p>
+    <details><summary>How to read the map and timeline</summary><ul>{health.gaps.map(g=><li>{g}</li>)}</ul>
+    <p>Routes in service follow <a href={sources.gtfs.url}>TransLink’s schedule data (GTFS)</a>. For construction, the map uses the <a href={sources.bspboards.url}>Broadway Subway station maps</a> and the <a href={sources.slsgeo.url}>Surrey–Langley guideway map</a>. Dotted lines show approximate routes. Select a transfer station to see the status of each line.</p>
+    <p>Base map: <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors (ODbL)</a>, via <a href="https://openfreemap.org/">OpenFreeMap</a>. This atlas is independent of TransLink.</p>
+    <p><a href="https://github.com/EDToaster/edtoast.me/blob/main/docs/skytrain/RUNBOOK.md">How the atlas is updated ↗</a></p></details>
   </section>
 </article>
 <script>import "~/demos/skytrain/client";</script>

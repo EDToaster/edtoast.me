@@ -1,330 +1,396 @@
 {
   "aug-cityhall": {
+    "label": "Utility work notice",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/08/Night-work-for-permanent-utility-line-installation-next-to-Canada-Line-Station-.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "launcher": {
+    "label": "Langley Launcher update",
     "url": "https://news.gov.bc.ca/releases/2026TT0102-001115",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "tracks": {
+    "label": "Broadway track update",
     "url": "https://news.gov.bc.ca/releases/2026TT0101-001113",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "testing": {
+    "label": "First train tests",
     "url": "https://news.gov.bc.ca/releases/2026TT0050-000621",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "bspstart": {
+    "label": "Construction announcement",
     "url": "https://news.gov.bc.ca/releases/2021TRAN0065-000906",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "slsmap": {
+    "label": "Surrey–Langley station map",
     "url": "https://surreylangleyskytrain.gov.bc.ca/stations/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "birtstudy": {
+    "label": "North Shore route study",
     "url": "https://northshoreconnects.ca/wp-content/uploads/2021/10/BIRT-Benefits-Assessment_Final.pdf",
     "publisher": "North Shore Connects",
     "authority": true
   },
   "birtcity": {
+    "label": "Burrard Inlet project page",
     "url": "https://vancouver.ca/streets-transportation/burrard-inlet-rapid-transit.aspx",
     "publisher": "City of Vancouver",
     "authority": true
   },
   "slsfall": {
+    "label": "Fall construction schedule",
     "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/09/SLS-20260914-Construction-Advisory.pdf",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "capstan": {
+    "label": "Capstan Station project",
     "url": "https://www.translink.ca/capstan",
     "publisher": "TransLink",
     "authority": true
   },
   "b0": {
+    "label": "Fall station update",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/11/Great-Northern-Way–Emily-Carr-Station-–-Fall-Construction-Update-2026.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b1": {
+    "label": "Gravel delivery notice",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/09/Temporary-trucking-activities-on-E.-1st-Avenue-to-support-backfilling.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b2": {
+    "label": "Main Street utility notice",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/11/Utility-repair-on-Main-Street-at-E-8th-Avenue.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b3": {
+    "label": "Sidewalk work notice",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/11/Sidewalk-reconstruction-at-Broadway-City-Hall-Station-starts-November-23.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b4": {
+    "label": "Water-main schedule",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/11/Night-work-to-install-permanent-water-main-between-Cambie-and-Yukon.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b5": {
+    "label": "November night work",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/11/Oak-VGH-Station-%E2%80%93-Night-work-starting-November-2.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b6": {
+    "label": "October night work",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/10/Oak-VGH-Station-–-Scheduled-night-work-starting-October-25.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b7": {
+    "label": "Hemlock Street pipe work",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/10/South-Granville-Station-Utility-work-on-Hemlock-Street-includes-night-work.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b8": {
+    "label": "South Granville road works",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/10/South-Granville-Station-–-road-restoration-continues-includes-night-work.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "b9": {
+    "label": "Arbutus road works",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/10/Arbutus-Station-–-Road-restoration-continues-includes-night-work.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "s0": {
+    "label": "152 Street work hours",
     "url": "https://surreylangleyskytrain.gov.bc.ca/construction-update-extended-hours-at-fraser-highway-and-152-street/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "s1": {
+    "label": "Fleetwood work hours",
     "url": "https://surreylangleyskytrain.gov.bc.ca/construction-update-extended-hours-at-fraser-highway-and-160-street/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "s2": {
+    "label": "Bakerview work hours",
     "url": "https://surreylangleyskytrain.gov.bc.ca/construction-update-extended-hours-at-bakerview-166-street-station/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "s3": {
+    "label": "Hillcrest work hours",
     "url": "https://surreylangleyskytrain.gov.bc.ca/construction-update-extended-hours-at-fraser-highway-and-184-street/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "s4": {
+    "label": "Sunday work schedule",
     "url": "https://surreylangleyskytrain.gov.bc.ca/construction-update-sunday-work-at-bakerview-166-street-and-hillcrest-184-street-stations/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "s5": {
+    "label": "Clayton work hours",
     "url": "https://surreylangleyskytrain.gov.bc.ca/construction-update-extended-hours-at-clayton-station/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "gtfs": {
+    "label": "SkyTrain schedule data (ZIP)",
     "url": "https://gtfs-static.translink.ca/gtfs/History/2026-11-20/google_transit.zip",
     "publisher": "TransLink",
     "authority": true
   },
   "gtfspage": {
+    "label": "Schedule data archive",
     "url": "https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-data",
     "publisher": "TransLink",
     "authority": true
   },
   "ops": {
+    "label": "SkyTrain routes and schedules",
     "url": "https://www.translink.ca/schedules-and-maps/skytrain",
     "publisher": "TransLink",
     "authority": true
   },
   "timetable": {
+    "label": "SkyTrain timetable",
     "url": "https://infomaps.translink.ca/Public_Timetables/213/tt991.pdf",
     "publisher": "TransLink",
     "authority": true
   },
   "bspstations": {
+    "label": "Broadway station plans",
     "url": "https://www.broadwaysubway.ca/about/stations/",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "bspboards": {
+    "label": "Broadway station maps",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/04/BSP-Community-Office-Station-Boards-V09-20260427-WEB-1.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "slsgeo": {
+    "label": "Surrey–Langley guideway map",
     "url": "https://surreylangleyskytrain.gov.bc.ca/maps/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "newton": {
+    "label": "Surrey council decision",
     "url": "https://www.surrey.ca/news-events/news/surrey-city-council-adopts-16-priorities-its-first-meeting-and-directs-staff-take-immediate-action",
     "publisher": "City of Surrey",
     "authority": true
   },
   "poco": {
+    "label": "City annual reports",
     "url": "https://www.portcoquitlam.ca/our-government/reports-plans-publications/annual-report",
     "publisher": "City of Port Coquitlam",
     "authority": true
   },
   "pocorelease": {
+    "label": "2025 annual report announcement",
     "url": "https://www.portcoquitlam.ca/our-government/media-centre/check-out-port-coquitlams-latest-annual-report",
     "publisher": "City of Port Coquitlam",
     "authority": true
   },
   "pocostudy": {
+    "label": "Port Coquitlam study proposal",
     "url": "https://dailyhive.com/vancouver/port-coquitlam-skytrain-study",
     "publisher": "Daily Hive",
     "authority": false
   },
   "ubc": {
+    "label": "UBC project timeline",
     "url": "https://skytrain.ubc.ca/project-status/",
     "publisher": "UBC",
     "authority": true
   },
   "ubcmap": {
+    "label": "City of Vancouver route plans",
     "url": "https://vancouver.ca/streets-transportation/millennium-line-ubc-extension.aspx",
     "publisher": "City of Vancouver",
     "authority": true
   },
   "bspfund": {
+    "label": "Broadway funding announcement",
     "url": "https://www.pm.gc.ca/en/news/news-releases/2018/09/04/major-rapid-transit-projects-ease-congestion-metro-vancouver",
     "publisher": "Government of Canada",
     "authority": true
   },
   "fundsls": {
+    "label": "Langley funding announcement",
     "url": "https://archive.news.gov.bc.ca/releases/news_releases_2020-2024/2022TRAN0067-001107.htm",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "slsstart": {
+    "label": "Fraser Highway construction update",
     "url": "https://news.gov.bc.ca/releases/2025TT0015-000153",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "slsstat": {
+    "label": "Eight-station progress report",
     "url": "https://news.gov.bc.ca/releases/2026TT0022-000515",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "rename": {
+    "label": "Extension naming announcement",
     "url": "https://news.gov.bc.ca/releases/2026TT0034-001071",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "capopen": {
+    "label": "Capstan opening announcement",
     "url": "https://www.translink.ca/news/2024/december/capstan%20station%20opens%20on%20canada%20line%20in%20richmond",
     "publisher": "TransLink",
     "authority": true
   },
   "newtprem": {
+    "label": "Interview with the premier",
     "url": "https://dailyhive.com/vancouver/premier-lorne-doerkson-newton-skytrain-extension-november-2026",
     "publisher": "Daily Hive",
     "authority": false
   },
   "augoak": {
+    "label": "Oak Street traffic notice",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/08/Oak-VGH-Station-%E2%80%93-Scheduled-Night-Work-and-Traffic-Deck-Removal-Activities.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "northpublic": {
+    "label": "Coverage of the North Shore study",
     "url": "https://dailyhive.com/vancouver/north-shore-connects-burrard-inlet-rapid-transit-skytrain",
     "publisher": "Daily Hive",
     "authority": false
   },
   "ubcmotion": {
+    "label": "Mayors’ Council minutes",
     "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2022/may/agenda--mayors-council--public-mtg--may-26-2022--web-version.pdf",
     "publisher": "TransLink",
     "authority": true
   },
   "northplan": {
+    "label": "North Shore corridor plan",
     "url": "https://vancouver.ca/streets-transportation/metrotown-to-north-shore-rapid-transit.aspx",
     "publisher": "City of Vancouver",
     "authority": true
   },
   "evergreen": {
+    "label": "Evergreen opening announcement",
     "url": "https://www.canada.ca/en/transport-canada/news/2016/12/evergreen-extension-officially-open-public.html",
     "publisher": "Government of Canada",
     "authority": true
   },
   "slsnow": {
+    "label": "Industrial Avenue closure",
     "url": "https://surreylangleyskytrain.gov.bc.ca/traffic-update-no-access-to-203-street-from-industrial-avenue-2/",
     "publisher": "Province of B.C.",
     "authority": true
   },
   "bspwork": {
+    "label": "Current Broadway work",
     "url": "https://www.broadwaysubway.ca/construction/current-work/",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "bspjul": {
+    "label": "July construction report",
     "url": "https://www.broadwaysubway.ca/app/uploads/sites/626/2026/09/BSP_Monthly_Status_Report_July_2026.pdf",
     "publisher": "Broadway Subway Project",
     "authority": true
   },
   "cambier": {
+    "label": "Cambie Corridor Plan report",
     "url": "https://council.vancouver.ca/20180417/documents/rr2.pdf",
     "publisher": "City of Vancouver",
     "authority": true
   },
   "cambie": {
+    "label": "Cambie Corridor Plan update",
     "url": "https://vancouver.ca/files/cov/2022-07-07-cambie-corridor-plan-implementation-update-year-end-2021.pdf",
     "publisher": "City of Vancouver",
     "authority": true
   },
   "flyer-section-finish": {
+    "label": "152 Street turn restrictions",
     "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261109-Traffic-Update-at-Fraser-Highway-and-152-St.pdf",
     "publisher": "Surrey Langley SkyTrain",
     "authority": true
   },
   "flyer-disassembly": {
+    "label": "Gantry removal schedule",
     "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261116-Traffic-Update-Eastbound-Fraser-Highway-152-St-88-Ave.pdf",
     "publisher": "Surrey Langley SkyTrain",
     "authority": true
   },
   "fleetwood-utilities": {
+    "label": "158 and 159 streets notice",
     "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261120-Traffic-Update-at-Fraser-Highway-and-158159.pdf",
     "publisher": "Surrey Langley SkyTrain",
     "authority": true
   },
   "clayton-road-restoration": {
+    "label": "68 Avenue closure notice",
     "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261120-Traffic-Update-at-Fraser-Highway-and-68Ave.pdf",
     "publisher": "Surrey Langley SkyTrain",
     "authority": true
   },
   "western-beams": {
+    "label": "Fraser Highway beam lifts",
     "url": "https://surreylangleyskytrain.gov.bc.ca/updated-local-access-only-on-fraser-highway-between-whalley-boulevard-and-140-street/",
     "publisher": "Surrey Langley SkyTrain",
     "authority": true
   },
   "western-local": {
+    "label": "Coverage of Fraser Highway closures",
     "url": "https://dailyhive.com/vancouver/surrey-langley-skytrain-construction-highway-traffic-restrictions",
     "publisher": "Daily Hive",
     "authority": false
   },
   "tl-29th-lift": {
+    "label": "29th Avenue elevator notice",
     "url": "https://www.translink.ca/news/2026/september/elevator%20replacement%20begins%20at%2029th%20avenue%20skytrain%20station",
     "publisher": "TransLink",
     "authority": true
   },
   "tl-patterson-lift": {
+    "label": "Patterson elevator notice",
     "url": "https://www.translink.ca/news/2026/october/translink%20replacing%2040-year-old%20elevator%20at%20patterson%20skytrain%20station",
     "publisher": "TransLink",
     "authority": true
   },
   "tl-overnight-test": {
+    "label": "Overnight testing schedule",
     "url": "https://www.translink.ca/news/2026/september/skytrain%20begins%20overnight%20testing%20ahead%20of%20%20major%20network%20expansion",
     "publisher": "TransLink",
     "authority": true
   },
   "tl-oakridge-access": {
+    "label": "Oakridge closure schedule",
     "url": "https://www.translink.ca/news/2026/august/oakridge%2041st%20avenue%20canada%20line%20station%20closing%20early",
     "publisher": "TransLink",
     "authority": true

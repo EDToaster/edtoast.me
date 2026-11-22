@@ -5,8 +5,8 @@ import observations from "~/data/skytrain/history.json";
 import evidence from "~/data/skytrain/sources.json";
 import collection from "~/data/skytrain/health.json";
 
-export const statuses: Record<string,string> = {operating:"Operating",construction:"Under construction",approved:"Approved, not started",proposed:"Proposed / upcoming",unknown:"Not yet evidenced"};
-export const lines:Record<string,string>={expo:"Expo",millennium:"Millennium",canada:"Canada",study:"Independent study"};
+export const statuses: Record<string,string> = {operating:"Operating",construction:"Under construction",approved:"Approved, awaiting construction",proposed:"Proposed",unknown:"No record for this date"};
+export const lines:Record<string,string>={expo:"Expo",millennium:"Millennium",canada:"Canada",study:"Separate line (study)"};
 export const colors:Record<string,string>={expo:"#224da3",millennium:"#c88a09",canada:"#008178",study:"#85628c"};
 export const stations=[...rail.stations,...additions.stations];
 export const connections=[...rail.connections,...additions.connections];
@@ -15,7 +15,7 @@ export const projects=additions.projects;
 export interface NewsEvent {id:string;published:string;firstSeen:string;effective:string|null;title:string;summary:string;stations:string[];lines:string[];projects:string[];segments:string[];sources:string[]}
 export const events:NewsEvent[]=[...records].sort((a,b)=>b.published.localeCompare(a.published)||a.id.localeCompare(b.id));
 export const history=observations;
-export const sources:Record<string,{url:string;publisher:string;authority:boolean}>=evidence;
+export const sources:Record<string,{url:string;publisher:string;authority:boolean;label?:string}>=evidence;
 export const health: {coverageStart:string;lastAttempt:string;lastSuccessful:string|null;seededAt:string;outcome:string;sources:Record<string,{ok:boolean;checked:string;lastOK:string|null;note?:string}>;gaps:string[]}=collection;
 export const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Vancouver",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 export const dayText=(s:string)=>new Date(s+"T12:00:00Z").toLocaleDateString("en-CA",{timeZone:"UTC",month:"short",day:"numeric",year:"numeric"});
@@ -42,4 +42,4 @@ export function related(e:typeof events[number],id:string):boolean {
   return e.stations.includes(id)||e.projects.includes(id);
 }
 export function escape(s:string){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]!))}
-export function citations(ids:string[]){return [...new Set(ids)].map(k=>{const s=sources[k];return s?'<a class="evidence" href="'+escape(s.url)+'" target="_blank" rel="noopener">'+escape(s.publisher)+' ↗</a>':""}).join(" ")}
+export function citations(ids:string[]){return [...new Set(ids)].map(k=>{const s=sources[k];return s?'<a class="evidence" href="'+escape(s.url)+'" title="'+escape(s.publisher)+'" target="_blank" rel="noopener">'+escape(s.label??s.publisher)+' ↗</a>':""}).join(" ")}
