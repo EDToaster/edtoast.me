@@ -1,0 +1,101 @@
+---
+import { colors, lines } from "./model";
+
+const choices = [["", "All lines"], ...Object.entries(lines)];
+const palette = Object.entries(colors).map(([id, color]) => `--route-${id}:${color}`).join(";");
+---
+<label for="line">Line
+  <select id="line" style={palette}>
+    <button type="button"><selectedcontent></selectedcontent></button>
+    {choices.map(([id, name]) => (
+      <option value={id}>
+        <span class="route-chip" style={id ? `--tint:var(--route-${id})` : undefined}>
+          <span class:list={["route-mark", { network: !id }]} aria-hidden="true"></span>
+          <span>{name}</span>
+        </span>
+      </option>
+    ))}
+  </select>
+</label>
+
+<style>
+  /* Keep a swatch on the closed native control, including in older mobile pickers. */
+  #line {
+    --selected: #6a7067;
+    padding-inline-start: 1.45rem;
+    background-image: radial-gradient(circle at .78rem 50%, var(--selected) 0 4px, transparent 4.5px);
+  }
+  #line:has(option[value="expo"]:checked) { --selected: var(--route-expo); }
+  #line:has(option[value="millennium"]:checked) { --selected: var(--route-millennium); }
+  #line:has(option[value="canada"]:checked) { --selected: var(--route-canada); }
+  #line:has(option[value="study"]:checked) { --selected: var(--route-study); }
+
+  @supports (appearance: base-select) and selector(::picker(select)) {
+    #line, #line::picker(select) { appearance: base-select; }
+    #line {
+      align-items: center;
+      gap: .5rem;
+      padding: .25rem .45rem;
+      background-image: none;
+    }
+    #line button { all: unset; min-width: 0; }
+    #line selectedcontent { display: flex; min-width: 0; }
+    #line::picker-icon { font-size: .72em; color: var(--ink); }
+    #line::picker(select) {
+      min-inline-size: max-content;
+      margin-block-start: .25rem;
+      padding: .25rem;
+      border: 1px solid var(--rule);
+      border-radius: .4rem;
+      background: #fffef9;
+      color: var(--ink);
+      box-shadow: 0 5px 16px #292f2a1c;
+    }
+    #line option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .8rem;
+      padding: .4rem .5rem;
+      border-radius: .22rem;
+      font: inherit;
+      cursor: pointer;
+    }
+    #line option:is(:hover, :focus-visible) { background: #eeeee5; }
+    #line option::checkmark { order: 1; color: var(--ink); }
+    .route-chip {
+      --tint: #656c60;
+      display: inline-flex;
+      align-items: center;
+      gap: .35em;
+      min-width: 0;
+      padding: .13em .55em;
+      border: 1px solid color-mix(in srgb, var(--tint) 32%, white);
+      border-radius: 1em;
+      background: color-mix(in srgb, var(--tint) 9%, white);
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .route-chip > :last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .route-mark {
+      flex: none;
+      width: .7em;
+      height: .7em;
+      border-radius: 50%;
+      background: var(--tint);
+    }
+    .route-mark.network {
+      width: 1em;
+      border-radius: .2em;
+      background: linear-gradient(105deg, var(--route-expo) 32%, white 32% 38%, var(--route-millennium) 38% 63%, white 63% 69%, var(--route-canada) 69%);
+    }
+    @media (pointer: coarse) {
+      #line option { min-height: 44px; }
+    }
+    @media (forced-colors: active) {
+      .route-chip { border-color: ButtonText; }
+      .route-mark { forced-color-adjust: none; }
+    }
+  }
+</style>

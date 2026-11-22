@@ -1,5 +1,6 @@
 ---
 import Base from "~/layouts/Base.astro";
+import LinePicker from "~/demos/skytrain/LinePicker.astro";
 import "~/demos/skytrain/atlas.css";
 import { events, sources, lines, stations, projects, health, dayText } from "~/demos/skytrain/model";
 const liveLines=Object.entries(lines).filter(([id])=>id!=="study");
@@ -13,7 +14,7 @@ const sorted=[...stations].sort((a,b)=>a.name.localeCompare(b.name));
   <section aria-label="Network map">
     <div class="mapbar"><label class="search-label"><span aria-hidden="true">⌕</span><input id="search" list="station-names" placeholder="Find a station…" aria-label="Find a station" autocomplete="off"/></label>
     <datalist id="station-names">{sorted.map(s=><option value={s.name}/>)}</datalist>
-    <label>Line<select id="line"><option value="">All lines</option>{Object.entries(lines).map(([id,name])=><option value={id}>{name}</option>)}</select></label>
+    <LinePicker />
     <label>Status<select id="status"><option value="">All statuses</option><option value="operating">Operating</option><option value="construction">Under construction</option><option value="approved">Approved, awaiting construction</option><option value="proposed">Proposed</option></select></label>
     <label>As of<input type="date" id="asof" aria-label="Map as of"/></label></div>
     <p id="historical" role="status" hidden></p>
