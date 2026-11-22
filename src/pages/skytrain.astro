@@ -2,7 +2,8 @@
 import Base from "~/layouts/Base.astro";
 import LinePicker from "~/demos/skytrain/LinePicker.astro";
 import "~/demos/skytrain/atlas.css";
-import { events, sources, lines, stations, projects, health, dayText } from "~/demos/skytrain/model";
+import { events, sources, lines, stations, statuses, projects, health, dayText } from "~/demos/skytrain/model";
+import { mapStatuses } from "~/demos/skytrain/status-filter";
 const liveLines=Object.entries(lines).filter(([id])=>id!=="study");
 const sorted=[...stations].sort((a,b)=>a.name.localeCompare(b.name));
 ---
@@ -15,10 +16,16 @@ const sorted=[...stations].sort((a,b)=>a.name.localeCompare(b.name));
     <div class="mapbar"><label class="search-label"><span aria-hidden="true">⌕</span><input id="search" list="station-names" placeholder="Find a station…" aria-label="Find a station" autocomplete="off"/></label>
     <datalist id="station-names">{sorted.map(s=><option value={s.name}/>)}</datalist>
     <LinePicker />
-    <label>Status<select id="status"><option value="">All statuses</option><option value="operating">Operating</option><option value="construction">Under construction</option><option value="approved">Approved, awaiting construction</option><option value="proposed">Proposed</option></select></label>
-    <label>As of<input type="date" id="asof" aria-label="Map as of"/></label></div>
+    <label>As of<input type="date" id="asof" aria-label="Map as of"/></label>
+    <fieldset class="status-filter">
+      <legend>Map status</legend>
+      <div class="status-options">
+        {mapStatuses.map(id => <label><input type="checkbox" name="status" value={id} checked />{statuses[id]}</label>)}
+      </div>
+    </fieldset></div>
     <p id="historical" role="status" hidden></p>
     <div class="map-frame"><div id="railmap" aria-label="SkyTrain map. To explore by keyboard, open the station and track list below."></div>
+    <p id="status-empty" role="status" hidden>Select a status to see stations and track.</p>
     <div class="map-id" aria-hidden="true">SkyTrain network</div><button id="fit" title="Zoom out to the whole network" type="button">Show whole map</button><a class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a></div>
     <div class="key"><div class="line-key">{liveLines.map(([id,name])=><span><i class={id}></i>{name}</span>)}</div>
     <div class="status-key"><span><i></i>Operating</span><span><i class="construction"></i>Under construction</span><span><i class="approved"></i>Approved</span><span><i class="proposed"></i>Proposed</span></div></div>

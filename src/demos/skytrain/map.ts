@@ -36,9 +36,9 @@ export function atlasMap(select:(id:string)=>void){
  }
  map.on("moveend zoomend resize",names);
  const indexDist=(p:string)=>projects.find(v=>v.id===p)?.archive;
- function draw(q:URLSearchParams,day:string){
+ function draw(q:URLSearchParams,day:string,selectedStatuses:ReadonlySet<string>){
    tracks.clearLayers();dots.clearLayers();selected=q.get("selected")??"";
-   const line=q.get("line"),status=q.get("status");const match=(s:{id:string;project:string;line:string})=>{const state=observation(s,day)?.state;return !!state&&(!line||line===s.line)&&(!status||status===state)&&(!indexDist(s.project)||q.has("studies"))};
+   const line=q.get("line");const match=(s:{id:string;project:string;line:string})=>{const state=observation(s,day)?.state;return !!state&&(!line||line===s.line)&&selectedStatuses.has(state)&&(!indexDist(s.project)||q.has("studies"))};
    const shown=segments.filter(match);
    const areas:Record<string,[string,number,number]>={ubcx:["UBC",49.270,-123.248],newton:["NEWTON",49.13,-122.845],poco:["PORT COQUITLAM",49.254,-122.765]};
    corridorLabels=shown.flatMap(s=>areas[s.project]?[areas[s.project]]:[]);

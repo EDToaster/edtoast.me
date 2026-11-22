@@ -1,8 +1,10 @@
 import {atlasMap} from "./map";
+import {readStatuses, writeStatuses} from "./status-filter";
 import sourceRegistry from "../../../docs/skytrain/registry.json";
 import {stations,connections,segments,projects,events,history as changes,health,lines,statuses,project,station,segName,dayText,bound,today,observation,related,escape as h,citations} from "./model";
 const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id)! as T;
-const day=today();const controls=["line","status","asof","station","project","from","to","changes","studies"];
+const day=today();const controls=["line","asof","station","project","from","to","changes","studies"];
+const statusBoxes=Array.from(document.querySelectorAll<HTMLInputElement>('.status-filter input[name="status"]'));
 let q=new URLSearchParams(location.search);
 function patch(values:Record<string,string|null>,push=true){for(const [k,v] of Object.entries(values)){if(v)q.set(k,v);else q.delete(k)}if(push)window.history.pushState(null,"",location.pathname+(q.size?"?"+q:""));render()}
 const eventTitle=(e:typeof events[number])=>'<strong>'+h(e.title)+'</strong>';
@@ -34,11 +36,18 @@ function log(date:string){
 function render(){const date=q.get("asof")||day;
  for(const key of controls){const c=el<HTMLInputElement>(key);if(c.type==="checkbox")c.checked=q.has(key);else c.value=q.get(key)??(key==="asof"?day:"")}
  const warn=el("historical");warn.hidden=date>=health.coverageStart;warn.textContent="Regular coverage starts "+dayText(health.coverageStart)+". For earlier dates, the map only shows stations and track we can confirm from records available for that date.";
- const visible=map.draw(q,date);
+ const selectedStatuses=readStatuses(q.get("status"));
+ for(const box of statusBoxes)box.checked=selectedStatuses.has(box.value);
+ el("status-empty").hidden=selectedStatuses.size!==0;
+ const visible=map.draw(q,date,selectedStatuses);
  const idx=el("index-content");idx.innerHTML='<p>'+visible.stations.length+' stations · '+visible.segments.length+' track sections</p>'+["Stations","Track sections"].map((title,i)=>'<h3>'+title+'</h3><div>'+ (i?visible.segments.map(s=>[s.id,segName(s)]):visible.stations.map(s=>[s.id,s.name])).sort((a,b)=>a[1].localeCompare(b[1])).map(([id,name])=>'<button data-entity="'+h(id)+'">'+h(name)+'</button>').join("")+'</div>').join("");
  detail(date);log(date)
 }
-for(const key of controls){el<HTMLInputElement>(key).addEventListener("change",e=>{const c=e.currentTarget as HTMLInputElement;const v=c.type==="checkbox"?(c.checked?"1":null):c.value;patch({[key]:key==="asof"&&v===day?null:v,...(key==="line"||key==="status"?{selected:null}:{}),...(key==="station"||key==="project"?{segment:null}:{})})})}
+for(const box of statusBoxes)box.addEventListener("change",()=>{
+ const selected=new Set(statusBoxes.filter(input=>input.checked).map(input=>input.value));
+ patch({status:writeStatuses(selected),selected:null});
+});
+for(const key of controls){el<HTMLInputElement>(key).addEventListener("change",e=>{const c=e.currentTarget as HTMLInputElement;const v=c.type==="checkbox"?(c.checked?"1":null):c.value;patch({[key]:key==="asof"&&v===day?null:v,...(key==="line"?{selected:null}:{}),...(key==="station"||key==="project"?{segment:null}:{})})})}
 el("index-content").addEventListener("click",e=>{const id=(e.target as HTMLElement).closest("button")?.dataset.entity;if(id){el<HTMLDetailsElement>("index").open=false;patch({selected:id});map.focus(id);el("detail").scrollIntoView({block:"nearest"})}});
 function find(){const input=el<HTMLInputElement>("search"),v=input.value.trim().toLowerCase();if(!v)return;const s=stations.find(s=>s.name.toLowerCase()===v)??stations.find(s=>s.name.toLowerCase().includes(v));if(!s){input.setCustomValidity("No station matches that name.");input.reportValidity();return}input.setCustomValidity("");input.value=s.name;patch({selected:s.id,line:null,status:null});map.focus(s.id)}
 el("search").addEventListener("input",()=>el<HTMLInputElement>("search").setCustomValidity(""));el("search").addEventListener("change",find);el("search").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();find()}});
