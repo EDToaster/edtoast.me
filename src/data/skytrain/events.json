@@ -959,5 +959,94 @@
     "sources": [
       "tl-oakridge-access"
     ]
+  },
+  {
+    "id": "thornton-west-side-footpath",
+    "published": "2026-11-21",
+    "effective": null,
+    "title": "A footpath along Thornton Street beside Great Northern Way–Emily Carr",
+    "summary": "CityHallWatch photographed a pedestrian path on the west side of Thornton Street between East 1st and East 2nd avenues. The route runs beside the fenced subway construction site.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "great-northern-way-emily-carr"
+    ],
+    "sources": [
+      "thornton-path-photos",
+      "b0"
+    ],
+    "firstSeen": "2026-11-22T12:09:41Z",
+    "segments": []
+  },
+  {
+    "id": "mayors-nov19-extension-funding",
+    "published": "2026-11-19",
+    "effective": "2026-11-19",
+    "title": "Regional mayors press for long-term transit funding",
+    "summary": "TransLink CEO Kevin Quinn told the Mayors’ Council that existing funding would keep current service running through 2027. Radio-Canada’s account of the meeting identified the proposed UBC and Newton extensions among the projects that would need provincial support.",
+    "projects": [
+      "ubcx",
+      "newton"
+    ],
+    "lines": [
+      "millennium",
+      "expo"
+    ],
+    "stations": [],
+    "sources": [
+      "mayors-funding-nov19",
+      "mayors-operating-funds"
+    ],
+    "firstSeen": "2026-11-22T12:09:41Z",
+    "segments": []
+  },
+  {
+    "id": "langley-launcher-willowbrook-clarification",
+    "published": "2026-11-11",
+    "effective": null,
+    "corrects": "langley-gantry",
+    "title": "Correction: the Langley Launcher was heading toward Willowbrook",
+    "summary": "The atlas entry for September 21 placed the gantry at Langley City Centre Station. B.C. described the machine moving into Langley to build the guideway over Willowbrook Drive, with Willowbrook Station still ahead.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "willowbrook",
+      "langley-city-centre"
+    ],
+    "sources": [
+      "launcher",
+      "launcher-willowbrook-report"
+    ],
+    "firstSeen": "2026-11-22T12:09:41Z",
+    "segments": []
+  },
+  {
+    "id": "mount-pleasant-main-eighth-roadwork",
+    "published": "2026-11-02",
+    "effective": "2026-11-03",
+    "title": "Main Street utility repairs near Mount Pleasant Station",
+    "summary": "Broadway Subway crews planned to adjust a manhole and resurface the road at Main Street and East 8th Avenue from November 3 to 13. The notice said homes and businesses would stay accessible.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "mount-pleasant"
+    ],
+    "sources": [
+      "b2"
+    ],
+    "firstSeen": "2026-11-22T12:09:41Z",
+    "segments": []
   }
 ]

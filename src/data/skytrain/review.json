@@ -23,5 +23,17 @@
     ],
     "reason": "The regional priority corridor did not choose a rail technology. Preserve the historical comparison only; await an explicit mode decision.",
     "firstSeen": "2026-11-21T19:47:29Z"
+  },
+  {
+    "id": "thornton-street-restoration-timing",
+    "projects": [
+      "broadway"
+    ],
+    "sources": [
+      "thornton-path-photos",
+      "b0"
+    ],
+    "firstSeen": "2026-11-22T12:09:41Z",
+    "reason": "Residents told CityHallWatch they received city notices about Thornton Street restoration starting in 2027. The station notice covers backfilling but gives no street-restoration date. Check the city notice before publishing a schedule."
   }
 ]

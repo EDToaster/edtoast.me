@@ -1,69 +1,69 @@
 {
   "coverageStart": "2026-08-20",
-  "lastAttempt": "2026-11-21T19:58:02Z",
-  "lastSuccessful": "2026-11-21T19:58:02Z",
+  "lastAttempt": "2026-11-22T12:09:41Z",
+  "lastSuccessful": "2026-11-22T12:09:41Z",
   "seededAt": "2026-11-21T19:47:29Z",
   "outcome": "Verified updates",
   "sources": {
     "gtfs": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Read static feed publication index and reproduced all 54 operating stations, connections and shapes from 26SEP_20261120; unchanged from seed."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "The current feed and the November 20 dated archive match byte for byte. Rebuilt all five rail patterns from 26SEP_20261120; stations, line connections and shapes match the atlas."
     },
     "translink": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Rendered the release index; read station elevator notices, the September control-centre testing release, and November economic-research news. Also checked The Buzzer and the Nov 19 Mayors’ Council agenda."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Read the rendered newsroom through November 7, The Buzzer, the rail upgrade pages and the November 19 Mayors’ Council agenda. Cross-checked the funding discussion against two meeting reports."
     },
     "broadway": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Read current-work notices and the Nov 17 utility and Nov 20 City Hall sidewalk PDFs; both already recorded."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Reviewed the current and archived notices, monthly-report index, and original station and utility PDFs. Matched the November 21 Thornton Street photos to the station works; the reported 2027 street-restoration date lacks a public notice."
     },
     "langley": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Read the project index, Nov 9/16/19/20 notices and underlying construction PDFs; grouped the weekly recap with the original records."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Checked current work, the notice archive, the November 9, 16, 19 and 20 notices and the two latest weekly advisories. Compared the November 11 guideway report with B.C.’s September release to correct the gantry location."
     },
     "province": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Reviewed BC News and the Premier’s newsroom and searched for extension decisions; no new formal construction funding or public opening found."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Read BC Gov News, the Premier’s newsroom, the transportation news index and the original Langley Launcher release. The old ministry landing page returned 404; the transportation index and direct releases were available."
     },
     "surrey": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Reviewed city newsroom and Nov 10 council release. The Nov 9 Newton priority is already recorded; not a construction authorization."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Read Surrey’s newsroom and its November 10 release on the November 9 council vote. Compared the city direction to Global News and the premier’s November remarks. Neither establishes construction funding for Newton."
     },
     "poco": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Checked annual report, public notices and municipal search. Business-plan work is documented; no new construction decision found."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Read the city’s annual-report material, public notices and the November 9 inaugural address; checked local council coverage. No new decision on the proposed passenger branch surfaced."
     },
     "ubc": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Checked UBC project timeline, local interview and municipal planning search. No change in the evidence for a planning or funding decision."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Read UBC’s project status, Vancouver’s extension page and November 17 council agenda. The November 19 regional funding discussion did not authorize construction at UBC or change the Cambie infill plans."
     },
     "north": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "Read City of Vancouver and City of North Vancouver corridor/study pages and searched municipal decisions. Historical SkyTrain modelling is not an active mode decision."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Read the Vancouver and North Vancouver corridor pages and checked local and provincial coverage. Older study reports surfaced again; no new choice of SkyTrain technology was found."
     },
     "local": {
       "ok": true,
-      "checked": "2026-11-21T19:58:02Z",
-      "lastOK": "2026-11-21T19:58:02Z",
-      "note": "The registry’s category URL failed. Used publisher-specific search and read the full Daily Hive beam-lifting and Newton stories; both were reconciled to primary notices or existing events."
+      "checked": "2026-11-22T12:09:41Z",
+      "lastOK": "2026-11-22T12:09:41Z",
+      "note": "Daily Hive’s Mapped index was unavailable. Searched publishers directly and read Daily Hive, Global News, Radio-Canada, the Journal of Commerce and CityHallWatch, including its dated Thornton Street photograph."
     }
   },
   "gaps": [

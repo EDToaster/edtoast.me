@@ -394,5 +394,29 @@
     "url": "https://www.translink.ca/news/2026/august/oakridge%2041st%20avenue%20canada%20line%20station%20closing%20early",
     "publisher": "TransLink",
     "authority": true
+  },
+  "thornton-path-photos": {
+    "url": "https://cityhallwatch.wordpress.com/2026/11/21/current-status-of-broadway-subway-a-short-spotlight-with-photos-from-thornton-gnw-emily-carr-stn/",
+    "publisher": "CityHallWatch",
+    "authority": false,
+    "label": "Thornton Street field report and photographs"
+  },
+  "mayors-funding-nov19": {
+    "url": "https://ici.radio-canada.ca/article/info/2301966/metrovancouver-translink-financement-transportencommun",
+    "publisher": "Radio-Canada",
+    "authority": false,
+    "label": "Regional mayors discuss transit funding"
+  },
+  "mayors-operating-funds": {
+    "url": "https://dailyhive.com/vancouver/brad-west-translink-mayors-council-chair-reappointed",
+    "publisher": "Daily Hive",
+    "authority": false,
+    "label": "Mayors’ Council meeting report"
+  },
+  "launcher-willowbrook-report": {
+    "url": "https://canada.constructconnect.com/joc/news/infrastructure/2026/11/progress-report-surrey-langley-skytrain-guideway-construction-65-complete",
+    "publisher": "Journal of Commerce",
+    "authority": false,
+    "label": "Guideway progress at Willowbrook Drive"
   }
 }
