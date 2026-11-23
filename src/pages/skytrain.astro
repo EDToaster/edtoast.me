@@ -24,7 +24,7 @@ const sorted=[...stations].sort((a,b)=>a.name.localeCompare(b.name));
       </div>
     </fieldset></div>
     <p id="historical" role="status" hidden></p>
-    <div class="map-frame"><div id="railmap" aria-label="SkyTrain map. To explore by keyboard, open the station and track list below."></div>
+    <div class="map-frame"><div id="railmap" data-native-cursor aria-label="SkyTrain map. To explore by keyboard, open the station and track list below."></div>
     <p id="status-empty" role="status" hidden>Select a status to see stations and track.</p>
     <div class="map-id" aria-hidden="true">SkyTrain network</div><button id="fit" title="Zoom out to the whole network" type="button">Show whole map</button><a class="map-credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a></div>
     <div class="key"><div class="line-key">{liveLines.map(([id,name])=><span><i class={id}></i>{name}</span>)}</div>

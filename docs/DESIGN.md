@@ -40,3 +40,20 @@ to inline SVG at build time (`src/components/Icon.astro`).
 - Extra accent colours. Blue is the only one.
 - Animated or bouncing hover effects.
 - Filler copy. Say what the thing is and what it does.
+
+## Glass cursor easter egg
+
+The optional 48px lens is the one exception to the no-gradients/no-shadows
+rule. The switch sits beside `source`; Escape restores the system pointer.
+The optical effects belong to the lens, not to the rest of the site.
+
+- [Apple’s Meet Liquid Glass](https://developer.apple.com/videos/play/wwdc2025/219/)
+  informed the clear center, moving specular rim and press response.
+- [Arya’s WebGPU reconstruction](https://www.youtube.com/watch?v=lq-ikfNVx7g)
+  (4:43–11:56) shows how distance to the edge can drive a rounded surface,
+  refraction, color separation and grazing-angle reflection. Our circular
+  profile and highlights approximate those cues; this is not Apple’s renderer.
+- Following the [CSS/SVG refraction approach](https://kube.io/blog/liquid-glass-css-svg/),
+  we displace live backdrop pixels, rather than capturing the DOM into a texture.
+  In browsers without SVG backdrop displacement, the rim, shadow, hotspot and
+  press feedback still work, but page content does not bend.

@@ -1,0 +1,20 @@
+<!-- R/G encode the direction to sample the backdrop, pointing inward.
+     Neutral gray means no displacement. A curved bezel concentrates
+     almost all the bending in the outside third of the lens. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="x"><stop stop-color="red"/><stop offset="1" stop-color="black"/></linearGradient>
+    <linearGradient id="y" x2="0" y2="1"><stop stop-color="lime"/><stop offset="1" stop-color="black"/></linearGradient>
+    <radialGradient id="bezel">
+      <stop stop-color="#808080"/>
+      <stop offset=".45" stop-color="#808080" stop-opacity=".96"/>
+      <stop offset=".72" stop-color="#808080" stop-opacity=".79"/>
+      <stop offset=".86" stop-color="#808080" stop-opacity=".56"/>
+      <stop offset=".95" stop-color="#808080" stop-opacity=".29"/>
+      <stop offset="1" stop-color="#808080" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="100" height="100" fill="url(#x)"/>
+  <rect width="100" height="100" fill="url(#y)" style="mix-blend-mode:screen"/>
+  <rect width="100" height="100" fill="url(#bezel)"/>
+</svg>
