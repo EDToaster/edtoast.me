@@ -418,5 +418,35 @@
     "publisher": "Journal of Commerce",
     "authority": false,
     "label": "Guideway progress at Willowbrook Drive"
+  },
+  "north-ma-skytrain": {
+    "url": "https://dailyhive.com/vancouver/metrotown-north-shore-brt-skytrain-bowinn-ma",
+    "publisher": "Daily Hive",
+    "label": "Bowinn Ma on a North Shore SkyTrain crossing",
+    "authority": false
+  },
+  "north-ma-nov19-text": {
+    "url": "https://cityhallwatch.wordpress.com/wp-content/uploads/2026/11/weekly-alternative-buzzer-wab-vol6no47-on-22-nov-2026-davidowicz.pdf",
+    "publisher": "Weekly Alternative Buzzer",
+    "label": "Text of Ma’s November 19 statement",
+    "authority": false
+  },
+  "north-city-mode": {
+    "url": "https://www.cnv.org/Streets-Transportation/Transportation-Planning/North-Shore-Connects",
+    "publisher": "City of North Vancouver",
+    "label": "North Shore route and technology studies",
+    "authority": true
+  },
+  "cleaning-contract-operator": {
+    "url": "https://dailyhive.com/vancouver/skytrain-expo-millennium-dexterra-cleaning-contractor-terminated",
+    "publisher": "Daily Hive",
+    "label": "TransLink confirms the cleaning contract change",
+    "authority": false
+  },
+  "cleaning-contract-notice": {
+    "url": "https://www.globenewswire.com/news-release/2026/11/19/3407153/0/en/dexterra-group-loses-skytrain-contract-in-vancouver.html",
+    "publisher": "SEIU Local 2",
+    "label": "Cleaners’ union gives the contract end date",
+    "authority": false
   }
 }

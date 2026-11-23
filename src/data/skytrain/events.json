@@ -1048,5 +1048,43 @@
     ],
     "firstSeen": "2026-11-22T12:09:41Z",
     "segments": []
+  },
+  {
+    "id": "north-ma-skytrain-advocacy",
+    "published": "2026-11-22",
+    "effective": "2026-11-19",
+    "firstSeen": "2026-11-23T12:10:49Z",
+    "title": "Bowinn Ma backs SkyTrain across Burrard Inlet",
+    "summary": "North Vancouver-Lonsdale MLA Bowinn Ma called for SkyTrain as the long-term crossing in a November 19 statement. She did not name a route or station. The regional partners are still studying which technology to use.",
+    "projects": [],
+    "lines": [],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "north-ma-skytrain",
+      "north-ma-nov19-text",
+      "north-city-mode"
+    ]
+  },
+  {
+    "id": "expo-millennium-cleaning-contract-change",
+    "published": "2026-11-22",
+    "effective": "2026-12-17",
+    "firstSeen": "2026-11-23T12:10:49Z",
+    "title": "Cleaning contractor to change on the Expo and Millennium lines",
+    "summary": "TransLink confirmed it would replace Dexterra, which cleans the trains, stations and maintenance facilities on both lines. The cleaners’ union said December 17 would be Dexterra’s last day.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo",
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "cleaning-contract-operator",
+      "cleaning-contract-notice"
+    ]
   }
 ]
