@@ -1,9 +1,16 @@
+---
+import GlassCursorToggle from "./GlassCursorToggle.astro";
+---
 <footer>
   <a href="https://github.com/EDToaster/edtoast.me">source</a>
+  <GlassCursorToggle />
 </footer>
 
 <style>
   footer {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-4);
     margin-top: var(--space-6);
     font-size: var(--text-sm);
     color: var(--muted);
