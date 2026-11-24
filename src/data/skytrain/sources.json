@@ -448,5 +448,29 @@
     "publisher": "SEIU Local 2",
     "label": "Cleaners’ union gives the contract end date",
     "authority": false
+  },
+  "industrial-nov26": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261123-Traffic-Update-Industrial-Ave.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Revised Industrial Avenue notice, November 23",
+    "authority": true
+  },
+  "langley-industrial-nov23-report": {
+    "url": "https://aldergrovestar.com/2026/11/23/langleys-industrial-ave-to-see-more-skytrain-construction-closures/",
+    "publisher": "Aldergrove Star",
+    "label": "Industrial Avenue closure and Langley Launcher progress",
+    "authority": false
+  },
+  "fraser-highway15-nov26": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261123-Traffic-Update-at-Fraser-Highway-and-Highway-15.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Highway 15 turn restrictions, November 26 to December 3",
+    "authority": true
+  },
+  "ubc-quinn-nov20": {
+    "url": "https://dailyhive.com/vancouver/translink-sfu-burnaby-mountain-gondola-capital-projects-update-november-2026",
+    "publisher": "Daily Hive",
+    "label": "Kevin Quinn on the UBC extension at the Board of Trade",
+    "authority": false
   }
 }

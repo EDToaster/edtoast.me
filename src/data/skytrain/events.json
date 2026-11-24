@@ -1086,5 +1086,91 @@
       "cleaning-contract-operator",
       "cleaning-contract-notice"
     ]
+  },
+  {
+    "id": "industrial-avenue-track-work-nov26",
+    "published": "2026-11-23",
+    "effective": "2026-11-26",
+    "firstSeen": "2026-11-24T12:06:14Z",
+    "title": "Industrial Avenue track work moves to November 26",
+    "summary": "Crews rescheduled the concrete pour and track installation from Tuesday to Thursday. Drivers won’t be able to reach 203 Street from Industrial Avenue from 6 a.m. to 8 p.m.; alternating traffic will keep homes and businesses accessible.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:willowbrook~langley-city-centre"
+    ],
+    "sources": [
+      "industrial-nov26",
+      "langley-industrial-nov23-report"
+    ],
+    "corrects": "langley-track"
+  },
+  {
+    "id": "fraser-highway15-overnight-guideway-nov26",
+    "published": "2026-11-23",
+    "effective": "2026-11-26",
+    "firstSeen": "2026-11-24T12:06:58Z",
+    "title": "Overnight guideway work limits turns at Highway 15 and Fraser Highway",
+    "summary": "From 9 p.m. to 6 a.m., crews will close the right turn from northbound Highway 15 onto Fraser Highway from November 26 to December 1. The restriction shifts to the right turn from eastbound Fraser Highway onto southbound Highway 15 on December 2 and 3.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:bakerview-166-street~hillcrest-184-street"
+    ],
+    "sources": [
+      "fraser-highway15-nov26",
+      "slsgeo"
+    ]
+  },
+  {
+    "id": "langley-launcher-east-of-willowbrook",
+    "published": "2026-11-23",
+    "effective": null,
+    "firstSeen": "2026-11-24T12:06:14Z",
+    "title": "Langley Launcher moves east from Willowbrook",
+    "summary": "The Aldergrove Star reported that the gantry building the elevated guideway had moved east from the Willowbrook Station site. It had less than 1.5 kilometres to go before reaching the end of the line.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:willowbrook~langley-city-centre"
+    ],
+    "sources": [
+      "langley-industrial-nov23-report"
+    ]
+  },
+  {
+    "id": "ubc-quinn-board-of-trade-nov20",
+    "published": "2026-11-23",
+    "effective": "2026-11-20",
+    "firstSeen": "2026-11-24T12:06:14Z",
+    "title": "TransLink CEO leaves UBC extension timing to the province",
+    "summary": "At the Board of Trade on November 20, Kevin Quinn said extending the Millennium Line from Arbutus to UBC remained a regional priority. B.C. leads the design work and has yet to publish the business case or its cost estimate.",
+    "projects": [
+      "ubcx"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "ubc-quinn-nov20",
+      "ubc"
+    ]
   }
 ]

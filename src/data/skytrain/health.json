@@ -1,69 +1,69 @@
 {
   "coverageStart": "2026-08-20",
-  "lastAttempt": "2026-11-23T12:10:49Z",
-  "lastSuccessful": "2026-11-23T12:10:49Z",
+  "lastAttempt": "2026-11-24T12:12:17Z",
+  "lastSuccessful": "2026-11-24T12:12:17Z",
   "seededAt": "2026-11-21T19:47:29Z",
   "outcome": "Verified updates",
   "sources": {
     "gtfs": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "TransLink’s current feed matches the November 20 archive byte for byte (26SEP_20261120). Rebuilding all five rail patterns reproduced the atlas stations, connections and shapes."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "The current TransLink download matches its November 20 archive (26SEP_20261120). Importing the five rail patterns reproduced the atlas network, including the stops, line connections and track geometry."
     },
     "translink": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Read the rendered release index back past November 8, The Buzzer, the November 19 Mayors’ Council agenda, rail projects and station alerts. TransLink separately confirmed the Expo and Millennium cleaning contract change to Daily Hive."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Checked the rendered newsroom, The Buzzer, rail projects and the November 19 Mayors’ Council agenda. Read Kevin Quinn’s November 20 remarks on the UBC extension in local coverage."
     },
     "broadway": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Checked current work, the construction-notice archive, the monthly-report index and the November 17 and 20 Broadway–City Hall PDFs. The sidewalk start was already recorded. Found no city or project notice confirming a 2027 Thornton Street restoration date."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Read the current work and archive pages, monthly report index, and the November 17 water main and November 20 sidewalk notices. Both notices are already on the timeline. Found no official date for Thornton Street restoration."
     },
     "langley": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Read the project notice archive, station and route pages, November 13 and 20 weekly advisories, and notices on the Fleetwood Flyer, western beam lifts, 158/159 streets, 68 Avenue and Industrial Avenue. The scheduled work is already covered."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Compared the original and revised Industrial Avenue PDFs, read the Highway 15 overnight guideway notice and checked both locations on the alignment map. Reviewed the November 20 weekly advisory and local reporting on the gantry east of Willowbrook."
     },
     "province": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Checked BC Gov News, the Premier’s office, the transportation news index and ministry feed, and searched for releases about the extensions. No new rail authorization or opening surfaced."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Checked BC Gov News, transportation releases and the Premier’s office for the named extensions. No new passenger opening, construction funding or route decision surfaced."
     },
     "surrey": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Read the city’s notice on the November 9 vote and checked the city newsroom and coverage of the premier’s remarks. No new funding decision for the Newton extension surfaced."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Read the November 23 land-use and public-hearing agenda packages. The latter includes the November 9 minutes naming Newton SkyTrain a council priority. No new construction budget surfaced."
     },
     "poco": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Read Port Coquitlam’s council priorities, annual-report page, November 9 inaugural address and current public notices. The city continues to advocate for a passenger branch; no new project decision surfaced."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Read the annual-report page, the rescheduling notice and both November 24 agendas. Neither meeting had taken place at the time of collection; neither agenda listed a SkyTrain branch decision."
     },
     "ubc": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Checked UBC’s project timeline, Vancouver’s UBC extension page and the November 17 council agenda, alongside searches for UBC and the Cambie infill stations. No new approval surfaced."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Compared UBC’s project status and Vancouver’s extension page and November 17 agenda with the Daily Hive account of the November 20 Board of Trade address. No construction funding or timetable was announced."
     },
     "north": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "Compared Bowinn Ma’s November 19 statement, reproduced in the November 22 Weekly Alternative Buzzer, with Daily Hive’s report and the two cities’ corridor pages. Her support for SkyTrain does not select a route or change the archived studies."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Checked the Vancouver and North Vancouver corridor pages and searched for a decision following Bowinn Ma’s statement. The municipalities have not published a choice of technology or alignment in the material reviewed."
     },
     "local": {
       "ok": true,
-      "checked": "2026-11-23T12:10:49Z",
-      "lastOK": "2026-11-23T12:10:49Z",
-      "note": "The Mapped category page failed. Used Daily Hive’s Transportation index and direct publisher searches; read Daily Hive, The Tyee, CityHallWatch and the November 22 Weekly Alternative Buzzer. Checked local publication dates and removed repeated coverage."
+      "checked": "2026-11-24T12:12:17Z",
+      "lastOK": "2026-11-24T12:12:17Z",
+      "note": "Daily Hive’s Mapped index did not load. Used its Transportation index and direct reporting instead; read the Board of Trade coverage and the Aldergrove Star report on Industrial Avenue and the Langley Launcher."
     }
   },
   "gaps": [
