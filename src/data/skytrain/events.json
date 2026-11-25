@@ -1172,5 +1172,85 @@
       "ubc-quinn-nov20",
       "ubc"
     ]
+  },
+  {
+    "id": "richmond-branch-track-maintenance-nov15",
+    "published": "2026-11-15",
+    "effective": "2026-11-15",
+    "firstSeen": "2026-11-25T12:08:43Z",
+    "title": "Late-night track maintenance on the Richmond branch",
+    "summary": "The November 15 service bulletin listed single-track service between Bridgeport and Richmond–Brighouse that Sunday. Trains in both directions were scheduled to share one track from 11 p.m. until the last train.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "bridgeport",
+      "richmond-brighouse"
+    ],
+    "segments": [
+      "canada:bridgeport~capstan",
+      "canada:capstan~aberdeen",
+      "canada:aberdeen~lansdowne",
+      "canada:lansdowne~richmond-brighouse"
+    ],
+    "sources": [
+      "wab-nov15-access"
+    ]
+  },
+  {
+    "id": "royal-oak-edmonds-track-maintenance-nov24",
+    "published": "2026-11-19",
+    "effective": "2026-11-24",
+    "firstSeen": "2026-11-25T12:11:28Z",
+    "title": "Platform 2 for both directions at Royal Oak and Edmonds",
+    "summary": "TransLink scheduled track maintenance from 9:30 p.m. to the last train on November 24, 25 and 26. Trains in both directions use Platform 2 at both stations during the work. Trips through Royal Oak can take about 15 minutes longer.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "royal-oak",
+      "edmonds"
+    ],
+    "segments": [
+      "expo:royal-oak~edmonds"
+    ],
+    "sources": [
+      "tl-current-alerts",
+      "tl-expo-alert-mirror"
+    ]
+  },
+  {
+    "id": "richmond-branch-track-maintenance-nov24",
+    "published": "2026-11-19",
+    "effective": "2026-11-24",
+    "firstSeen": "2026-11-25T12:09:59Z",
+    "title": "Three nights of single-track service between Bridgeport and Richmond–Brighouse",
+    "summary": "TransLink scheduled trains to share one track from 11 p.m. to the end of service on November 24, 25 and 26. Trains on the Richmond branch were scheduled to run every 20 minutes, with last trains leaving about five minutes later than usual.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "bridgeport",
+      "richmond-brighouse"
+    ],
+    "segments": [
+      "canada:bridgeport~capstan",
+      "canada:capstan~aberdeen",
+      "canada:aberdeen~lansdowne",
+      "canada:lansdowne~richmond-brighouse"
+    ],
+    "sources": [
+      "tl-current-alerts",
+      "tl-canada-alert-mirror"
+    ]
   }
 ]

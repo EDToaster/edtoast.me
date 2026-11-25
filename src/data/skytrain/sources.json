@@ -472,5 +472,41 @@
     "publisher": "Daily Hive",
     "label": "Kevin Quinn on the UBC extension at the Board of Trade",
     "authority": false
+  },
+  "tl-current-alerts": {
+    "url": "https://www.translink.ca/alerts",
+    "publisher": "TransLink",
+    "label": "SkyTrain service and station alerts",
+    "authority": true
+  },
+  "tl-expo-alert-mirror": {
+    "url": "https://mobility-bot.com/operators/o-c28-translink/r/TL/30053/",
+    "publisher": "Mobility Bot",
+    "label": "Timestamped Expo Line alerts from TransLink’s feed",
+    "authority": false
+  },
+  "tl-canada-alert-mirror": {
+    "url": "https://mobility-bot.com/operators/o-c28-translink/r/TL/13686/",
+    "publisher": "Mobility Bot",
+    "label": "Timestamped Canada Line alerts from TransLink’s feed",
+    "authority": false
+  },
+  "wab-nov15-access": {
+    "url": "https://cityhallwatch.wordpress.com/wp-content/uploads/2026/11/weekly-alternative-buzzer-wab-vol6no46-on-15-nov-2026-davidowicz.pdf",
+    "publisher": "Weekly Alternative Buzzer",
+    "label": "November 15 service bulletin",
+    "authority": false
+  },
+  "tl-oakridge-project": {
+    "url": "https://www.translink.ca/oakridge",
+    "publisher": "TransLink",
+    "label": "Oakridge station upgrades and elevator schedule",
+    "authority": true
+  },
+  "tl-elevator-program": {
+    "url": "https://www.translink.ca/elevators",
+    "publisher": "TransLink",
+    "label": "Station elevator replacement schedules",
+    "authority": true
   }
 }
