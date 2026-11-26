@@ -2,13 +2,24 @@
 
 **Target:** `EDToaster/edtoast.me`, branch `main`, page https://edtoast.me/gta6-pc/. The page is static. Perplexity is the daily researcher and editor. The scripts protect the record and compute the daily snapshot; they do not judge news. Use the same process for a manual run or a recovery.
 
+## Never post a download link
+
+This is the first rule and it has no exceptions. Fake GTA VI PC downloads carry malware, and the real builds are made from leaked game files. A link from this page or from a message about it sends readers straight to both.
+
+- **NEVER post a download link anywhere**: in the data files, in page copy, in a commit message, in a reply or notification in the Slack thread, or in a run summary.
+- A download link is any address that hands out a file or leads one click from one: builds, binaries, installers, launchers, patches, game files, dumps, keys, release pages, archives, zip or tarball links, CI artifacts, raw files, packages, torrents, magnet links, file hosts, mirrors, cloud drives, paste sites, chat server invites, and setup or install guides.
+- Do not write such an address as plain text, break it up, shorten it, describe where to find it, or name the search that finds it. Do not quote a README's install steps.
+- The only links allowed are a project's repository front page, GitHub's published DMCA notices, project discussion threads, and articles from the press and from security vendors. If an article exists mainly to point readers at a download, do not cite it.
+- Never download, run, mirror or test a build or any game file yourself.
+- If you are unsure whether a link counts, leave it out and describe the fact in words.
+
+The validator rejects release, archive, artifact and file links, file hosts, chat servers and addresses written into text. Passing it does not make a link safe. Read every new URL yourself before it goes in.
+
 ## Start clean
 
 Clone the repository with the connected account. Fetch `main` and note its SHA. Do not reuse a dirty checkout. Read `docs/gta6-pc/registry.json` (the seven things to check and how) and the seven files in `src/data/gta6-pc/`: `status`, `routes`, `projects`, `events`, `history`, `sources`, `health`. Read `health.json` first: `lastSuccessful` is where the search window starts.
 
 Routine writes are limited to `src/data/gta6-pc/*.json`. The registry, this runbook, scripts, tests, page code, styles, dependencies and deployment are out of scope. Never create, edit or dispatch a workflow. The owner authorizes ordinary CI and the Pages deployment that follow a push. Never store credentials, cookies or fetched pages in the repository.
-
-**Never download, run, mirror or link to game files, leaked builds, prebuilt binaries, release assets, setup guides, chat servers or file hosts.** This page reports on the projects. It links to reporting and to source repositories only, and the validator rejects anything else. Do not test a build.
 
 ## Collect and interpret
 

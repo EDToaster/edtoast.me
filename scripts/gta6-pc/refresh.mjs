@@ -32,10 +32,12 @@ const hostNames = ["windows", "linux", "macos"];
 const authority = (u) => /(^|\.)(rockstargames\.com|take2games\.com|store\.steampowered\.com|store\.epicgames\.com)$/.test(new URL(u).hostname);
 // The page links to reporting and to source code. It never links to game files, builds or chat servers.
 const blocked = /(^|\.)(discord\.gg|discord\.com|discordapp\.com|t\.me|telegram\.org|mega\.nz|mega\.io|mediafire\.com|gofile\.io|pixeldrain\.com|1fichier\.com|buzzheavier\.com|archive\.org|rutracker\.org|1337x\.to|thepiratebay\.org)$/;
+// No link may lead to a file or a page that hands one out: release pages, archives, build artifacts, raw files, installers.
+const download = /\/(releases|archive|archives|downloads?|zipball|tarball|raw|actions|packages|suites|artifacts)(\/|$)|\.(zip|7z|rar|tar|gz|xz|zst|iso|exe|msi|msix|dmg|appimage|deb|rpm|bin|bat|cmd|ps1|sh|torrent|xvc|pkg)$/i;
 const sourceOK = (s) => {
   const u = new URL(s.url);
   demand(u.protocol === "https:" && !u.username && !u.password, "source must be a plain https URL: " + s.url);
-  demand(!blocked.test(u.hostname) && !/\/releases\/|\/archive\/|\.(zip|7z|rar|exe|torrent|xvc|pkg)$/i.test(u.pathname), "download, file host or chat link: " + s.url);
+  demand(!blocked.test(u.hostname) && !download.test(u.pathname), "download, file host or chat link: " + s.url);
   demand(text(s.publisher) && text(s.label) && sourceKinds.includes(s.kind), "invalid source: " + s.url);
   demand(s.published === undefined || ymd(s.published), "invalid source date: " + s.url);
   if (s.kind === "official") demand(authority(s.url), "not an official publisher: " + s.url);
@@ -44,6 +46,8 @@ const sourceOK = (s) => {
 // House style for anything a reader sees: no em dashes.
 const plain = (where, ...values) => {
   for (const v of values.flat()) demand(v == null || (typeof v === "string" && !v.includes("\u2014")), "em dash in " + where);
+  // Links live in the source list, where they are checked. Text never carries an address.
+  for (const v of values.flat()) demand(v == null || !/\b(https?|hxxps?|ftp|magnet):|\bwww\./i.test(v), "link written into the text of " + where);
 };
 
 export function validate(db) {

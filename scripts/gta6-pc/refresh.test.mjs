@@ -93,10 +93,11 @@ test("console parity needs 30 fps and someone outside the project", () => {
 
 test("downloads, chat servers and em dashes are refused", () => {
   const link = (url, kind = "press") => input({ sources: { bad: { url, publisher: "Somewhere", label: "A link", kind } } });
-  for (const url of ["https://discord.gg/abc", "https://mega.nz/file/abc", "https://github.com/a/b/releases/tag/v1", "https://example.com/gta6.zip", "http://example.com/news"])
+  for (const url of ["https://discord.gg/abc", "https://mega.nz/file/abc", "https://github.com/a/b/releases/tag/v1", "https://github.com/a/b/releases", "https://github.com/a/b/actions/runs/1", "https://github.com/a/b/raw/main/build.7z", "https://github.com/a/b/zipball/main", "https://example.com/download/gta6", "https://example.com/gta6.zip", "https://example.com/setup.msi", "http://example.com/news"])
     assert.throws(() => merge(initial, link(url)), /download, file host or chat link|plain https/);
   assert.throws(() => merge(initial, link("https://gitlab.com/a/b", "repo")), /must be on github.com/);
   assert.throws(() => merge(initial, input({ events: [event("dash", { summary: "One thing \u2014 another." })] })), /em dash/);
+  assert.throws(() => merge(initial, input({ events: [event("pasted", { summary: "Get it at https://example.com/build today." })] })), /link written into the text/);
   assert.throws(() => merge(initial, input({ events: [event("unsourced", { sources: [] })] })), /no source/);
   assert.throws(() => merge(initial, input({ events: [event("orphan", { projects: ["not-a-project"] })] })), /unknown project/);
 });
