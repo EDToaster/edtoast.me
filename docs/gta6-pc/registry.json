@@ -1,0 +1,44 @@
+[
+  {
+    "id": "official",
+    "name": "Rockstar and Take-Two",
+    "url": "https://www.rockstargames.com/VI",
+    "check": "Read the platforms on Rockstar's GTA VI page, the Rockstar Newswire and Take-Two's investor news. Only an announcement from Rockstar or Take-Two, or a store page they publish, changes the official fields."
+  },
+  {
+    "id": "repos",
+    "name": "Tracked repositories",
+    "url": "https://github.com/EDToaster/edtoast.me/blob/main/src/data/gta6-pc/projects.json",
+    "check": "Run scripts/gta6-pc/probe.mjs for every project with a repository. For each one whose last commit moved, read the README status section and any linked measurement notes. A 404 or 451 is a state change that needs an event."
+  },
+  {
+    "id": "discovery",
+    "name": "New projects",
+    "url": "https://github.com/search?q=xbox+series+compatibility+layer&type=repositories&s=updated",
+    "check": "Search GitHub for new repositories (queries in the runbook) and compare PortWatch VI and GTA 6 PC Race for projects not listed here. Trackers are pointers only: confirm each claim in the project's own repository or in press before adding it, and never copy their text."
+  },
+  {
+    "id": "dmca",
+    "name": "GitHub DMCA notices",
+    "url": "https://github.com/github/dmca/tree/master/2026",
+    "check": "List the current month's folder in github/dmca and read every notice from Take-Two or Rockstar. Match named repositories against the project list."
+  },
+  {
+    "id": "press",
+    "name": "Press coverage",
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/",
+    "check": "Search PC Gamer, The Verge, Eurogamer, IGN, VideoCardz, Notebookcheck, Tom's Hardware, TechRadar, PCMag and GamesBeat for GTA VI PC port, recompilation, emulation and takedown news since the last successful run. Read the full article before citing it."
+  },
+  {
+    "id": "ps5",
+    "name": "PS5 route",
+    "url": "https://github.com/KytyPS5/KytyPS5/discussions/1937",
+    "check": "Check KytyPS5's weekly updates and Road to GTA VI thread, AnyPS5's game bring-up discussions and shadPS4 for any GTA VI result. Fake KytyPS5 installers exist; use only the repositories listed in the data."
+  },
+  {
+    "id": "safety",
+    "name": "Fakes and malware",
+    "url": "https://www.techradar.com/vpn/vpn-privacy-security/",
+    "check": "Search for new reports of fake GTA VI PC downloads, installers or emulators from security vendors and press."
+  }
+]

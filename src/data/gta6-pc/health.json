@@ -1,0 +1,58 @@
+{
+  "coverageStart": "2026-10-07",
+  "seededAt": "2026-11-26T22:08:00Z",
+  "lastAttempt": "2026-11-26T22:08:00Z",
+  "lastSuccessful": "2026-11-26T22:08:00Z",
+  "outcome": "Seeded",
+  "sources": {
+    "official": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "Rockstar's page lists PS5 and Xbox Series X|S with a 19 November 2026 date and does not mention PC."
+    },
+    "repos": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "Read repository metadata and READMEs for every listed project through the GitHub API."
+    },
+    "discovery": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "Compared the project list with PortWatch VI and GTA 6 PC Race and checked each candidate repository directly."
+    },
+    "dmca": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "Read the five Take-Two notices published in November 2026. One concerns GTA VI."
+    },
+    "press": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "Read coverage from PC Gamer, The Verge, VideoCardz, Notebookcheck, TechRadar, Tom's Hardware, IGN, PCMag, XDA and GamesBeat through 26 November."
+    },
+    "ps5": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "No PS5 project reports GTA VI running. Read the KytyPS5 roadmap thread and AnyPS5's discussions."
+    },
+    "safety": {
+      "ok": true,
+      "checked": "2026-11-26T22:08:00Z",
+      "lastOK": "2026-11-26T22:08:00Z",
+      "note": "Read the NordVPN kit report and the 355-domain report."
+    }
+  },
+  "gaps": [
+    "Frame rates come from different scenes, settings and graphics cards, so they are not directly comparable. Each figure links to where it was published.",
+    "Most figures are the projects’ own. “Self-reported” means only the project’s README says so, “Tracker” means another tracker reports having seen or checked the build, and “Press” means a named outlet covered it.",
+    "Private builds have no public code. Their entries rely on PortWatch VI.",
+    "Dozens of smaller VIctory forks exist. The list keeps the ones with a distinct approach, a measured result or press coverage.",
+    "Dates are UTC."
+  ]
+}

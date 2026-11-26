@@ -18,7 +18,8 @@ npm run build    # astro check + static build into dist/
 
 ```
 src/
-  pages/            routes: / (intro, work, education, projects), /games, /games/[slug], /demos, /demos/[slug], 404
+  pages/            routes: / (intro, work, education, projects), /games, /games/[slug], /demos, /demos/[slug],
+                    /skytrain, /gta6-pc, 404
   layouts/Base.astro
   components/       Header, Footer, Icon, EntryList
   styles/           tokens.css (all colours/sizes, light only), global.css
@@ -26,7 +27,10 @@ src/
   content/games/    one .md per game: frontmatter = listing metadata, body = about text
   content/demos/    same shape as games; set `href` for demos hosted elsewhere
   games/<slug>/     Game.astro + logic.ts for each game
-  demos/<slug>/     Demo.astro for each local demo
+  demos/<slug>/     Demo.astro for each local demo; code for the data-backed trackers (skytrain, gta6-pc)
+  data/<tracker>/   JSON record behind a tracker, refreshed daily by a Perplexity task
+scripts/<tracker>/  validator, guard and tests for that record
+docs/<tracker>/     RUNBOOK.md (how the daily check works) and registry.json (what it reads)
 public/             favicon, CNAME, static files
 docs/DESIGN.md      visual rules; read before changing styles
 ```

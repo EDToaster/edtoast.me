@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "victory",
+    "name": "VIctory",
+    "repo": "Marvisak/VIctory",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 3,
+    "approach": "A Rust layer that loads the Xbox executable into its own process and runs the code unchanged. It stands in for the console’s system services and Direct3D, and recompiles the console’s GPU programs to DXIL. Most builds that play the game are forks of it.",
+    "fps": {
+      "value": 1,
+      "text": "about 1 fps in the world, 30 in menus"
+    },
+    "hardware": "Radeon RX 6700 XT 12 GB, Windows 11",
+    "target": null,
+    "missing": [
+      "Ray-traced shadows and bounce light never run",
+      "Fewer than 300 of 24,387 shader programs do not translate, and their draws are dropped",
+      "HDR and the game’s own upscaler",
+      "Offline only by design; speech and reverb are silent"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 13286,
+    "pushed": "2026-11-25",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory",
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "id": "victory-rdna",
+    "name": "VIctory-RDNA",
+    "repo": "XaviFortes/VIctory-RDNA",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A fork of the 7900 XTX build tuned for AMD RDNA3 cards. It maps the game’s buffers in place and keeps large ones in video memory to cut the copying that slows other forks.",
+    "fps": {
+      "value": 23,
+      "text": "23.1 fps median in gameplay, 19.1 in heavy scenes"
+    },
+    "hardware": "Radeon RX 7900 XT 20 GB, Series X profile at 4K output",
+    "target": "A stable 30 fps or more without ray tracing",
+    "missing": [
+      "Ray tracing is off",
+      "Needs 32 GB of RAM, with 64 GB recommended",
+      "Measured on one PC, with no test from outside the project"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 2,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-rdna"
+    ]
+  },
+  {
+    "id": "victory-7900xtx",
+    "name": "VIctory-7900XTX",
+    "repo": "avatarmanz/VIctory-7900XTX",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 5,
+    "approach": "AvatarManz’s fork patches the game’s renderer so it behaves like a PC renderer and translates shaders ahead of time into a store kept between builds. It merges work from victory-fork, DexNom and Belobug.",
+    "fps": {
+      "value": 23,
+      "text": "23 fps walking at 1080p output, 16 at 4K and 9 with ray tracing on"
+    },
+    "hardware": "Radeon RX 7900 XTX, Core i9-12900K, 64 GB RAM",
+    "target": "The Series X version at 4K with ray tracing, then 30 fps or more",
+    "missing": [
+      "Models and textures stay at low detail for a long time while the game streams them",
+      "Ray-traced structures of moving objects are partly corrupt",
+      "Uses 37 to 45 GB of RAM"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 1833,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-7900xtx",
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "id": "belobug",
+    "name": "VIctory-Belobug-AMD",
+    "repo": "Belobug/VIctory-Belobug-AMD",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 5,
+    "approach": "Belobug’s AMD fork follows VIctory’s main branch and adds a stand-in for the game’s ray-traced bounce light. PortWatch reports having seen it play through missions with a picture close to the console’s.",
+    "fps": {
+      "value": 22,
+      "text": "about 22 fps in a city street with ray tracing off"
+    },
+    "hardware": "Radeon RX 7900 XTX, Series S profile (the README shares its measurements with the 7900 XTX fork)",
+    "target": "A stable 30 fps or more without ray tracing",
+    "missing": [
+      "Trees, signs and far objects flicker in places",
+      "Lighting is too bright or too dark for a while after walking indoors",
+      "Textures appear late",
+      "About 30 GB of RAM in use, 64 GB recommended"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": 200,
+    "stars": 2580,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-belobug",
+      "portwatch",
+      "notebookcheck-gameplay"
+    ]
+  },
+  {
+    "id": "vice-tay",
+    "name": "Vice-Tay",
+    "repo": "TaynanGT/Vice-Tay",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 5,
+    "approach": "A VIctory tree tuned on one RTX 4090 PC. Every change is checked in CI and then in a recorded play session with frame rate and memory read from the game’s own frame lines.",
+    "fps": {
+      "value": 21,
+      "text": "21.1 fps median over a 30 minute session"
+    },
+    "hardware": "GeForce RTX 4090, Ryzen 9 9950X3D, 48 GB RAM, Series S profile",
+    "target": "The open world at 30 fps with a correct picture",
+    "missing": [
+      "Short of 30 fps",
+      "Measured on the Series S profile only",
+      "Frame rate eased and memory grew by about 1 GB over the session",
+      "No test from outside the project"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 96,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-vice-tay"
+    ]
+  },
+  {
+    "id": "victory-nvidia",
+    "name": "VIctory on NVIDIA",
+    "repo": "trustno1-coder/VIctory-NVIDIA",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A fork of the 7900 XTX build that stops NVIDIA cards from skipping thousands of draws a frame. It runs the Series S profile at half scale.",
+    "fps": {
+      "value": 21,
+      "text": "20 to 22 fps indoors in the prologue"
+    },
+    "hardware": "GeForce RTX 5070, half-scale Series S profile",
+    "target": null,
+    "missing": [
+      "Ray tracing is mostly off: the game’s structure builder uses 64-lane programs that NVIDIA cards refuse",
+      "The quality preset costs about 7 fps"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 111,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-nvidia"
+    ]
+  },
+  {
+    "id": "anyxboxx",
+    "name": "AnyXboxX",
+    "repo": "LooperSalty/AnyXboxX",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "Began as an emulator that interpreted the console runtime on Unicorn. Its GTA VI results now come from a copy of VIctory bundled in the repository.",
+    "fps": {
+      "value": 16,
+      "text": "16 to 17 fps median in the open world"
+    },
+    "hardware": "GeForce RTX 4070 SUPER, Core i7-13700KF, Series X mode",
+    "target": null,
+    "missing": [
+      "Limited by the CPU work of copying the console’s shared memory",
+      "12 GB cards run short of texture memory"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 416,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-anyxboxx",
+      "videocardz-kickoff"
+    ]
+  },
+  {
+    "id": "klbf-lab",
+    "name": "KLBF Lab",
+    "repo": "PastiiJay/klbf-lab",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows",
+      "linux"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "Combines fixes from several VIctory forks into one tested build, with its own AMD stability work, water physics and optional FSR frame generation. It also proposes a shared way to measure frame rate.",
+    "fps": {
+      "value": 14,
+      "text": "14.0 fps average over a 37 minute play session"
+    },
+    "hardware": "Radeon RX 9070 XT 16 GB, Ryzen 7 9800X3D, 32 GB RAM, Series S profile with FSR 4",
+    "target": null,
+    "missing": [
+      "An outside tester’s five minute benchmark averaged 8.3 fps on an RTX 4070",
+      "Linux support is community work in progress"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 165,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-klbf-lab"
+    ]
+  },
+  {
+    "id": "vi-br-port",
+    "name": "VI-BR-PORT",
+    "repo": "edsuuu/VI-BR-PORT",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A Brazilian fork aimed at 8 GB NVIDIA cards and a 1080p monitor. It skips the ray-tracing skinning pass and swaps bounce light for a constant ambient term.",
+    "fps": {
+      "value": 14,
+      "text": "about 14 fps in the prison scene, 5.6 on the Series X profile"
+    },
+    "hardware": "GeForce RTX 4060 Ti 8 GB, Series S profile",
+    "target": "15 fps or more with a sharp picture in cutscenes and the prison",
+    "missing": [
+      "Its README says it is not playable yet",
+      "No ray-traced lighting"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 13,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-vi-br-port"
+    ]
+  },
+  {
+    "id": "kelvaroq",
+    "name": "Kelvaroq",
+    "repo": "stellarr-studio/kelvaroq",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 5,
+    "approach": "A Rust runtime built on VIctory and victory-fork by a French studio. It replaces the per-frame memory bookkeeping that it measured as the main cost in other forks.",
+    "fps": {
+      "value": 10,
+      "text": "about 10 fps in the prologue, 7 to 8 in its heaviest scenes"
+    },
+    "hardware": "GeForce RTX 5080 at 3840×2160",
+    "target": "3840×2160 at 30 fps with steady frame pacing",
+    "missing": [
+      "Some shader pipelines are missing and some draws are dropped",
+      "Video memory pressure",
+      "One outside playtest so far: 36 minutes on an RTX 4090, up to the first mission"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": 200,
+    "stars": 240,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-kelvaroq",
+      "portwatch"
+    ]
+  },
+  {
+    "id": "victory-fork",
+    "name": "victory-fork",
+    "repo": "fxceless/victory-fork",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 5,
+    "approach": "hyphennn’s fork, formerly victory-gta6. It follows VIctory’s main branch and adds rendering and speed fixes, with autosaves and checkpoints working. Several other forks build on it.",
+    "fps": {
+      "value": 9,
+      "text": "8 to 9.5 fps at the first boat mission, 10 to 14 in lighter views"
+    },
+    "hardware": "GeForce RTX 4070 12 GB, Core i7-14700KF, 32 GB RAM, Series X profile",
+    "target": null,
+    "missing": [
+      "Anything the sun does not hit directly is black, because ray-traced bounce light and shadows do not run",
+      "The graphics card is lost 30 to 50 minutes into a session",
+      "Uses 23 to 27 GB of RAM"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 3264,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-fork",
+      "techradar-chapter1",
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "id": "victory-nvidia-8gb",
+    "name": "VIctory NVIDIA 8 GB",
+    "repo": "soldsawn/victory-nvidia-8gb",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A fork of victory-fork for 8 GB GeForce cards. Dropping two texture mip levels keeps the card from running out of memory.",
+    "fps": {
+      "value": 9,
+      "text": "8 to 10 fps at 1080p, 6 at native 4K"
+    },
+    "hardware": "GeForce RTX 4060 Laptop 8 GB, Core i5-12450H, 48 GB RAM, Series X profile",
+    "target": null,
+    "missing": [
+      "Lower texture detail to fit 8 GB",
+      "Tested on one laptop"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 62,
+    "pushed": "2026-11-25",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-nvidia-8gb"
+    ]
+  },
+  {
+    "id": "vitoriabr",
+    "name": "VItoriaBr",
+    "repo": "uiliannn/VItoriaBr",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 5,
+    "approach": "Uilian’s fork merges victory-fork’s world rendering with his own NVIDIA work and is developed on live streams. It finishes the prologue and reaches the first story mission.",
+    "fps": {
+      "value": 5,
+      "text": "4 to 6 fps on the default preset; 22 in one experimental build"
+    },
+    "hardware": "GeForce RTX 5060 Ti 16 GB, Ryzen 7 5700X, 40 GB RAM",
+    "target": null,
+    "missing": [
+      "Progress stops at the first story mission",
+      "Occasional crashes entering the world and in some scenes",
+      "The 22 fps build is not merged"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 225,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-vitoriabr",
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "id": "leonida-legacy",
+    "name": "Leonida Legacy",
+    "repo": "ProjectLeonidaL/leonida",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "Keeps the Leonida name but is a fork of victory-fork. It picks settings for the player’s graphics card and ships scripts so testers without programming experience can send measurements.",
+    "fps": {
+      "value": 3,
+      "text": "2 to 4 fps in the world, about 10 in the first rooms with newer switches"
+    },
+    "hardware": "GeForce RTX 3080 12 GB, Ryzen 7 7800X3D, 32 GB RAM (frame rates measured upstream on an RTX 4070)",
+    "target": null,
+    "missing": [
+      "Shadowed areas are black",
+      "Frame rates not yet measured on its own test PC"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 505,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-leonida-legacy"
+    ]
+  },
+  {
+    "id": "scarlettport",
+    "name": "ScarlettPort",
+    "repo": "ZigZagBoi1/ScarlettPort",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A runtime forked from the VIctory line with its own launcher. Version 0.4.6 rebuilt the renderer for lit rooms and complete textures without ray tracing.",
+    "fps": {
+      "value": 3,
+      "text": "about 3 fps with the full picture"
+    },
+    "hardware": "GeForce RTX 3060, Series S profile",
+    "target": null,
+    "missing": [
+      "Playable speed",
+      "The ray-tracing structure builder makes stray writes"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 530,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-scarlettport"
+    ]
+  },
+  {
+    "id": "victory-amd",
+    "name": "victory-amd",
+    "repo": "myokex/victory-amd",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "An AMD fork of victory-fork that measures what each frame is made of. JoshuuDev’s copy of it is the base of the private Doomsday build.",
+    "fps": {
+      "value": 3,
+      "text": "2.5 to 4 fps, 9.6 in the first rooms with newer switches"
+    },
+    "hardware": "One PC with 32 GB RAM, Series X profile",
+    "target": null,
+    "missing": [
+      "Shadowed areas are black",
+      "Its README says it is not playable yet"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 222,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-amd"
+    ]
+  },
+  {
+    "id": "dexnom",
+    "name": "DexNom RayTime",
+    "repo": "DexNom/VIctory",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "An AMD fork that keeps the game’s ray tracing on. The game builds and walks its ray-tracing structures through translated Direct3D 12 compute shaders, with FSR 4.1.2 upscaling to 4K.",
+    "fps": {
+      "value": 1,
+      "text": "1.1 to 1.3 fps with ray tracing on"
+    },
+    "hardware": "Radeon RX 7900 XTX 24 GB",
+    "target": null,
+    "missing": [
+      "Frame times can reach several seconds",
+      "Some materials still render black",
+      "Interior lighting and shadows vary by scene"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 1268,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-dexnom",
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "id": "xcl",
+    "name": "XCL",
+    "repo": "xcl-dev/xcl",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 3,
+    "approach": "An independent Rust layer in the spirit of Wine. It runs Xbox code natively, writes its own versions of the console libraries and recompiles shaders through HLSL to DXIL. It lists GTA VI only as “a newer retail game”.",
+    "fps": {
+      "value": 5,
+      "text": "about 5 fps in the 3D world, 30 in menus"
+    },
+    "hardware": "GeForce RTX 5090, on an unmerged NVIDIA branch",
+    "target": null,
+    "missing": [
+      "The world’s picture is incomplete: the minimap and other mesh pipelines are refused",
+      "It does not keep running in the world for long"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 8586,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-xcl",
+      "videocardz-kickoff"
+    ]
+  },
+  {
+    "id": "five-star-recomp",
+    "name": "Five Star Recomp",
+    "repo": "ThatRecompDev/five-star-recomp",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 3,
+    "approach": "A C# layer and toolkit written for GTA VI, with a translator that turns each console GPU program into HLSL.",
+    "fps": {
+      "value": 1,
+      "text": "about one second a frame in the world; the opening cutscene’s cards and sound run at 30"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "World surfaces are black while material textures are fixed",
+      "No capture published"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 224,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-five-star-recomp"
+    ]
+  },
+  {
+    "id": "percyscarlett",
+    "name": "PercyScarlett",
+    "repo": "rpatty-dev/PercyScarlett",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 3,
+    "approach": "A Rust layer with stand-in system DLLs and its own shader recompiler. Version 1.0 reaches the opening prison scene, lit and textured, on an 8 GB card. It swaps the console build of FSR 4 for a plain stretch so the picture reaches the screen. Its README calls the game “TheBig6”.",
+    "fps": {
+      "value": 3,
+      "text": "about 2 to 3 fps on the Series S profile, 1 on Series X"
+    },
+    "hardware": "GeForce RTX 2060 SUPER 8 GB",
+    "target": null,
+    "missing": [
+      "Shaded areas and interiors are too dark without ray-traced lighting",
+      "Speed"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 42,
+    "pushed": "2026-11-25",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-percyscarlett"
+    ]
+  },
+  {
+    "id": "scarlight",
+    "name": "Scarlight",
+    "repo": "pablogonz12/Scarlight",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "linux"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 3,
+    "approach": "A Steam compatibility tool for Linux that runs the Xbox build through Proton on Mesa drivers.",
+    "fps": {
+      "value": 2,
+      "text": "1.5 to 3 fps in a fixed scene, down to 0.1 in busy ones"
+    },
+    "hardware": "Radeon RX 9070 XT, Mesa 26.3.1, CachyOS",
+    "target": null,
+    "missing": [
+      "Its README says it is not playable",
+      "One game tested on one card"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 20,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-scarlight"
+    ]
+  },
+  {
+    "id": "victory-macos",
+    "name": "VIctory for macOS",
+    "repo": "pragyaangaur/VIctory-macOS",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "macos"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 3,
+    "approach": "Runs VIctory on Apple Silicon through Wine and Apple’s D3DMetal. A student maintains it and credits Claude for much of the work.",
+    "fps": null,
+    "hardware": "M2 Max, 32 GB, CrossOver 26.3 with D3DMetal 4.0 beta 3",
+    "target": null,
+    "missing": [
+      "Nobody has reached gameplay on a Mac",
+      "An M5 Pro presented 64 black frames and stopped",
+      "The furthest run depends on patches that are not merged"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 228,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-victory-macos",
+      "pcmag-mac"
+    ]
+  },
+  {
+    "id": "native-victory-macos",
+    "name": "Native VIctory for macOS",
+    "repo": "LakshanSivakumar/Native-Victory-macOS",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "macos"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 2,
+    "approach": "Ports VIctory to macOS without Wine. The game’s code runs in the port’s own process and shaders go through Apple’s Metal Shader Converter. A contributor’s branch recompiles the game’s 440,000 functions to arm64.",
+    "fps": null,
+    "hardware": "Apple Silicon Mac, macOS 15",
+    "target": null,
+    "missing": [
+      "Crashes a few seconds into the prologue",
+      "The arm64 build is not on the main branch"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 93,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-native-victory-macos"
+    ]
+  },
+  {
+    "id": "tuxbox",
+    "name": "TuxBox",
+    "repo": "brcly/TuxBox",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "linux",
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 2,
+    "approach": "A Linux-first layer that adds the console-specific parts on top of Proton: the Xbox flavour of Direct3D 12, a shader translator and the memory, input and storage calls games use. Windows has a native Direct3D 12 backend.",
+    "fps": null,
+    "hardware": "GeForce RTX 4070 Ti SUPER",
+    "target": null,
+    "missing": [
+      "GTA VI reaches the story intro, and the first cutscene does not appear",
+      "No retail game is playable yet"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 386,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-tuxbox"
+    ]
+  },
+  {
+    "id": "xvalkyrie",
+    "name": "XValkyrie",
+    "repo": "sammwyy/xvalkyrie",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 0,
+    "approach": "A C++ layer for Xbox One and Series games that runs code natively and turns shaders into HLSL. It publishes a compatibility list of every title it has tried, with Fortnite, Unicorn Overlord and Minecraft Preview among the Series ones.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No GTA VI result published"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 235,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-xvalkyrie"
+    ]
+  },
+  {
+    "id": "xbox-emulator",
+    "name": "Xbox Emulator",
+    "repo": "omonkeyz/xbox-emulator",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 0,
+    "approach": "Continues the TomBox project: a Rust runtime that runs decrypted Xbox Series builds as ordinary Windows processes. It reports Trackmania driving at about 60 fps and Fortnite reaching its lobby.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No GTA VI result in the public repository",
+      "The developer’s GTA VI work is private and shown on streams"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 1849,
+    "pushed": "2026-11-25",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-xbox-emulator",
+      "videocardz-kickoff"
+    ]
+  },
+  {
+    "id": "leonida",
+    "name": "Leonida",
+    "repo": "ItsNotRexed/Leonida",
+    "route": "xbox-recomp",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "shut-down",
+    "stage": 1,
+    "approach": "The first and largest project. It translated all 26,503 console shaders to SPIR-V for Vulkan and built a loader and import shims, with the aim of producing a native Windows program from the user’s files.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "Never showed a frame of the retail game"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": "The Discord server of about 180,000 members was removed on 23 November and the 15-year-old lead quit that night. GitHub processed Take-Two’s notice on 24 November and disabled the repository with a network of 3,007 repositories.",
+    "http": 404,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-leonida",
+      "dmca-leonida",
+      "verge-leonida",
+      "pcgamer-quit"
+    ]
+  },
+  {
+    "id": "leonida-continued",
+    "name": "Leonida Continued",
+    "repo": "ubiquitarianism/leonida",
+    "route": "xbox-recomp",
+    "base": null,
+    "hosts": [
+      "windows",
+      "linux"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 1,
+    "approach": "The largest continuation of Leonida’s code. It keeps the Vulkan path, with all 26,503 shaders translated to SPIR-V, and builds ray-tracing structures in the console’s own layout.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "Nothing is playable",
+      "It runs the story load to the end, and no world frame has been verified",
+      "Ray tracing is in progress"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 2522,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-leonida-continued"
+    ]
+  },
+  {
+    "id": "leonida-ce",
+    "name": "Leonida CE",
+    "repo": "IAmNotSiob/leonida-ce",
+    "route": "xbox-recomp",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 2,
+    "approach": "A community edition of Leonida that keeps its history and license. The game’s own interface appears and walks through first-boot setup.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "The graphics device is lost about two minutes after the legal terms",
+      "Some streamed texture formats cannot be decoded yet"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 26,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-leonida-ce"
+    ]
+  },
+  {
+    "id": "palmetto",
+    "name": "Palmetto",
+    "repo": "luizwidmer/palmetto",
+    "route": "xbox-recomp",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 1,
+    "approach": "Translates the console executable and shaders at build time and runs them on a Direct3D 12 device backed by Vulkan. It began as a continuation of Leonida.",
+    "fps": null,
+    "hardware": "GeForce RTX 4090, Core i9-13900K",
+    "target": null,
+    "missing": [
+      "Every presented frame reads back black",
+      "Measured on one PC"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 15,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-palmetto"
+    ]
+  },
+  {
+    "id": "recity",
+    "name": "Project ReCity",
+    "repo": "pixl27/ProjectReCity",
+    "route": "xbox-recomp",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 0,
+    "approach": "A static recompilation of version 1.0.2.1 into a native Windows program with a Vulkan renderer. Its shader translator has been tested on more than 30 GPU and driver combinations.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "The game does not boot",
+      "The loader has only run a test executable"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 67,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-recity"
+    ]
+  },
+  {
+    "id": "xbox2windows",
+    "name": "Xbox2Windows",
+    "repo": "R0Y00/Xbox2Windows",
+    "route": "xbox-recomp",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 1,
+    "approach": "Research into translating Xbox Series machine code to C++ and its shaders to DXIL, with public tests that run without a game.",
+    "fps": null,
+    "hardware": "GeForce RTX 4060 Laptop",
+    "target": null,
+    "missing": [
+      "Only a modified diagnostic executable has played the intro and reached loading",
+      "851 of 12,101 pixel shaders are verified",
+      "Menus and gameplay are unverified"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 1965,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-xbox2windows",
+      "videocardz-kickoff"
+    ]
+  },
+  {
+    "id": "scarlettx",
+    "name": "ScarlettX",
+    "repo": "Freminet/ScarlettX",
+    "route": "xbox-emulator",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "quiet",
+    "stage": 0,
+    "approach": "A clean-room high-level emulator of the Xbox Series operating system, game runtime and Direct3D. It runs a small retail game, Concept Destruction, at about 188 fps.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No GTA VI work",
+      "Shader lifting for retail games and the console’s shared memory are not started",
+      "No commits since 22 November"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 267,
+    "pushed": "2026-11-22",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-scarlettx",
+      "videocardz-kickoff"
+    ]
+  },
+  {
+    "id": "xsxemu",
+    "name": "XSXEmu",
+    "repo": "daeken/XSXEmu",
+    "route": "xbox-emulator",
+    "base": null,
+    "hosts": [
+      "macos"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 1,
+    "approach": "An emulator for Apple Silicon that runs the game’s x86-64 code through Rosetta and translates shaders to Metal without Wine.",
+    "fps": null,
+    "hardware": "Apple M4",
+    "target": null,
+    "missing": [
+      "GTA VI starts worker threads and reads its archives, and has not produced a frame",
+      "0 of 28,164 shipped pipelines are ready"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 12,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-xsxemu"
+    ]
+  },
+  {
+    "id": "kytyps5",
+    "name": "KytyPS5",
+    "repo": "KytyPS5/KytyPS5",
+    "route": "ps5-layer",
+    "base": null,
+    "hosts": [
+      "windows",
+      "linux",
+      "macos"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 0,
+    "approach": "A translation layer for PS5 games on Windows and Linux, with experimental macOS support. It loads the game’s executable and maps PS5 system calls and graphics to the host. A community thread tracks the games it needs to run before GTA VI: GTA V is in game at about 56 fps on an RTX 5060 and Cyberpunk 2077 at about 14.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No GTA VI boot shown",
+      "Asset streaming and performance for a game this size"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 12826,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-kytyps5",
+      "kyty-roadmap",
+      "notebookcheck-ps5dump"
+    ]
+  },
+  {
+    "id": "anyps5",
+    "name": "AnyPS5",
+    "repo": "boykopovar/AnyPS5",
+    "route": "ps5-relink",
+    "base": null,
+    "hosts": [
+      "windows",
+      "linux"
+    ],
+    "scope": "general",
+    "visibility": "open",
+    "state": "active",
+    "stage": 0,
+    "approach": "Converts a PS5 executable into a native Windows or Linux program and links it against its own versions of the PS5 system libraries, with a shader recompiler that outputs SPIR-V. No emulator or separate runtime runs beside the game.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "Has not shown GTA VI running"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": null,
+    "http": 200,
+    "stars": 62170,
+    "pushed": "2026-11-26",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-anyps5",
+      "videocardz-anyps5"
+    ]
+  },
+  {
+    "id": "gtavi-recomp",
+    "name": "GTA VI Translation Layer",
+    "repo": "JamesCicada/GTAVI-Recomp",
+    "route": "ps5-relink",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 0,
+    "approach": "Adds GTA VI research, patches and progress tracking on top of AnyPS5. The project refuses to work from leaked files.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "Nothing has been tested with GTA VI",
+      "15 of 138 roadmap tasks cannot start until the game’s files can be studied lawfully"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "http": 200,
+    "stars": 74,
+    "pushed": "2026-11-25",
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-gtavi-recomp"
+    ]
+  },
+  {
+    "id": "cgbj",
+    "name": "CGBJ",
+    "repo": null,
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "private",
+    "state": "active",
+    "stage": 5,
+    "approach": "A private build that combines VIctory and XCL. Its code was public briefly and went offline.",
+    "fps": {
+      "value": 25,
+      "text": "25 fps average"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No public code",
+      "Figures come from PortWatch and the owner"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": null,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "portwatch"
+    ]
+  },
+  {
+    "id": "darkworldhm",
+    "name": "darkworldhm",
+    "repo": null,
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "private",
+    "state": "active",
+    "stage": 4,
+    "approach": "A private build shown on a stream on 25 November in free roam on an NVIDIA card.",
+    "fps": {
+      "value": 15,
+      "text": "12 to 15 fps in free roam, swinging between 5 and 24"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No public code",
+      "Its base is not known"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": null,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "portwatch"
+    ]
+  },
+  {
+    "id": "notnozy",
+    "name": "NotNozy",
+    "repo": null,
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "private",
+    "state": "active",
+    "stage": 4,
+    "approach": "A private build on an AMD card, shown on a stream, that looks close to the 7900 XTX fork.",
+    "fps": {
+      "value": 16,
+      "text": "about 16 fps"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No public code",
+      "Its base is not known"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": null,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "portwatch"
+    ]
+  },
+  {
+    "id": "doomsday",
+    "name": "Doomsday",
+    "repo": null,
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "private",
+    "state": "active",
+    "stage": 5,
+    "approach": "A private group’s build on JoshuuDev’s victory-amd fork, with ray-traced lighting running.",
+    "fps": {
+      "value": 4,
+      "text": "3 to 5 fps with ray-traced lighting"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No public code"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": null,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "portwatch"
+    ]
+  },
+  {
+    "id": "suri",
+    "name": "suri",
+    "repo": null,
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "private",
+    "state": "active",
+    "stage": 5,
+    "approach": "A private build on victory-fork. PortWatch confirmed a player moving through Lucia’s prologue.",
+    "fps": {
+      "value": 3,
+      "text": "about 3 fps"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No public code"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": null,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "portwatch"
+    ]
+  },
+  {
+    "id": "omonkey",
+    "name": "omonkey",
+    "repo": null,
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "private",
+    "state": "active",
+    "stage": 4,
+    "approach": "The Xbox Emulator developer’s private GTA VI work, streamed live. A player walks slowly around the opening prison scene.",
+    "fps": {
+      "value": 5,
+      "text": "about 5 fps in the prison scene"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "No public code"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": null,
+    "http": null,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "portwatch"
+    ]
+  },
+  {
+    "id": "zettrox",
+    "name": "ZETTROX",
+    "repo": "Zettrox/ztrx",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "offline",
+    "stage": 5,
+    "approach": "A build of VIctory and victory-fork for NVIDIA cards. It played from Lucia’s prologue into Jason’s first mission and led PortWatch’s ranking on 25 November.",
+    "fps": {
+      "value": 2,
+      "text": "about 2 fps"
+    },
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "Anything in shadow rendered black"
+    ],
+    "eta": null,
+    "evidence": "press",
+    "note": "The repository and the owner’s account returned 404 on 26 November. GitHub has published no notice for it.",
+    "http": 404,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-zettrox",
+      "notebookcheck-gameplay",
+      "portwatch"
+    ]
+  },
+  {
+    "id": "americas-recomp",
+    "name": "americas-recomp",
+    "repo": "realdody/americas-recomp",
+    "route": "ps5-relink",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "offline",
+    "stage": 0,
+    "approach": "A fork of AnyPS5 that tested whether the PS5 tool’s shader recompiler could handle the Xbox game.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "Did not boot the game"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": "PortWatch dates the removal to 23 November. The owner’s account is still active and no notice is published.",
+    "http": 404,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-americas-recomp",
+      "portwatch"
+    ]
+  },
+  {
+    "id": "keylime",
+    "name": "keylime",
+    "repo": "ethan00013/keylime",
+    "route": "xbox-layer",
+    "base": null,
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "offline",
+    "stage": 2,
+    "approach": "A C++20 runtime written from scratch with Vulkan graphics and its own shader translator. It reported the intro and main menu at 30 fps.",
+    "fps": null,
+    "hardware": null,
+    "target": null,
+    "missing": [
+      "The opening cutscene did not draw"
+    ],
+    "eta": null,
+    "evidence": "tracker",
+    "note": "The repository returned 404 on 26 November. No notice is published.",
+    "http": 404,
+    "stars": null,
+    "pushed": null,
+    "checked": "2026-11-26",
+    "updated": "2026-11-26",
+    "sources": [
+      "repo-keylime",
+      "portwatch"
+    ]
+  }
+]

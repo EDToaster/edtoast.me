@@ -1,0 +1,40 @@
+{
+  "verdict": "no",
+  "answer": "Not yet",
+  "summary": "Rockstar has not announced a PC version of GTA VI. Unofficial builds made from a leaked Xbox copy run the opening missions at about 20 fps on high-end graphics cards, short of the 30 fps the consoles hold.",
+  "official": {
+    "announced": false,
+    "released": false,
+    "window": "Early 2027, reported",
+    "note": "Rockstar lists only PS5 and Xbox Series X|S. GamesBeat reported in October that a PC version is planned for the first three months of 2027, citing four unnamed sources. Rockstar has not confirmed it.",
+    "sources": [
+      "rockstar-vi",
+      "gamesbeat-q1"
+    ]
+  },
+  "unofficial": {
+    "eta": "No project gives a date. The leaker predicted more than 30 fps within a week of 19 November, and a tracker account on X guessed 30 fps around the weekend of 28 November. The best measured sessions are still in the low 20s.",
+    "caveat": "Every unofficial build needs the game’s Xbox files, which so far exist outside a console only as the leaked copy. Take-Two treats the projects as copyright infringement and has had the largest one removed.",
+    "sources": [
+      "pcgamer-leak",
+      "techradar-chapter1",
+      "dmca-leonida"
+    ]
+  },
+  "safety": {
+    "note": "Nothing here is a download, and no installer for a PC version exists. Security researchers have traced more than 355 websites offering fake GTA VI launchers and found a ready-made malware kit sold to scammers. Fake “KytyPS5 GTA 6” installers and cloned repositories with a zip file in place of code use the real projects’ names.",
+    "sources": [
+      "techradar-malware",
+      "csn-fakes"
+    ]
+  },
+  "console": {
+    "fps": 30,
+    "launched": "2026-11-19",
+    "platforms": [
+      "PS5",
+      "Xbox Series X|S"
+    ]
+  },
+  "updated": "2026-11-26"
+}

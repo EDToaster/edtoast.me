@@ -1,0 +1,414 @@
+{
+  "rockstar-vi": {
+    "url": "https://www.rockstargames.com/VI",
+    "publisher": "Rockstar Games",
+    "label": "Rockstar’s GTA VI page",
+    "kind": "official"
+  },
+  "gamesbeat-q1": {
+    "url": "https://gamesbeat.com/grand-theft-auto-vis-pc-release-is-slated-for-q1-2027/",
+    "publisher": "GamesBeat",
+    "label": "GamesBeat report on the PC window",
+    "kind": "press",
+    "published": "2026-10-13"
+  },
+  "pcgamer-ball": {
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/for-a-moment-it-looked-like-grand-theft-auto-6-might-be-playable-on-pc-on-launch-day-then-xboxs-chief-strategy-officer-crashed-the-party/",
+    "publisher": "PC Gamer",
+    "label": "PC Gamer on the Xbox streaming correction",
+    "kind": "press",
+    "published": "2026-10-07"
+  },
+  "dmca-gtav": {
+    "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-18-take-two.md",
+    "publisher": "GitHub DMCA repository",
+    "label": "Take-Two notice, 18 November",
+    "kind": "primary",
+    "published": "2026-11-18"
+  },
+  "dmca-leonida": {
+    "url": "https://github.com/github/dmca/blob/master/2026/11/2026-11-24-take-two.md",
+    "publisher": "GitHub DMCA repository",
+    "label": "Take-Two notice against Leonida",
+    "kind": "primary",
+    "published": "2026-11-24"
+  },
+  "techradar-malware": {
+    "url": "https://www.techradar.com/vpn/vpn-privacy-security/fake-gta-6-pc-downloads-are-spreading-malware-through-dark-web-scam-bundle-nordvpn-warns",
+    "publisher": "TechRadar",
+    "label": "TechRadar on the fake download kit",
+    "kind": "press",
+    "published": "2026-11-18"
+  },
+  "csn-fakes": {
+    "url": "https://cybersecuritynews.com/fake-gta-6-pc-launchers/",
+    "publisher": "Cyber Security News",
+    "label": "Report on 355 fake launcher domains",
+    "kind": "press",
+    "published": "2026-11-20"
+  },
+  "pcgamer-leak": {
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/cyberleek-drops-what-they-claim-is-a-near-complete-gta-6-xbox-build-online/",
+    "publisher": "PC Gamer",
+    "label": "PC Gamer on the Xbox build leak",
+    "kind": "press",
+    "published": "2026-11-19"
+  },
+  "pcgamer-week": {
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/modders-reckon-gta-6-will-be-playable-on-pc-within-a-week/",
+    "publisher": "PC Gamer",
+    "label": "PC Gamer on the one week claim",
+    "kind": "press",
+    "published": "2026-11-20"
+  },
+  "videocardz-kickoff": {
+    "url": "https://videocardz.com/newz/gta-vi-pc-efforts-have-already-kicked-off-with-multiple-xbox-emulation-projects-underway",
+    "publisher": "VideoCardz",
+    "label": "VideoCardz on the first projects",
+    "kind": "press",
+    "published": "2026-11-22"
+  },
+  "pcgamer-exe": {
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/cyberleek-releases-executable-for-gta-6-xbox-build-leaked-last-week-the-torch-passes-to-the-open-source-recomp-and-emulation-projects/",
+    "publisher": "PC Gamer",
+    "label": "PC Gamer on the executable",
+    "kind": "press",
+    "published": "2026-11-23"
+  },
+  "xda-exe": {
+    "url": "https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/",
+    "publisher": "XDA Developers",
+    "label": "XDA on the executable",
+    "kind": "press",
+    "published": "2026-11-23"
+  },
+  "pcgamer-quit": {
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-recomp-leaders-bail-out-as-take-two-cracks-down-on-illicit-efforts-to-get-the-game-running-on-pc/",
+    "publisher": "PC Gamer",
+    "label": "PC Gamer on Leonida’s leads quitting",
+    "kind": "press",
+    "published": "2026-11-24"
+  },
+  "verge-leonida": {
+    "url": "https://www.theverge.com/news/1041690/grand-theft-auto-6-pc-recompilation-project-leonida-takedown-take-two",
+    "publisher": "The Verge",
+    "label": "The Verge on the Leonida takedown",
+    "kind": "press",
+    "published": "2026-11-24"
+  },
+  "toms-takedown": {
+    "url": "https://www.tomshardware.com/video-games/pc-gaming/take-two-wipes-out-3-007-gta-6-pc-port-repos-from-github-in-massive-dmca-crackdown-as-ai-tools-fuel-wave-of-unofficial-builds",
+    "publisher": "Tom’s Hardware",
+    "label": "Tom’s Hardware on the 3,007 repositories",
+    "kind": "press",
+    "published": "2026-11-26"
+  },
+  "videocardz-takedown": {
+    "url": "https://videocardz.com/newz/take-two-takes-down-over-3000-gta-vi-pc-repositories-but-it-may-be-too-late-unofficial-builds-already-render-textures-and-ray-traced-lighting",
+    "publisher": "VideoCardz",
+    "label": "VideoCardz on the first gameplay clips",
+    "kind": "press",
+    "published": "2026-11-25"
+  },
+  "notebookcheck-gameplay": {
+    "url": "https://www.notebookcheck.net/GTA-6-PC-ports-reach-gameplay-despite-Take-Two-s-GitHub-DMCA.1459752.0.html",
+    "publisher": "Notebookcheck",
+    "label": "Notebookcheck on builds reaching gameplay",
+    "kind": "press",
+    "published": "2026-11-25"
+  },
+  "notebookcheck-ps5dump": {
+    "url": "https://www.notebookcheck.net/GTA-6-game-dump-runs-on-PS5-console-jailbreak-boosting-piracy-and-PC-emulator.1460007.0.html",
+    "publisher": "Notebookcheck",
+    "label": "Notebookcheck on the PS5 dump",
+    "kind": "press",
+    "published": "2026-11-25"
+  },
+  "pcgamer-explainer": {
+    "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-recomp-explained/",
+    "publisher": "PC Gamer",
+    "label": "PC Gamer’s explainer",
+    "kind": "press",
+    "published": "2026-11-25"
+  },
+  "techradar-chapter1": {
+    "url": "https://www.techradar.com/gaming/the-very-unofficial-gta-6-pc-ports-are-speeding-ahead-with-chapter-1-seemingly-now-playable-but-rockstar-is-rumored-to-be-playing-whack-a-mole-with-these-projects",
+    "publisher": "TechRadar",
+    "label": "TechRadar on chapter one",
+    "kind": "press",
+    "published": "2026-11-25"
+  },
+  "videocardz-anyps5": {
+    "url": "https://videocardz.com/newz/github-promotes-ps5-to-pc-translation-layer-amid-gta-vi-pc-port-takedowns-then-deletes-the-post",
+    "publisher": "VideoCardz",
+    "label": "VideoCardz on GitHub’s AnyPS5 post",
+    "kind": "press",
+    "published": "2026-11-26"
+  },
+  "pcmag-mac": {
+    "url": "https://www.pcmag.com/news/community-efforts-to-port-gta-6-to-pc-and-mac-show-early-success",
+    "publisher": "PCMag",
+    "label": "PCMag on the PC and Mac efforts",
+    "kind": "press",
+    "published": "2026-11-25"
+  },
+  "portwatch": {
+    "url": "https://portwatch-vi.xyz/",
+    "publisher": "PortWatch VI",
+    "label": "PortWatch VI tracker",
+    "kind": "tracker"
+  },
+  "race-tracker": {
+    "url": "https://vuyp.github.io/gta6-pc-race/",
+    "publisher": "GTA 6 PC Race",
+    "label": "GTA 6 PC Race tracker",
+    "kind": "tracker"
+  },
+  "kyty-roadmap": {
+    "url": "https://github.com/KytyPS5/KytyPS5/discussions/1937",
+    "publisher": "KytyPS5 discussions",
+    "label": "KytyPS5 “Road to GTA VI” thread",
+    "kind": "repo",
+    "published": "2026-10-27"
+  },
+  "repo-victory": {
+    "url": "https://github.com/Marvisak/VIctory",
+    "publisher": "GitHub",
+    "label": "VIctory repository",
+    "kind": "repo"
+  },
+  "repo-victory-rdna": {
+    "url": "https://github.com/XaviFortes/VIctory-RDNA",
+    "publisher": "GitHub",
+    "label": "VIctory-RDNA repository",
+    "kind": "repo"
+  },
+  "repo-victory-7900xtx": {
+    "url": "https://github.com/avatarmanz/VIctory-7900XTX",
+    "publisher": "GitHub",
+    "label": "VIctory-7900XTX repository",
+    "kind": "repo"
+  },
+  "repo-belobug": {
+    "url": "https://github.com/Belobug/VIctory-Belobug-AMD",
+    "publisher": "GitHub",
+    "label": "VIctory-Belobug-AMD repository",
+    "kind": "repo"
+  },
+  "repo-vice-tay": {
+    "url": "https://github.com/TaynanGT/Vice-Tay",
+    "publisher": "GitHub",
+    "label": "Vice-Tay repository",
+    "kind": "repo"
+  },
+  "repo-victory-nvidia": {
+    "url": "https://github.com/trustno1-coder/VIctory-NVIDIA",
+    "publisher": "GitHub",
+    "label": "VIctory on NVIDIA repository",
+    "kind": "repo"
+  },
+  "repo-anyxboxx": {
+    "url": "https://github.com/LooperSalty/AnyXboxX",
+    "publisher": "GitHub",
+    "label": "AnyXboxX repository",
+    "kind": "repo"
+  },
+  "repo-klbf-lab": {
+    "url": "https://github.com/PastiiJay/klbf-lab",
+    "publisher": "GitHub",
+    "label": "KLBF Lab repository",
+    "kind": "repo"
+  },
+  "repo-vi-br-port": {
+    "url": "https://github.com/edsuuu/VI-BR-PORT",
+    "publisher": "GitHub",
+    "label": "VI-BR-PORT repository",
+    "kind": "repo"
+  },
+  "repo-kelvaroq": {
+    "url": "https://github.com/stellarr-studio/kelvaroq",
+    "publisher": "GitHub",
+    "label": "Kelvaroq repository",
+    "kind": "repo"
+  },
+  "repo-victory-fork": {
+    "url": "https://github.com/fxceless/victory-fork",
+    "publisher": "GitHub",
+    "label": "victory-fork repository",
+    "kind": "repo"
+  },
+  "repo-victory-nvidia-8gb": {
+    "url": "https://github.com/soldsawn/victory-nvidia-8gb",
+    "publisher": "GitHub",
+    "label": "VIctory NVIDIA 8 GB repository",
+    "kind": "repo"
+  },
+  "repo-vitoriabr": {
+    "url": "https://github.com/uiliannn/VItoriaBr",
+    "publisher": "GitHub",
+    "label": "VItoriaBr repository",
+    "kind": "repo"
+  },
+  "repo-leonida-legacy": {
+    "url": "https://github.com/ProjectLeonidaL/leonida",
+    "publisher": "GitHub",
+    "label": "Leonida Legacy repository",
+    "kind": "repo"
+  },
+  "repo-scarlettport": {
+    "url": "https://github.com/ZigZagBoi1/ScarlettPort",
+    "publisher": "GitHub",
+    "label": "ScarlettPort repository",
+    "kind": "repo"
+  },
+  "repo-victory-amd": {
+    "url": "https://github.com/myokex/victory-amd",
+    "publisher": "GitHub",
+    "label": "victory-amd repository",
+    "kind": "repo"
+  },
+  "repo-dexnom": {
+    "url": "https://github.com/DexNom/VIctory",
+    "publisher": "GitHub",
+    "label": "DexNom RayTime repository",
+    "kind": "repo"
+  },
+  "repo-xcl": {
+    "url": "https://github.com/xcl-dev/xcl",
+    "publisher": "GitHub",
+    "label": "XCL repository",
+    "kind": "repo"
+  },
+  "repo-five-star-recomp": {
+    "url": "https://github.com/ThatRecompDev/five-star-recomp",
+    "publisher": "GitHub",
+    "label": "Five Star Recomp repository",
+    "kind": "repo"
+  },
+  "repo-percyscarlett": {
+    "url": "https://github.com/rpatty-dev/PercyScarlett",
+    "publisher": "GitHub",
+    "label": "PercyScarlett repository",
+    "kind": "repo"
+  },
+  "repo-scarlight": {
+    "url": "https://github.com/pablogonz12/Scarlight",
+    "publisher": "GitHub",
+    "label": "Scarlight repository",
+    "kind": "repo"
+  },
+  "repo-victory-macos": {
+    "url": "https://github.com/pragyaangaur/VIctory-macOS",
+    "publisher": "GitHub",
+    "label": "VIctory for macOS repository",
+    "kind": "repo"
+  },
+  "repo-native-victory-macos": {
+    "url": "https://github.com/LakshanSivakumar/Native-Victory-macOS",
+    "publisher": "GitHub",
+    "label": "Native VIctory for macOS repository",
+    "kind": "repo"
+  },
+  "repo-tuxbox": {
+    "url": "https://github.com/brcly/TuxBox",
+    "publisher": "GitHub",
+    "label": "TuxBox repository",
+    "kind": "repo"
+  },
+  "repo-xvalkyrie": {
+    "url": "https://github.com/sammwyy/xvalkyrie",
+    "publisher": "GitHub",
+    "label": "XValkyrie repository",
+    "kind": "repo"
+  },
+  "repo-xbox-emulator": {
+    "url": "https://github.com/omonkeyz/xbox-emulator",
+    "publisher": "GitHub",
+    "label": "Xbox Emulator repository",
+    "kind": "repo"
+  },
+  "repo-leonida": {
+    "url": "https://github.com/ItsNotRexed/Leonida",
+    "publisher": "GitHub",
+    "label": "Leonida repository (offline)",
+    "kind": "repo"
+  },
+  "repo-leonida-continued": {
+    "url": "https://github.com/ubiquitarianism/leonida",
+    "publisher": "GitHub",
+    "label": "Leonida Continued repository",
+    "kind": "repo"
+  },
+  "repo-leonida-ce": {
+    "url": "https://github.com/IAmNotSiob/leonida-ce",
+    "publisher": "GitHub",
+    "label": "Leonida CE repository",
+    "kind": "repo"
+  },
+  "repo-palmetto": {
+    "url": "https://github.com/luizwidmer/palmetto",
+    "publisher": "GitHub",
+    "label": "Palmetto repository",
+    "kind": "repo"
+  },
+  "repo-recity": {
+    "url": "https://github.com/pixl27/ProjectReCity",
+    "publisher": "GitHub",
+    "label": "Project ReCity repository",
+    "kind": "repo"
+  },
+  "repo-xbox2windows": {
+    "url": "https://github.com/R0Y00/Xbox2Windows",
+    "publisher": "GitHub",
+    "label": "Xbox2Windows repository",
+    "kind": "repo"
+  },
+  "repo-scarlettx": {
+    "url": "https://github.com/Freminet/ScarlettX",
+    "publisher": "GitHub",
+    "label": "ScarlettX repository (offline)",
+    "kind": "repo"
+  },
+  "repo-xsxemu": {
+    "url": "https://github.com/daeken/XSXEmu",
+    "publisher": "GitHub",
+    "label": "XSXEmu repository",
+    "kind": "repo"
+  },
+  "repo-kytyps5": {
+    "url": "https://github.com/KytyPS5/KytyPS5",
+    "publisher": "GitHub",
+    "label": "KytyPS5 repository",
+    "kind": "repo"
+  },
+  "repo-anyps5": {
+    "url": "https://github.com/boykopovar/AnyPS5",
+    "publisher": "GitHub",
+    "label": "AnyPS5 repository",
+    "kind": "repo"
+  },
+  "repo-gtavi-recomp": {
+    "url": "https://github.com/JamesCicada/GTAVI-Recomp",
+    "publisher": "GitHub",
+    "label": "GTA VI Translation Layer repository",
+    "kind": "repo"
+  },
+  "repo-zettrox": {
+    "url": "https://github.com/Zettrox/ztrx",
+    "publisher": "GitHub",
+    "label": "ZETTROX repository (offline)",
+    "kind": "repo"
+  },
+  "repo-americas-recomp": {
+    "url": "https://github.com/realdody/americas-recomp",
+    "publisher": "GitHub",
+    "label": "americas-recomp repository (offline)",
+    "kind": "repo"
+  },
+  "repo-keylime": {
+    "url": "https://github.com/ethan00013/keylime",
+    "publisher": "GitHub",
+    "label": "keylime repository (offline)",
+    "kind": "repo"
+  }
+}

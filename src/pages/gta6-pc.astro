@@ -1,0 +1,248 @@
+---
+import Base from "~/layouts/Base.astro";
+import "~/demos/gta6-pc/tracker.css";
+import {
+  status, routes, sources, events, history, health, checks, running, stopped, today, project, route,
+  stages, lastStage, states, evidence, eventKinds, consoleFps, dayText, shortDay, timeText, count,
+} from "~/demos/gta6-pc/model";
+
+const best = today.fpsProject ? project(today.fpsProject)! : undefined;
+const atFurthest = running.filter((p) => p.stage === today.stage);
+const playing = running.filter((p) => p.stage >= 4).length;
+const cite = (ids: string[]) => [...new Set(ids)].map((id) => ({ id, ...sources[id] }));
+const routeStats = routes.map((r) => {
+  const mine = running.filter((p) => p.route === r.id);
+  return { ...r, count: mine.length, stage: Math.max(0, ...mine.map((p) => p.stage)), fps: Math.max(0, ...mine.filter((p) => p.visibility === "open").map((p) => p.fps?.value ?? 0)) };
+});
+const days = [...new Set(events.map((e) => e.date))];
+const outcomes: Record<string, string> = {
+  Seeded: "This was the first full check.",
+  Updated: "The page changed on this check.",
+  "No changes": "Nothing had changed since the check before.",
+  "Partial check": "Some sources could not be read, so the last full check is older.",
+  "Sources could not be checked": "No source could be read on the latest attempt.",
+};
+
+// Frame rate by day: a small step chart against the consoles' 30 fps.
+const W = 640, H = 170, pad = { l: 34, r: 12, t: 12, b: 24 };
+const top = Math.max(consoleFps + 5, ...history.map((h) => h.fps ?? 0));
+const t0 = Date.parse(history[0].date), t1 = Math.max(Date.parse(history.at(-1)!.date), t0 + 864e5);
+const x = (d: string) => pad.l + ((Date.parse(d) - t0) / (t1 - t0)) * (W - pad.l - pad.r);
+const y = (v: number) => H - pad.b - (v / top) * (H - pad.t - pad.b);
+const measured = history.filter((h) => h.fps !== null);
+const path = measured.map((h, i) => (i ? "H" + x(h.date).toFixed(1) + "V" : "M" + x(h.date).toFixed(1) + ",") + y(h.fps!).toFixed(1)).join("");
+---
+<Base title="GTA VI: are we on PC yet?" description="Tracks every effort to run GTA VI on PC: how each one works, how far it has got and what Take-Two has shut down. Checked daily." wide>
+<article class="pcyet">
+  <p class="section-label"><a href="/demos">Demos</a> <span aria-hidden="true">/</span> GTA VI</p>
+  <h1 class="page-title">Are we on PC yet?</h1>
+  <p class="verdict" data-verdict={status.verdict}>{status.answer}.</p>
+  <p class="lede">{status.summary}</p>
+  <p class="checked">Checked <time datetime={health.lastAttempt}>{timeText(health.lastAttempt)}</time> · updated daily · <a class="link" href="#history">update history</a><span id="overdue" hidden> · this page is overdue for a check</span></p>
+
+  <dl class="stats">
+    <div>
+      <dt>Official PC version</dt>
+      <dd class="figure">{status.official.released ? "Released" : status.official.announced ? "Announced" : "Not announced"}</dd>
+      <dd>{status.official.window}</dd>
+    </div>
+    <div>
+      <dt>Best unofficial frame rate</dt>
+      <dd class="figure">{today.fps ?? "–"} <small>fps</small></dd>
+      <dd class="gauge" role="img" aria-label={`${today.fps ?? 0} of the consoles’ ${consoleFps} frames per second`}><i style={`width:${Math.min(100, ((today.fps ?? 0) / consoleFps) * 100)}%`}></i></dd>
+      <dd>{best ? best.name + ", measured by the project" : "No measurement"}. Consoles run {consoleFps}.</dd>
+    </div>
+    <div>
+      <dt>Furthest any build gets</dt>
+      <dd class="figure">{today.stage === null ? "–" : stages[today.stage].name}</dd>
+      <dd>Stage {today.stage} of {lastStage}, reached by {atFurthest.length} {atFurthest.length === 1 ? "build" : "builds"}</dd>
+    </div>
+    <div>
+      <dt>Projects</dt>
+      <dd class="figure">{running.length} <small>running</small></dd>
+      <dd>{playing} in game · {stopped.length} shut down or offline</dd>
+    </div>
+  </dl>
+
+  <section class="when" aria-labelledby="when-title">
+    <h2 id="when-title">When</h2>
+    <div class="cols">
+      <div>
+        <h3>From Rockstar</h3>
+        <p>{status.official.note}</p>
+        <p class="cites">{cite(status.official.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+      </div>
+      <div>
+        <h3>From the ports</h3>
+        <p>{status.unofficial.eta}</p>
+        <p>{status.unofficial.caveat}</p>
+        <p class="cites">{cite(status.unofficial.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="days-title">
+    <h2 id="days-title">Day by day</h2>
+    <p class="note">The best frame rate from a build with public code and the furthest stage any build reached, recorded once a day.</p>
+    <svg class="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Best frame rate by day, from ${dayText(history[0].date)} to ${dayText(history.at(-1)!.date)}. The latest is ${today.fps ?? 0} fps against ${consoleFps} on console.`}>
+      {[0, 10, 20, 30].map((v) => <g><line class="grid" x1={pad.l} x2={W - pad.r} y1={y(v)} y2={y(v)} /><text class="axis" x={pad.l - 6} y={y(v) + 3} text-anchor="end">{v}</text></g>)}
+      <line class="console" x1={pad.l} x2={W - pad.r} y1={y(consoleFps)} y2={y(consoleFps)} />
+      <text class="axis console-label" x={W - pad.r} y={y(consoleFps) - 5} text-anchor="end">Console, {consoleFps} fps</text>
+      {history.map((h, i) => (i === 0 || i === history.length - 1 || history.length < 12 || i % Math.ceil(history.length / 8) === 0) && <text class="axis" x={x(h.date)} y={H - 6} text-anchor={i === 0 ? "start" : i === history.length - 1 ? "end" : "middle"}>{shortDay(h.date)}</text>)}
+      {measured.length > 1 && <path class="line" d={path} />}
+      {measured.map((h) => <circle class="dot" cx={x(h.date)} cy={y(h.fps!)} r="3"><title>{shortDay(h.date)}: {h.fps} fps</title></circle>)}
+    </svg>
+    <div class="scroll">
+      <table class="days">
+        <thead><tr><th scope="col">Date</th><th scope="col">Furthest stage</th><th scope="col" class="num">Best fps</th><th scope="col" class="num">Tracked</th><th scope="col">What changed</th></tr></thead>
+        <tbody>
+          {[...history].reverse().map((h) => (
+            <tr>
+              <th scope="row"><time datetime={h.date}>{shortDay(h.date)}</time></th>
+              <td>{h.stage === null ? "–" : h.stage + " · " + stages[h.stage].name}</td>
+              <td class="num" data-unit={h.fps == null ? undefined : "fps"}>{h.fps ?? "–"}</td>
+              <td class="num">{h.tracked ?? "–"}</td>
+              <td>{h.note}{h.backfilled && <span class="muted"> Reconstructed from reporting.</span>} <span class="cites inline">{cite(h.sources).map((s) => <a href={s.url} title={s.label}>{s.publisher} ↗</a>)}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="routes-title">
+    <h2 id="routes-title">Five ways in</h2>
+    <p class="note">The game exists as an Xbox Series build and a PS5 build. Each project picks one and one way of making it run.</p>
+    <ul class="routes">
+      {routeStats.map((r) => (
+        <li>
+          <div class="route-head">
+            <h3>{r.name}</h3>
+            <span class="tag">{r.method}</span>
+            <a class="link" href={`?route=${r.id}#projects`} data-route-link={r.id}>{r.count} {r.count === 1 ? "project" : "projects"}</a>
+          </div>
+          <p>{r.how}</p>
+          <p><b>Now:</b> {r.standing}</p>
+          <p class="muted">{r.count ? "Furthest: " + stages[r.stage].name.toLowerCase() + " (stage " + r.stage + ")" + (r.fps ? " · best " + r.fps + " fps" : " · no frame rate published") : "No running project"}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title">Projects</h2>
+    <p class="note">Furthest first. Frame rates come from different scenes, settings and graphics cards, so read them as rough guides. Open a row for how the project works and what is missing.</p>
+    <form class="filters" id="filters" hidden>
+      <label>Route<select name="route"><option value="">All routes</option>{routes.map((r) => <option value={r.id}>{r.name}</option>)}</select></label>
+      <label>Runs on<select name="host"><option value="">Any system</option><option value="windows">Windows</option><option value="linux">Linux</option><option value="macos">macOS</option></select></label>
+      <label>Sort by<select name="sort"><option value="">Progress</option><option value="fps">Frame rate</option><option value="stars">GitHub stars</option><option value="pushed">Latest commit</option></select></label>
+      <label class="check"><input type="checkbox" name="ingame" value="1" /> In game only</label>
+      <button type="button" id="expand" aria-pressed="false">Open all</button>
+    </form>
+    <p class="muted" id="shown" role="status">{running.length} projects</p>
+    <ol class="projects" id="project-list">
+      {running.map((p, i) => (
+        <li data-route={p.route} data-hosts={p.hosts.join(" ")} data-stage={p.stage} data-fps={p.fps?.value ?? 0} data-stars={p.stars ?? -1} data-pushed={p.pushed ?? ""} data-rank={i}>
+          <details id={p.id}>
+            <summary>
+              <span class="who">
+                <span class="name">{p.name}</span>
+                <span class="tag">{route(p.route).short}</span>
+                {p.visibility === "private" && <span class="tag">Private</span>}
+                {p.state === "quiet" && <span class="tag">Quiet</span>}
+                {p.hosts.filter((h) => h !== "windows").map((h) => <span class="tag">{h === "macos" ? "macOS" : "Linux"}</span>)}
+              </span>
+              <span class="stage" title={stages[p.stage].detail}>
+                <span class="meter" aria-hidden="true">{stages.slice(1).map((_, n) => <i class:list={{ on: n < p.stage }}></i>)}</span>
+                <span class="stage-name"><span class="sr">Stage {p.stage} of {lastStage}: </span>{stages[p.stage].name}</span>
+              </span>
+              <span class="fps">{p.fps ? <><b>{p.fps.value}</b> fps</> : <span class="muted">no fps</span>}</span>
+            </summary>
+            <div class="body">
+              <p>{p.approach}</p>
+              <dl>
+                {p.fps && <div><dt>Frame rate</dt><dd>{p.fps.text}</dd></div>}
+                {p.hardware && <div><dt>Measured on</dt><dd>{p.hardware}</dd></div>}
+                <div><dt>Target</dt><dd>{p.target ?? "None stated"}</dd></div>
+                <div><dt>ETA</dt><dd>{p.eta ?? "None published"}</dd></div>
+                {p.missing.length > 0 && <div><dt>Missing</dt><dd><ul>{p.missing.map((m) => <li>{m}</li>)}</ul></dd></div>}
+                <div><dt>Evidence</dt><dd>{evidence[p.evidence]}{p.scope === "general" && " · a general tool, GTA VI is one of its games"}{p.base && project(p.base) && " · built on " + project(p.base)!.name}</dd></div>
+                <div><dt>Checked</dt><dd>{shortDay(p.checked)}{p.stars !== null && " · " + count(p.stars) + " stars"}{p.pushed && " · last commit " + shortDay(p.pushed)}</dd></div>
+              </dl>
+              <p class="cites">{cite(p.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+            </div>
+          </details>
+        </li>
+      ))}
+    </ol>
+    <p class="muted" id="none" hidden>No project matches. <button type="button" class="plain" id="clear">Clear the filters</button></p>
+  </section>
+
+  <section aria-labelledby="stopped-title">
+    <h2 id="stopped-title">Shut down or offline</h2>
+    <p class="note">“Shut down” means a published notice or the project’s own statement. “Offline” means the repository is gone and nobody has said why.</p>
+    <ul class="stopped">
+      {stopped.map((p) => (
+        <li id={p.id}>
+          <div class="route-head"><h3>{p.name}</h3><span class="tag">{states[p.state]}</span><span class="tag">{route(p.route).short}</span></div>
+          <p>{p.approach}</p>
+          <p>{p.note}</p>
+          <p class="muted">Got as far as: {stages[p.stage].name.toLowerCase()} (stage {p.stage}){p.fps && ", " + p.fps.text} · checked {shortDay(p.checked)}</p>
+          <p class="cites">{cite(p.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="warning" aria-labelledby="fakes-title">
+    <h2 id="fakes-title">There is nothing to download</h2>
+    <p>{status.safety.note}</p>
+    <p class="cites">{cite(status.safety.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+  </section>
+
+  <section id="history" aria-labelledby="history-title">
+    <h2 id="history-title">Update history</h2>
+    <div class="kinds" id="kinds" hidden>
+      <button type="button" data-kind="" aria-pressed="true">All</button>
+      {Object.entries(eventKinds).map(([id, name]) => <button type="button" data-kind={id} aria-pressed="false">{name}</button>)}
+    </div>
+    <div class="timeline">
+      {days.map((d) => (
+        <div class="day">
+          <h3><time datetime={d}>{dayText(d)}</time></h3>
+          {events.filter((e) => e.date === d).map((e) => (
+            <article data-kind={e.kind} id={"e-" + e.id}>
+              <p class="kind">{eventKinds[e.kind]}</p>
+              <h4>{e.title}</h4>
+              <p>{e.summary}</p>
+              <p class="cites">{cite(e.sources).map((s) => <a href={s.url} title={s.kind === "repo" ? s.publisher : s.label}>{s.kind === "repo" ? s.label : s.publisher} ↗</a>)}</p>
+            </article>
+          ))}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-title">
+    <h2 id="about-title">Coverage &amp; sources</h2>
+    <p>Coverage starts {dayText(health.coverageStart)}. {health.lastSuccessful ? "Last full check: " + timeText(health.lastSuccessful) + "." : ""} {outcomes[health.outcome]}</p>
+    <p>This page links to reporting and to projects’ source code. It does not link to game files, builds, chat servers or setup instructions, and it does not test anything itself.</p>
+    <details>
+      <summary>What the stages mean</summary>
+      <ol class="stage-key" start="0">{stages.map((s) => <li><b>{s.name}.</b> {s.detail}</li>)}</ol>
+    </details>
+    <details>
+      <summary>How to read the numbers</summary>
+      <ul>{health.gaps.map((g) => <li>{g}</li>)}</ul>
+    </details>
+    <details>
+      <summary>What each check covered</summary>
+      <ul class="checks">{checks.map((c) => <li><b>{c.name}</b> · {c.ok ? "read" : "could not be read"} {shortDay(c.checked)}. {c.note}</li>)}</ul>
+    </details>
+    <p>Other trackers follow the same race: <a class="link" href={sources.portwatch.url}>PortWatch VI ↗</a> and <a class="link" href={sources["race-tracker"].url}>GTA 6 PC Race ↗</a>. They are used here as pointers. Where a project has public code or press coverage, its entry is checked against that. Private builds are labelled and rest on PortWatch’s reports.</p>
+    <p><a class="link" href="https://github.com/EDToaster/edtoast.me/blob/main/docs/gta6-pc/RUNBOOK.md">How this page is updated ↗</a> · <a class="link" href="https://github.com/EDToaster/edtoast.me/commits/main/src/data/gta6-pc">Every data change ↗</a></p>
+    <p class="muted">Independent of Rockstar Games and Take-Two Interactive. Dates are UTC.</p>
+  </section>
+</article>
+<script>import "~/demos/gta6-pc/client";</script>
+</Base>

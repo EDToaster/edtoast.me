@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2026-11-19",
+    "stage": null,
+    "fps": null,
+    "tracked": null,
+    "note": "Console launch. An Xbox build leaks without its executable.",
+    "backfilled": true,
+    "sources": [
+      "rockstar-vi",
+      "pcgamer-leak"
+    ]
+  },
+  {
+    "date": "2026-11-21",
+    "stage": 0,
+    "fps": null,
+    "tracked": null,
+    "note": "Projects prepare shaders and loaders with no executable to run.",
+    "backfilled": true,
+    "sources": [
+      "videocardz-kickoff"
+    ]
+  },
+  {
+    "date": "2026-11-23",
+    "stage": 2,
+    "fps": null,
+    "tracked": null,
+    "note": "The executable is released. VIctory shows the menus.",
+    "backfilled": true,
+    "sources": [
+      "pcgamer-exe",
+      "portwatch"
+    ]
+  },
+  {
+    "date": "2026-11-24",
+    "stage": 4,
+    "fps": 5,
+    "tracked": null,
+    "note": "First builds walk around the prologue.",
+    "backfilled": true,
+    "sources": [
+      "videocardz-takedown"
+    ]
+  },
+  {
+    "date": "2026-11-25",
+    "stage": 5,
+    "fps": 16,
+    "tracked": null,
+    "note": "One build reaches the first story mission. AvatarManz’s fork is reported at about 16 fps.",
+    "backfilled": true,
+    "sources": [
+      "notebookcheck-gameplay",
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "stage": 5,
+    "fps": 23,
+    "fpsProject": "victory-7900xtx",
+    "privateFps": 25,
+    "tracked": 46,
+    "active": 42,
+    "offline": 4,
+    "sources": [],
+    "note": "First full check. Two forks report 23 fps on their own test PCs, and ZETTROX goes offline."
+  }
+]

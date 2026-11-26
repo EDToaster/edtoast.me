@@ -1,0 +1,47 @@
+[
+  {
+    "id": "xbox-layer",
+    "short": "Xbox layer",
+    "name": "Xbox compatibility layer",
+    "platform": "Xbox Series",
+    "method": "Translation",
+    "how": "The Xbox Series CPU is x86-64, so the game’s code runs on a PC processor as it is. A layer loads the Xbox executable, answers its console system calls, turns the console’s Direct3D 12 into the PC’s and recompiles its GPU programs. Wine and Proton work the same way for Windows games.",
+    "standing": "The only route that plays the game. VIctory and its forks get through the prologue and early missions at up to about 23 fps on high-end cards, mostly with ray tracing off."
+  },
+  {
+    "id": "xbox-recomp",
+    "short": "Xbox recompilation",
+    "name": "Xbox static recompilation",
+    "platform": "Xbox Series",
+    "method": "Recompilation",
+    "how": "Tools translate the executable and its shaders ahead of time and build a native Windows program around them, usually with a Vulkan renderer.",
+    "standing": "Leonida led this route until Take-Two’s takedown. Its continuations boot the game and reach its setup screens, and none has drawn the world."
+  },
+  {
+    "id": "xbox-emulator",
+    "short": "Xbox emulation",
+    "name": "Xbox emulation",
+    "platform": "Xbox Series",
+    "method": "Emulation",
+    "how": "An emulator models the console’s operating system and runtime at a high level, or runs the game’s code through an interpreter or Rosetta.",
+    "standing": "Nothing here has produced a GTA VI frame. The layers are faster because they skip CPU emulation."
+  },
+  {
+    "id": "ps5-layer",
+    "short": "PS5 layer",
+    "name": "PS5 translation layer",
+    "platform": "PS5",
+    "method": "Translation",
+    "how": "A layer loads the PS5 executable and maps Sony’s system libraries and graphics calls to Windows, Linux or macOS. shadPS4 does this for PS4 games only.",
+    "standing": "A PS5 dump surfaced on 25 November. KytyPS5 runs GTA V and has shown nothing for GTA VI."
+  },
+  {
+    "id": "ps5-relink",
+    "short": "PS5 relinking",
+    "name": "PS5 relinking",
+    "platform": "PS5",
+    "method": "Recompilation",
+    "how": "A relinker converts the PS5 executable into a native Windows or Linux program and links it against rewritten system libraries, so no emulator runs beside the game.",
+    "standing": "AnyPS5 has not shown GTA VI running. The one GTA VI project built on it refuses leaked files and is waiting for a lawful way to study the game."
+  }
+]

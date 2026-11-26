@@ -1,0 +1,299 @@
+[
+  {
+    "id": "xbox-no-pc-stream",
+    "date": "2026-10-07",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "official",
+    "title": "Xbox says GTA VI will not stream to PC",
+    "summary": "Xbox chief strategy officer Matthew Ball corrected a report that Xbox Cloud Gaming would carry the game. He wrote that it “will not be streaming exclusively or to PC.”",
+    "projects": [],
+    "sources": [
+      "pcgamer-ball"
+    ]
+  },
+  {
+    "id": "gamesbeat-q1-2027",
+    "date": "2026-10-13",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "official",
+    "title": "GamesBeat reports a PC release in early 2027",
+    "summary": "Four unnamed industry sources told GamesBeat that Rockstar plans a PC version “within the first three months of 2027.” Rockstar did not respond before publication and has announced nothing.",
+    "projects": [],
+    "sources": [
+      "gamesbeat-q1"
+    ]
+  },
+  {
+    "id": "gtav-port-notices",
+    "date": "2026-11-18",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "takedown",
+    "title": "Take-Two removes GTA V ports from GitHub the day before launch",
+    "summary": "Four notices took down unofficial GTA V ports for phones, Macs and browsers along with their forks. Take-Two wrote that a “bring your own files” disclaimer does not shield a project that helps people run the game.",
+    "projects": [],
+    "sources": [
+      "dmca-gtav"
+    ]
+  },
+  {
+    "id": "fake-download-kit",
+    "date": "2026-11-18",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "safety",
+    "title": "A fake GTA 6 PC download kit is for sale",
+    "summary": "NordVPN’s threat team found a $200 kit that bundles a wallet drainer, a cookie stealer named “GTA6 Keygen.exe” and a hidden crypto miner. Researchers later traced more than 355 domains serving fake launchers.",
+    "projects": [],
+    "sources": [
+      "techradar-malware",
+      "csn-fakes"
+    ]
+  },
+  {
+    "id": "console-launch",
+    "date": "2026-11-19",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "official",
+    "title": "GTA VI launches on PS5 and Xbox Series X|S",
+    "summary": "Rockstar’s page lists the two consoles and no PC version. Both run the game at 30 fps.",
+    "projects": [],
+    "sources": [
+      "rockstar-vi",
+      "techradar-chapter1"
+    ]
+  },
+  {
+    "id": "xbox-build-leak",
+    "date": "2026-11-19",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "leak",
+    "title": "An Xbox Series build leaks without its executable",
+    "summary": "A leaker called Cyberleek published about 200 GB of game files and held back the main executable until 23 November, predicting the community would have it “emulated inside a week, running far past 30fps.” Take-Two’s notice dates the distribution to 20 November and calls the files stolen.",
+    "projects": [],
+    "sources": [
+      "pcgamer-leak",
+      "dmca-leonida"
+    ]
+  },
+  {
+    "id": "first-projects",
+    "date": "2026-11-21",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "Leonida and the first Xbox projects open on GitHub",
+    "summary": "Leonida set out to recompile the Xbox build into a Windows program and translated all 26,503 of its shaders before it had an executable to run. XCL, Xbox2Windows, ScarlettX, AnyXboxX and an emulator based on TomBox started the same week.",
+    "projects": [
+      "leonida",
+      "xcl",
+      "xbox2windows",
+      "scarlettx",
+      "anyxboxx",
+      "xbox-emulator"
+    ],
+    "sources": [
+      "videocardz-kickoff",
+      "dmca-leonida"
+    ]
+  },
+  {
+    "id": "exe-released",
+    "date": "2026-11-23",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "leak",
+    "title": "The missing executable is released",
+    "summary": "Cyberleek published the Xbox executable and wrote that “the torch passes to the open source recomp and emulation projects.” PC Gamer could not verify the file.",
+    "projects": [],
+    "sources": [
+      "pcgamer-exe",
+      "xda-exe"
+    ]
+  },
+  {
+    "id": "victory-published",
+    "date": "2026-11-23",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "VIctory is published and reaches the game’s menus",
+    "summary": "Marvisak published VIctory, a Rust layer that runs the Xbox code directly on Windows. PortWatch reported a livestream of the menus the same day. Most builds that play the game now are forks of it.",
+    "projects": [
+      "victory"
+    ],
+    "sources": [
+      "repo-victory",
+      "portwatch"
+    ]
+  },
+  {
+    "id": "leonida-discord-quit",
+    "date": "2026-11-23",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "takedown",
+    "title": "Leonida loses its Discord server and its lead",
+    "summary": "The project’s server of about 180,000 members was removed. Its 15-year-old lead, NotRexed, wrote “I quit guys” and said the takedown was only part of the reason.",
+    "projects": [
+      "leonida"
+    ],
+    "sources": [
+      "pcgamer-quit",
+      "verge-leonida"
+    ]
+  },
+  {
+    "id": "leonida-dmca",
+    "date": "2026-11-24",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "takedown",
+    "title": "GitHub disables Leonida and 3,007 repositories",
+    "summary": "Take-Two’s notice cites section 2.3 of Rockstar’s terms, which bars reverse engineering, and says the files a user must supply can only be the leaked ones. GitHub applied it to the whole fork network.",
+    "projects": [
+      "leonida"
+    ],
+    "sources": [
+      "dmca-leonida",
+      "toms-takedown"
+    ]
+  },
+  {
+    "id": "first-gameplay",
+    "date": "2026-11-24",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "The first builds walk around the prologue at 2 to 5 fps",
+    "summary": "Clips posted on 24 and 25 November show Lucia’s prison prologue with textures, lighting and controller input. One ran at 1 to 3 fps on an RTX 5070 Ti with a Ryzen 7 7800X3D.",
+    "projects": [],
+    "sources": [
+      "videocardz-takedown"
+    ]
+  },
+  {
+    "id": "six-builds-gameplay",
+    "date": "2026-11-25",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "At least six builds reach gameplay and one gets to “Gone Fishing”",
+    "summary": "Notebookcheck counted at least six builds in interactive gameplay. The furthest finished the prologue and reached Jason’s first mission. Broken shadows, blown-out lighting and crashes were common.",
+    "projects": [
+      "zettrox",
+      "belobug"
+    ],
+    "sources": [
+      "notebookcheck-gameplay"
+    ]
+  },
+  {
+    "id": "avatarmanz-16fps",
+    "date": "2026-11-25",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "AvatarManz’s fork is reported at about 16 fps",
+    "summary": "PC Gamer’s explainer lists AvatarManz, DexNom, Belobug, hyphennn and Uilian as the leading builds, all forks of VIctory.",
+    "projects": [
+      "victory-7900xtx",
+      "dexnom",
+      "belobug",
+      "victory-fork",
+      "vitoriabr"
+    ],
+    "sources": [
+      "pcgamer-explainer"
+    ]
+  },
+  {
+    "id": "ps5-dump",
+    "date": "2026-11-25",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "leak",
+    "title": "A PS5 copy is shown running on a jailbroken console",
+    "summary": "Videos show a 540 GB dump with a decrypted executable on PS5 firmware 11.60. Notebookcheck names KytyPS5 as a possible route to PC and says much work remains. No PS5 project has shown the game running.",
+    "projects": [
+      "kytyps5"
+    ],
+    "sources": [
+      "notebookcheck-ps5dump"
+    ]
+  },
+  {
+    "id": "weekend-prediction",
+    "date": "2026-11-25",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "A tracker account predicts 30 fps by the weekend",
+    "summary": "The “Is GTA 6 on PC” account on X wrote “GTA 6 on PC at 30 fps maybe during or after this weekend.” No project has published a date of its own.",
+    "projects": [],
+    "sources": [
+      "techradar-chapter1"
+    ]
+  },
+  {
+    "id": "zettrox-offline",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "takedown",
+    "title": "ZETTROX’s repository goes offline",
+    "summary": "The build that led PortWatch’s ranking a day earlier now returns a 404, and so does the owner’s account. GitHub has published no notice for it.",
+    "projects": [
+      "zettrox"
+    ],
+    "sources": [
+      "repo-zettrox",
+      "notebookcheck-gameplay"
+    ]
+  },
+  {
+    "id": "github-anyps5-post",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "takedown",
+    "title": "GitHub promotes AnyPS5, then deletes the post",
+    "summary": "GitHub’s account on X celebrated 58,000 stars for the PS5 relinker two days after the Leonida takedown and later removed the post. AnyPS5 has not shown GTA VI running.",
+    "projects": [
+      "anyps5"
+    ],
+    "sources": [
+      "videocardz-anyps5"
+    ]
+  },
+  {
+    "id": "vice-tay-30min",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "Vice-Tay logs a 30 minute session at 21 fps",
+    "summary": "Its README reports the prologue played by hand through the boat section on an RTX 4090, with a median of 21.1 fps on the Series S profile. Nobody outside the project has confirmed it.",
+    "projects": [
+      "vice-tay"
+    ],
+    "sources": [
+      "repo-vice-tay"
+    ]
+  },
+  {
+    "id": "rdna-23fps",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "VIctory-RDNA reports a 23 fps median at 4K",
+    "summary": "The new fork measures 23.1 fps in gameplay and 19.1 in heavy scenes on a Radeon RX 7900 XT with ray tracing off. The figures are its own.",
+    "projects": [
+      "victory-rdna"
+    ],
+    "sources": [
+      "repo-victory-rdna"
+    ]
+  },
+  {
+    "id": "mac-opening",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-26T22:08:00Z",
+    "kind": "port",
+    "title": "Two Mac ports get into the game’s opening",
+    "summary": "VIctory for macOS reached the prologue cinematics on an M2 Max through Wine and D3DMetal. A native Metal port draws the start screen at about 30 fps and crashes a few seconds into the prologue.",
+    "projects": [
+      "victory-macos",
+      "native-victory-macos"
+    ],
+    "sources": [
+      "repo-victory-macos",
+      "repo-native-victory-macos"
+    ]
+  }
+]
