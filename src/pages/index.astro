@@ -1,12 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDownload, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import Base from "~/layouts/Base.astro";
 import Icon from "~/components/Icon.astro";
 import CompanyLogo from "~/components/CompanyLogo.astro";
 import EntryList from "~/components/EntryList.astro";
 import GlassCursorToggle from "~/components/GlassCursorToggle.astro";
-import { site, heroLinks } from "~/data/site";
+import { site, heroLinks, resume } from "~/data/site";
 import { roles, education, stats, skills, emphasize } from "~/data/resume";
 import { projects } from "~/data/projects";
 
@@ -54,6 +55,14 @@ const sections = [
             ),
           )
         }
+        <span class="hero-resume">
+          <a href={resume.page}>
+            <Icon icon={faFileLines} /> resume
+          </a>
+          <a class="button" href={resume.pdf} download={resume.filename} aria-label="Download resume as PDF">
+            <Icon icon={faDownload} /> PDF
+          </a>
+        </span>
       </div>
     </div>
   </section>
@@ -407,7 +416,7 @@ const sections = [
     align-items: center;
     flex-wrap: wrap;
   }
-  .hero-links a,
+  .hero-links a:not(.button),
   .hero-links span {
     color: var(--muted);
     font-size: var(--text-md);
@@ -416,8 +425,12 @@ const sections = [
     gap: 0.35rem;
     transition: color 0.15s;
   }
-  .hero-links a:hover {
+  .hero-links a:not(.button):hover {
     color: var(--text);
+  }
+  /* The resume link and its PDF download wrap as one unit. */
+  .hero-links .hero-resume {
+    gap: 0.75rem;
   }
 
   /* Timeline */

@@ -9,6 +9,13 @@ export const site = {
   url: "https://edtoast.me",
 };
 
+/* Both are built from src/data/resume.tex; see scripts/resume/build.mjs. */
+export const resume = {
+  page: "/resume",
+  pdf: "/resume.pdf",
+  filename: "Howard-Chen-Resume.pdf", // name the browser saves the PDF under
+};
+
 export type HeroLink = { label: string; href?: string; icon: IconDefinition };
 
 export const heroLinks: HeroLink[] = [

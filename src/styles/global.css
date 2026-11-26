@@ -74,6 +74,24 @@ ol {
   margin-bottom: var(--space-5);
 }
 
+/* Actions, e.g. the resume PDF download. Same outline as the entry boxes. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  transition: border-color 0.15s;
+}
+.button:hover {
+  border-color: var(--border-strong);
+}
+
 .tag {
   font-size: var(--text-xs);
   color: var(--muted);

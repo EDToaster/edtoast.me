@@ -14,5 +14,6 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
+      - uses: ./.github/actions/resume-tools
       - run: npm ci
-      - run: npm run build # astro check + astro build
+      - run: npm run build # resume PDF + HTML, astro check, astro build
