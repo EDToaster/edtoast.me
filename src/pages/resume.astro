@@ -9,12 +9,10 @@ import Base from "~/layouts/Base.astro";
 import Icon from "~/components/Icon.astro";
 import { site, resume } from "~/data/site";
 
-// A glob, so a checkout that has not built the resume yet still starts in dev.
+// A glob, so a checkout without the resume tools still starts and builds.
+// The build script is what refuses to go on without the resume in CI.
 const built = import.meta.glob<string>("../generated/resume.html", { query: "?raw", import: "default", eager: true });
 const html = Object.values(built)[0];
-if (!html && import.meta.env.PROD) {
-  throw new Error("src/generated/resume.html is missing. Run `npm run resume` (or `npm run build`) first.");
-}
 ---
 
 <Base title="Resume" description={`Resume of ${site.name}: work experience, education and skills, with a PDF download.`} wide>

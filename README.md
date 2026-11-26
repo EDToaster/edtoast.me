@@ -14,8 +14,8 @@ npm run dev      # http://localhost:4321
 npm run build    # resume PDF + HTML, astro check, static build into dist/
 ```
 
-The build also needs the [resume tools](#resume). `npm run dev` starts without
-them and leaves the resume out.
+The resume needs [two more tools](#resume). Without them `npm run dev` and
+`npm run build` still work and leave the resume out; in CI they are required.
 
 ## Layout
 
@@ -58,8 +58,11 @@ is committed:
 | `public/resume.pdf` | pdfLaTeX, the engine Overleaf uses | `/resume.pdf` |
 | `src/generated/resume.html` | Pandoc + `scripts/resume/filter.lua` | `/resume`, inside the site layout |
 
-`npm run build` runs this first and fails if either tool is missing. CI and
-the deploy install both from `.github/actions/resume-tools`.
+`npm run build` and `npm run dev` run this first. On a machine without the
+tools they print a warning, skip the missing output and carry on, so `/resume`
+shows a "not built" note. With `CI` set a missing tool fails the build, and a
+resume that does not compile fails it everywhere. CI and the deploy install
+both tools from `.github/actions/resume-tools`.
 
 Tools to install locally:
 

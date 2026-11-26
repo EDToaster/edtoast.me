@@ -8,7 +8,7 @@
   "scripts": {
     "resume": "node scripts/resume/build.mjs",
     "dev": "npm run resume -- --optional && astro dev",
-    "build": "npm run resume && astro check && astro build",
+    "build": "npm run resume -- --optional && astro check && astro build",
     "preview": "astro preview",
     "check": "astro check"
   },
