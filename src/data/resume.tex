@@ -1,0 +1,160 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\textheight=10in
+\pagestyle{empty}
+\raggedright
+\usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+%\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\vspace*{-40pt}
+
+    
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Howard Chen}}\\
+	Vancouver, BC $\cdot$ howard3061@gmail.com $\cdot$ edtoaster.github.io $\cdot$ linkedin.com/in/howchen/
+\end{center}
+
+%==== Summary ====%
+\header{Profile}
+\vspace{1mm}
+Software Development engineer with 6+ years at Instacart, Meta, and AWS, specializing in high-scale distributed systems and infrastructure. Independently shipped consumer software to 30 million users. Driven by the building of reliable, cost-efficient infrastructure and the elimination of operational labor.
+\vspace{2mm}
+
+%==== Experience ====%
+\header{Work Experience}
+\vspace{1mm}
+
+\textbf{Instacart} \hfill Vancouver, BC\\
+\textit{Software Development Engineer} \hfill 2025 - Present\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+    \item Led the design and built a data ingestion pipeline processing \textbf{125B+} daily catalog product updates, integrating Snowflake, Temporal, and Postgres as the backbone for all product/retailer data ingestion platform-wide.
+    \item Architected a novel high-throughput datastore, backed by AWS S3 and a dedicated reader/writer fleet, delivering 2x Postgres ingestion throughput and \textbf{sub-millisecond p99 query latency} on the platform's hottest product recall path, directly improving search speed, GTV, and customer retention.
+    \item Own and operate 4 highly-available, replicated PostgreSQL clusters serving \textbf{10B+ daily queries}, powering search, product recall, and NLP systems.
+    \item Independently led a legacy infrastructure deprecation, including cross-team RPC migrations with zero business-metric regression, saving \textbf{\$2 million/year} in infrastructure costs.
+    \item On-call and incident response across 100+ cross-team RPC integrations.
+\end{itemize}
+
+\textbf{Meta} \hfill Bellevue, WA\\
+\textit{Production Engineer} \hfill 2024\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+    \item Validated CapEx and OpEx reduction and savings across the entire Monetization Organization at Meta, including Ads and the family of Meta apps. Reduction in required capacity includes highly-constrained AI resources such as GPU Compute and Storage.
+    \item Fulfilled new project proposals with infrastructure capacity reclaimed from previous capacity reduction and savings.
+    \item Introduced automation to completely eliminate manual work when validating and reducing quotas.
+\end{itemize}
+
+\textbf{Amazon AWS - EC2 AutoScaling} \hfill Vancouver, BC\\
+\textit{Software Development Engineer II} \hfill 2021 - 2024\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+    \item Built and maintained a highly-available, multi-zonal service supporting >\$30B in annual revenue and one-third of global cloud computing capacity; grew adoption among top customers by 31\% while expanding the service in 8 new highly available regions across 6 countries.
+    \item Led and developed 4+ high-adoption features (such as Instance Refresh) that focused on helping customers ship faster and with higher confidence and safety.
+    \item Eliminated \$500K/year in infrastructure spend by migrating off third-party Citrix NetScaler load balancers to AWS-native load balancing infrastructure.
+    \item Addressed high-priority security vulnerabilities in the service, and worked as an around-the-clock on-call operator to promptly resolve any service downtime and customer inquiries with an SLA of 15 minutes. During the last year, we reduced the number of high-severity operational events by 80\%.
+\end{itemize}
+
+\textbf{Amazon AWS - EC2 AutoScaling} \hfill Vancouver, BC and Seattle, WA\\
+\textit{SDE Intern} \hfill Summer 2020 and Summer 2019\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+    \item Designed, implemented, and shipped Lambda Termination Policies for EC2 Auto Scaling, enabling customers to control which instances terminate first for safe, efficient capacity replacement
+    \item Built an internal AWS forecasting product using time-series analysis and ML to predict service demand - owned end-to-end service architecture, AWS service stack composition, and operational health, while giving customers automated tools to debug and analyze performance
+\end{itemize}
+
+%==== Education ====%
+\header{Education}
+\textbf{University of Toronto} \hfill \textit{Graduated 2021}\\
+Honours BS Computer Science \textit{GPA: 3.85}\\
+\vspace{2mm}
+
+\header{Skills}
+\begin{tabular}{ l l }
+	Languages: & Golang, Rust, Java, Kotlin, SQL, C, C++, Python, Ruby, Verilog, Web     \\
+	Products:  & Amazon Web Services, Cloud Infrastructure, Postgres Optimization, EC2, AutoScaling \\
+\end{tabular}
+\vspace{2mm}
+
+% \header{Projects}
+% {\textbf{Various Minecraft Mods}} {\sl Java, Kotlin, Gradle, Game Design, Reverse Engineering} \hfill github.com/EDToaster\\
+% Actively developing a series of popular, open-source extensions (mods) for the record-breaking sandbox game Minecraft. With more than 24.7 million lifetime users and more than \$30,000 in total revenue, the series of mods continues to gain 1.5 million new downloads per month.\\
+% \vspace*{2mm}
+% {\textbf{Toast CPU}} {\sl Rust, RTL Design, SystemVerilog} \hfill github.com/EDToaster/ToastCPU\\
+% Designing my own homebrew 16-bit CPU architecture, accompanied by full Application Binary Interface specification. A custom assembler language, high level stack-concatenative language, FPGA implementation, and a faster-than-realtime Rust emulator were created for efficient debugging and compilation.\\
+% \vspace*{2mm}
+% {\textbf{AWS - Custom Termination Policies}} {\sl EC2 AutoScaling, Lambda, IAM} \hfill go.aws/3HN1Bnc\\
+% Designed and created a system that allows customers of EC2 AutoScaling to dictate which instances should be prioritized for termination. Through integration with customer\textquotesingle{}s defined Lambda functions, EC2 AutoScaling is able to more effectively prioritize instances based on workloads running on customer\textquotesingle{}s instances, or other customer-defined metrics.\\
+% \vspace*{2mm}
+% {\textbf{UofT Map}} {\sl Android, Google maps API, Java} \hfill bit.ly/UofTMapApp\\
+% Developed a University of Toronto campus map, which integrates data on various building locations, restaurants, parking and emergency services. After a successful launch, we reached \#2 Trending on Maps and Navigation within a day. So far we have exceeded 5000 downloads over 6 years.\\
+% \vspace*{2mm}
+
+
+
+
+\end{document}
