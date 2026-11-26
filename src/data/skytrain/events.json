@@ -1252,5 +1252,107 @@
       "tl-current-alerts",
       "tl-canada-alert-mirror"
     ]
+  },
+  {
+    "id": "newton-minister-mandate-nov24",
+    "published": "2026-11-24",
+    "effective": "2026-11-24",
+    "firstSeen": "2026-11-26T12:07:47Z",
+    "title": "B.C. directs its transportation minister to advance SkyTrain to Newton",
+    "summary": "Premier Lorne Doerkson asked Transportation Minister Trevor Halford to work with Surrey, TransLink and the federal government on the extension. The letter gives no construction budget or start date.",
+    "projects": [
+      "newton"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "newton-mandate-nov24",
+      "bc-mandates-release-nov24"
+    ]
+  },
+  {
+    "id": "industrial-avenue-nov26-postponed",
+    "published": "2026-11-25",
+    "effective": null,
+    "firstSeen": "2026-11-26T12:05:53Z",
+    "title": "November 26 track work on Industrial Avenue postponed",
+    "summary": "Crews postponed the concrete pour and track installation that would have closed access to 203 Street on Thursday. The project office has yet to set a new date.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:willowbrook~langley-city-centre"
+    ],
+    "sources": [
+      "industrial-nov25-postponement"
+    ],
+    "corrects": "industrial-avenue-track-work-nov26"
+  },
+  {
+    "id": "fleetwood-flyer-revised-removal-hours",
+    "published": "2026-11-25",
+    "effective": "2026-11-25",
+    "firstSeen": "2026-11-26T12:05:52Z",
+    "title": "New hours for taking down the Fleetwood Flyer",
+    "summary": "Crews scheduled overnight disassembly east of 152 Street from 10 p.m. November 25 to 7 a.m. December 2. Fraser Highway will carry eastbound through traffic only from 152 Street to 88 Avenue, first from 10 p.m. Thursday to 5 a.m. Friday, then from 10 p.m. Friday to 5 a.m. Monday, November 30.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:152-street~fleetwood"
+    ],
+    "sources": [
+      "flyer-revised-nov25"
+    ],
+    "corrects": "fleetwood-flyer-removal-window"
+  },
+  {
+    "id": "highway10-langley-launcher-overnight",
+    "published": "2026-11-25",
+    "effective": "2026-11-28",
+    "firstSeen": "2026-11-26T12:05:53Z",
+    "title": "Langley Launcher guideway work to close Highway 10 overnight",
+    "summary": "Crews scheduled overnight guideway work east of Willowbrook from November 28 to December 11. Highway 10 between Fraser Highway and 200 Street will narrow to one lane each way at night starting December 2, with full closures from midnight to 4 a.m. during the December 8 to 11 work window.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:willowbrook~langley-city-centre"
+    ],
+    "sources": [
+      "langley-launcher-highway10"
+    ]
+  },
+  {
+    "id": "skytrain-winter-equipment-2026",
+    "published": "2026-11-25",
+    "effective": null,
+    "firstSeen": "2026-11-26T12:05:53Z",
+    "title": "TransLink readies four de-icing trains for winter",
+    "summary": "Four trains are ready to spray de-icer on the power rails. Platform crews have 77 hockey sticks to clear ice and snow from train doors, and trains may run overnight to keep snow off the guideway.",
+    "projects": [
+      "network"
+    ],
+    "lines": [],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "tl-winter-2026"
+    ]
   }
 ]

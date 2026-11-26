@@ -508,5 +508,41 @@
     "publisher": "TransLink",
     "label": "Station elevator replacement schedules",
     "authority": true
+  },
+  "industrial-nov25-postponement": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261125-Traffic-Update-Industrial-Ave.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Industrial Avenue postponement, November 25",
+    "authority": true
+  },
+  "flyer-revised-nov25": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261125-Traffic-Update-152-Street.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Revised gantry removal hours at 152 Street",
+    "authority": true
+  },
+  "langley-launcher-highway10": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261123-Traffic-Update-at-Fraser-Highway-and-Highway-10-TIC.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Highway 10 guideway work and closure map",
+    "authority": true
+  },
+  "newton-mandate-nov24": {
+    "url": "https://www2.gov.bc.ca/assets/gov/government/ministries-organizations/premier-cabinet-mlas/minister-letter/mandate_letter_trevor_halford.pdf",
+    "publisher": "Province of B.C.",
+    "label": "Trevor Halford’s November 24 mandate letter",
+    "authority": true
+  },
+  "bc-mandates-release-nov24": {
+    "url": "https://archive.news.gov.bc.ca/releases/news_releases_2026-2030/2026PREM0072-001146.htm",
+    "publisher": "Office of the Premier",
+    "label": "Release of the November 24 mandate letters",
+    "authority": true
+  },
+  "tl-winter-2026": {
+    "url": "https://www.translink.ca/news/2026/november/from%2012000%20tires%20to%2077%20hockey%20sticks%20translink%20gears%20up%20for%20winter",
+    "publisher": "TransLink",
+    "label": "SkyTrain winter equipment and operating plans",
+    "authority": true
   }
 }
