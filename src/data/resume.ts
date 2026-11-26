@@ -25,14 +25,22 @@ export type Stat = { value: string; label: string; where: string };
 export const stats: Stat[] = [
   { value: "125B+", label: "catalog updates ingested daily", where: "Instacart" },
   { value: "10B+", label: "Postgres queries served daily", where: "Instacart" },
-  { value: "$2.5M", label: "per year in infra cost removed", where: "Instacart + AWS" },
+  { value: "$2.5M", label: "per year in infra cost removed", where: "Instacart" },
   { value: "80%", label: "fewer high-severity events in a year", where: "AWS" },
 ];
 
 export const skills = ["Go", "Rust", "Java", "Kotlin", "SQL", "C / C++", "Python", "Ruby", "Verilog", "Postgres", "AWS", "EC2 Auto Scaling"];
 
 export const roles: Role[] = [
-  { period: "Nov 2026", company: "Perplexity AI", logo: "perplexity", title: "Member of Technical Staff", upcoming: true },
+  {
+    period: "Nov 2026",
+    company: "Perplexity AI",
+    logo: "perplexity",
+    title: "Member of Technical Staff",
+    location: "Vancouver, BC",
+    summary: "Creating and optimizing infrastructure powering all of Perplexity",
+    current: true,
+  },
   {
     period: "2025 – 2026",
     company: "Instacart",
