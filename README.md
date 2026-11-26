@@ -11,19 +11,23 @@ Needs Node 22.22+ (see `.nvmrc`).
 ```sh
 npm install
 npm run dev      # http://localhost:4321
-npm run build    # astro check + static build into dist/
+npm run build    # resume PDF + HTML, astro check, static build into dist/
 ```
+
+The build also needs the [resume tools](#resume). `npm run dev` starts without
+them and leaves the resume out.
 
 ## Layout
 
 ```
 src/
-  pages/            routes: / (intro, work, education, projects), /games, /games/[slug], /demos, /demos/[slug],
-                    /skytrain, /gta6-pc, 404
+  pages/            routes: / (intro, work, education, projects), /resume, /games, /games/[slug], /demos,
+                    /demos/[slug], /skytrain, /gta6-pc, 404
   layouts/Base.astro
   components/       Header, Footer, Icon, EntryList
   styles/           tokens.css (all colours/sizes, light only), global.css
-  data/             site.ts (name, hero links), resume.ts (work, education), projects.ts
+  data/             site.ts (name, hero links), resume.ts (work, education), projects.ts,
+                    resume.tex (source of /resume and /resume.pdf)
   content/games/    one .md per game: frontmatter = listing metadata, body = about text
   content/demos/    same shape as games; set `href` for demos hosted elsewhere
   games/<slug>/     Game.astro + logic.ts for each game
@@ -31,6 +35,7 @@ src/
   data/<tracker>/   JSON record behind a tracker, refreshed daily by a Perplexity task
 scripts/<tracker>/  validator, guard and tests for that record
 docs/<tracker>/     RUNBOOK.md (how the daily check works) and registry.json (what it reads)
+scripts/resume/     build.mjs + filter.lua: resume.tex -> PDF and HTML
 public/             favicon, CNAME, static files
 docs/DESIGN.md      visual rules; read before changing styles
 ```
@@ -41,6 +46,38 @@ docs/DESIGN.md      visual rules; read before changing styles
 2. `src/games/<slug>/Game.astro` (keep game logic in a DOM-free `logic.ts`).
 3. It shows up at `/games/<slug>` and in the listings. The build fails if
    either half is missing.
+
+## Resume
+
+`src/data/resume.tex` is the only copy of the resume. Edit it (pasting from
+Overleaf is fine) and `npm run resume` rebuilds both outputs, neither of which
+is committed:
+
+| Output | Built with | Served at |
+| --- | --- | --- |
+| `public/resume.pdf` | pdfLaTeX, the engine Overleaf uses | `/resume.pdf` |
+| `src/generated/resume.html` | Pandoc + `scripts/resume/filter.lua` | `/resume`, inside the site layout |
+
+`npm run build` runs this first and fails if either tool is missing. CI and
+the deploy install both from `.github/actions/resume-tools`.
+
+Tools to install locally:
+
+- **Pandoc** 3.x: `brew install pandoc`, or `apt install pandoc`.
+- **A TeX engine.** pdfLaTeX gives the same PDF as CI: MacTeX on macOS, or on
+  Debian/Ubuntu the package list in `.github/actions/resume-tools/action.yml`.
+  Without it the script falls back to [Tectonic](https://tectonic-typesetting.github.io)
+  (`brew install tectonic`), a single binary that fetches LaTeX packages on
+  first use. Its page breaks the same lines, but it sets Latin Modern instead
+  of Computer Modern and stores ligatures such as "ffi" as one character, so
+  copied text differs. Fine for a preview; the deployed PDF always comes from
+  pdfLaTeX.
+
+The HTML keeps whatever the LaTeX says. `filter.lua` maps layout to structure
+(`\hrulefill` under a line makes it a section heading, `\hfill` splits a line
+into left and right) and `src/pages/resume.astro` styles the result, so new
+sections, jobs and bullets need no code changes. The home page's work section
+still reads `resume.ts`, not this file.
 
 ## Deploy
 

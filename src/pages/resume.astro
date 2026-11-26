@@ -1,0 +1,142 @@
+---
+/*
+  The resume as a web page. The body is src/generated/resume.html, which
+  scripts/resume/build.mjs compiles from src/data/resume.tex alongside the
+  PDF. This page only gives that fragment the site's type and spacing.
+*/
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import Base from "~/layouts/Base.astro";
+import Icon from "~/components/Icon.astro";
+import { site, resume } from "~/data/site";
+
+// A glob, so a checkout that has not built the resume yet still starts in dev.
+const built = import.meta.glob<string>("../generated/resume.html", { query: "?raw", import: "default", eager: true });
+const html = Object.values(built)[0];
+if (!html && import.meta.env.PROD) {
+  throw new Error("src/generated/resume.html is missing. Run `npm run resume` (or `npm run build`) first.");
+}
+---
+
+<Base title="Resume" description={`Resume of ${site.name}: work experience, education and skills, with a PDF download.`} wide>
+  <div class="bar">
+    <p class="section-label">Resume</p>
+    <a class="button" href={resume.pdf} download={resume.filename}>
+      <Icon icon={faDownload} /> Download PDF
+    </a>
+  </div>
+  {
+    html ? (
+      <article class="resume" set:html={html} />
+    ) : (
+      <p class="page-intro">
+        The resume has not been built in this checkout. Run <code>npm run resume</code>; the README lists the tools it needs.
+      </p>
+    )
+  }
+</Base>
+
+<style>
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .bar .section-label {
+    margin-bottom: 0;
+  }
+
+  /* The fragment is plain generated HTML, so everything below is :global. */
+  .resume {
+    font-size: var(--text-md);
+    line-height: 1.55;
+  }
+  .resume :global(h1) {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: var(--text-h1);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: var(--space-2);
+  }
+  .resume :global(.center p) {
+    color: var(--muted);
+  }
+  .resume :global(a) {
+    color: var(--accent);
+    transition: opacity 0.15s;
+  }
+  .resume :global(a:hover) {
+    opacity: 0.75;
+  }
+  /* The source rules off each section; here that is a section label over a hairline. */
+  .resume :global(h2) {
+    margin: var(--space-5) 0 var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-label);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .resume :global(strong) {
+    font-weight: 600;
+  }
+  /* The body font ships upright only; the source's italics become the muted secondary tone. */
+  .resume :global(em) {
+    font-style: normal;
+    color: var(--muted);
+  }
+  .resume :global(.smallcaps) {
+    font-variant: small-caps;
+  }
+
+  /* A line the source spreads with \hfill: name on the left, place or dates on the right. */
+  .resume :global(.resume-row) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 var(--space-3);
+  }
+  .resume :global(.resume-row > span:first-child) {
+    font-size: var(--text-base);
+  }
+  .resume :global(.resume-row > span + span) {
+    color: var(--muted);
+  }
+  /* A row that follows body text starts the next entry. */
+  .resume :global(:not(.resume-row, h2) + .resume-row) {
+    margin-top: var(--space-4);
+  }
+  .resume :global(p + p) {
+    margin-top: var(--space-2);
+  }
+
+  .resume :global(ul) {
+    list-style: disc;
+    padding-left: 1.1rem;
+    margin-top: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .resume :global(li::marker) {
+    color: var(--border-strong);
+  }
+
+  .resume :global(table) {
+    border-collapse: collapse;
+  }
+  .resume :global(td) {
+    padding: 0.15rem 0;
+    vertical-align: top;
+  }
+  .resume :global(td:first-child) {
+    padding-right: var(--space-3);
+    color: var(--muted);
+    white-space: nowrap;
+  }
+</style>

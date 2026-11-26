@@ -33,6 +33,11 @@ to inline SVG at build time (`src/components/Icon.astro`).
   border darkens on hover. Tags are small grey pills.
 - **Links:** blue for inline links, muted-to-black for nav and icon links.
   Hover is a colour or opacity change, nothing that moves.
+- **Buttons:** `.button`, for actions such as the resume PDF download. Same
+  1px border and 6px radius as the boxes, no fill; border darkens on hover.
+- **Resume page:** `/resume` is generated from LaTeX, so it is styled by
+  element, not by class: the name as a page title, each ruled section as a
+  section label over a hairline, right-hand places and dates in muted.
 
 ## Avoid
 

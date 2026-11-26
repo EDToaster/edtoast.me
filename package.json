@@ -6,8 +6,9 @@
     "node": ">=22.22.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build",
+    "resume": "node scripts/resume/build.mjs",
+    "dev": "npm run resume -- --optional && astro dev",
+    "build": "npm run resume && astro check && astro build",
     "preview": "astro preview",
     "check": "astro check"
   },
