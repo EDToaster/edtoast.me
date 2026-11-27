@@ -46,6 +46,12 @@
       "checked": "2026-11-27T13:21:05Z",
       "lastOK": "2026-11-27T13:21:05Z",
       "note": "Read Bitdefender’s 26 November report on two fake repositories, plus the earlier NordVPN kit and 355-domain reports."
+    },
+    "gdk": {
+      "ok": true,
+      "checked": "2026-11-27T23:05:22Z",
+      "lastOK": "2026-11-27T23:05:22Z",
+      "note": "Searched press, GitHub and both trackers for a leak of Microsoft’s console kit. Found one unsourced Reddit post and nothing that confirms it. Read DexNom’s public code, the November notices and the SDK rules in XCL, VIctory, OpenEra and BetterXen."
     }
   },
   "gaps": [

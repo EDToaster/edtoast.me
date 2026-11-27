@@ -40,5 +40,11 @@
     "name": "Fakes and malware",
     "url": "https://www.techradar.com/vpn/vpn-privacy-security/",
     "check": "Search for new reports of fake GTA VI PC downloads, installers or emulators from security vendors and press."
+  },
+  {
+    "id": "gdk",
+    "name": "Xbox development kit leak claim",
+    "url": "https://github.com/microsoft/GDK",
+    "check": "Search press and Microsoft’s own channels for a leak of the GDK with Xbox Extensions, list the month’s folder in github/dmca for a notice about kit files, and re-read the SDK rules in the READMEs of XCL, VIctory and the leading forks. The claim’s status changes only on a press report or a published notice, never on a forum post or a tracker. Never open, download or link to the files, the post that announced them or any place they are said to be."
   }
 ]

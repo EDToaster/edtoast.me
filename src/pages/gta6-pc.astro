@@ -4,6 +4,7 @@ import "~/demos/gta6-pc/tracker.css";
 import {
   status, routes, sources, events, history, health, checks, running, stopped, today, project, route,
   stages, lastStage, states, evidence, eventKinds, consoleFps, dayText, shortDay, timeText, count,
+  gdk, gdkStates, gdkEffects,
 } from "~/demos/gta6-pc/model";
 
 const best = today.fpsProject ? project(today.fpsProject)! : undefined;
@@ -15,6 +16,7 @@ const routeStats = routes.map((r) => {
   return { ...r, count: mine.length, stage: Math.max(0, ...mine.map((p) => p.stage)), fps: Math.max(0, ...mine.filter((p) => p.visibility === "open").map((p) => p.fps?.value ?? 0)) };
 });
 const days = [...new Set(events.map((e) => e.date))];
+const kitCheck = checks.find((c) => c.id === "gdk")!;
 const outcomes: Record<string, string> = {
   Seeded: "This was the first full check.",
   Updated: "The page changed on this check.",
@@ -127,6 +129,54 @@ const path = measured.map((h, i) => (i ? "H" + x(h.date).toFixed(1) + "V" : "M" 
         </li>
       ))}
     </ul>
+  </section>
+
+  <section id="gdk" class="kit" aria-labelledby="gdk-title">
+    <div class="route-head">
+      <h2 id="gdk-title">Did Microsoft’s Xbox dev kit leak?</h2>
+      <span class="tag" data-status={gdk.status}>{gdkStates[gdk.status]}</span>
+    </div>
+    <p class="lede">{gdk.summary}</p>
+    <div class="cols">
+      <div>
+        <h3>The claim</h3>
+        {gdk.claim.text.map((t) => <p>{t}</p>)}
+        <p class="cites">{cite(gdk.claim.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+      </div>
+      <div>
+        <h3>What the kit is</h3>
+        {gdk.kit.text.map((t) => <p>{t}</p>)}
+        <p class="cites">{cite(gdk.kit.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+      </div>
+    </div>
+    <h3 class="sub">What it would change for GTA VI</h3>
+    <table class="effects">
+      <thead><tr><th scope="col">Part of the job</th><th scope="col">Today</th><th scope="col">With the kit</th><th scope="col">Effect</th></tr></thead>
+      <tbody>
+        {gdk.effects.map((e) => (
+          <tr>
+            <th scope="row">{e.area}</th>
+            <td data-label="Today">{e.today}</td>
+            <td data-label="With the kit">{e.withKit} <span class="cites inline">{cite(e.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label + "\u00a0↗"}</a>)}</span></td>
+            <td><span class="tag" data-effect={e.effect}>{gdkEffects[e.effect]}</span></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="cols">
+      <div>
+        <h3>Would the projects use it?</h3>
+        {gdk.stances.map((s) => (
+          <p><b>{s.project ? <a class="link" href={"#" + s.project}>{s.name}</a> : s.name}.</b> {s.text} <span class="cites inline">{cite(s.sources).map((c) => <a href={c.url} title={c.publisher}>{c.label + "\u00a0↗"}</a>)}</span></p>
+        ))}
+      </div>
+      <div>
+        <h3>What using it would cost</h3>
+        {gdk.risks.text.map((t) => <p>{t}</p>)}
+        <p class="cites">{cite(gdk.risks.sources).map((s) => <a href={s.url} title={s.publisher}>{s.label} ↗</a>)}</p>
+      </div>
+    </div>
+    <p class="muted">Checked <time datetime={kitCheck.checked}>{timeText(kitCheck.checked)}</time>. The ratings are this page’s reading of what the projects have measured.</p>
   </section>
 
   <section id="projects" aria-labelledby="projects-title">

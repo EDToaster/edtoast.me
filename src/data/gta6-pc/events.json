@@ -398,5 +398,20 @@
     "sources": [
       "tweaktown-multiplayer"
     ]
+  },
+  {
+    "id": "gdk-leak-claim",
+    "date": "2026-11-27",
+    "firstSeen": "2026-11-27T23:05:22Z",
+    "kind": "leak",
+    "title": "A Reddit post claims Microsoft’s Xbox development kit has leaked",
+    "summary": "The post says the October 2026 console kit is circulating and will speed up the ports. No outlet or tracker confirms it, and the repository it points to holds no kit files. A real leak would mostly help the Xbox layers draw the game correctly, and the limits on frame rate sit on the PC side.",
+    "projects": [],
+    "sources": [
+      "portwatch",
+      "race-tracker",
+      "repo-dexnom",
+      "ms-gdk"
+    ]
   }
 ]

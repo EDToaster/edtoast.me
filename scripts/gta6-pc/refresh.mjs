@@ -6,7 +6,7 @@ import { pathToFileURL } from "node:url";
 import { snapshot, lastStage, live } from "../../src/demos/gta6-pc/derive.ts";
 
 export const dir = "src/data/gta6-pc/";
-export const names = ["status", "routes", "projects", "events", "history", "sources", "health"];
+export const names = ["status", "routes", "projects", "events", "history", "sources", "health", "gdk"];
 const file = (n) => dir + n + ".json";
 const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 export const load = () => Object.fromEntries(names.map((n) => [n, read(file(n))]));
@@ -28,6 +28,10 @@ const eventKinds = ["port", "takedown", "official", "leak", "safety"];
 const projectStates = ["active", "quiet", "shut-down", "offline"];
 const evidenceLevels = ["self-reported", "tracker", "press"];
 const hostNames = ["windows", "linux", "macos"];
+// The claim that Microsoft's console kit leaked, and what it would change.
+const kitStates = ["unconfirmed", "confirmed", "debunked"];
+const kitEffects = ["accuracy", "small", "none"];
+const kitFields = ["status", "confirmedBy", "summary", "claim", "kit", "effects", "stances", "risks"];
 // Only these publishers can say that a PC version exists.
 const authority = (u) => /(^|\.)(rockstargames\.com|take2games\.com|store\.steampowered\.com|store\.epicgames\.com)$/.test(new URL(u).hostname);
 // The page links to reporting and to source code. It never links to game files, builds or chat servers.
@@ -51,7 +55,7 @@ const plain = (where, ...values) => {
 };
 
 export function validate(db) {
-  const { status, routes, projects, events, history, sources, health } = db;
+  const { status, routes, projects, events, history, sources, health, gdk } = db;
   for (const s of Object.values(sources)) sourceOK(s);
   const known = (ids, where) => demand(Array.isArray(ids) && ids.every((k) => Object.hasOwn(sources, k)), "unknown source in " + where);
   const cited = (ids, where) => { known(ids, where); demand(ids.length > 0, "no source for " + where); };
@@ -128,6 +132,16 @@ export function validate(db) {
   demand(Number.isFinite(status.console.fps) && ymd(status.console.launched) && ymd(status.updated), "invalid console facts");
   plain("status", status.answer, status.summary, official.note, official.window, status.unofficial.eta, status.unofficial.caveat, status.safety.note);
 
+  demand(kitStates.includes(gdk.status) && ymd(gdk.updated) && text(gdk.summary), "invalid kit claim");
+  known(gdk.confirmedBy, "kit claim");
+  // A forum post or a tracker cannot confirm a leak. A press report or a published notice can.
+  demand((gdk.status === "confirmed") === (gdk.confirmedBy.length > 0) && kindsOf(gdk.confirmedBy).every((k) => k === "press" || k === "primary"), "a confirmed kit leak needs a press report or a published notice, and nothing else does");
+  for (const k of ["claim", "kit", "risks"]) { cited(gdk[k].sources, "kit " + k); demand(Array.isArray(gdk[k].text) && gdk[k].text.length > 0 && gdk[k].text.every(text), "invalid kit " + k); }
+  for (const e of gdk.effects) { cited(e.sources, "kit effect " + e.area); demand(text(e.area) && text(e.today) && text(e.withKit) && kitEffects.includes(e.effect), "invalid kit effect " + e.area); }
+  for (const s of gdk.stances) { cited(s.sources, "kit stance " + s.name); demand(text(s.name) && text(s.text) && (s.project === null || projectIDs.has(s.project)), "invalid kit stance " + s.name); }
+  demand(gdk.effects.length > 0, "the kit section needs its table");
+  plain("kit claim", gdk.summary, gdk.claim.text, gdk.kit.text, gdk.risks.text, gdk.effects.flatMap((e) => [e.area, e.today, e.withKit]), gdk.stances.flatMap((s) => [s.name, s.text]));
+
   demand(instant(health.seededAt) && instant(health.lastAttempt) && (health.lastSuccessful === null || instant(health.lastSuccessful)) && ymd(health.coverageStart), "invalid collection time");
   demand(Array.isArray(health.gaps) && health.gaps.every(text), "invalid notes");
   return db;
@@ -147,6 +161,7 @@ function accountable(before, after, added) {
   const o = before.status.official, n = after.status.official;
   if (o.announced !== n.announced || o.released !== n.released) demand(added.some((e) => e.kind === "official" && e.sources.some((k) => after.sources[k].kind === "official")), "official status changed without an official history entry");
   if (before.status.verdict !== after.status.verdict) demand(added.length > 0, "verdict changed without a history entry");
+  if (before.gdk.status !== after.gdk.status) demand(added.some((e) => e.kind === "leak"), "kit claim changed status without a leak entry in the history");
 }
 
 export function merge(old, candidate) {
@@ -202,6 +217,11 @@ export function merge(old, candidate) {
     demand(!("updated" in top) && !("console" in top), "status dates and console facts are not edited by a daily run");
     const next = { ...db.status, ...top, official: { ...db.status.official, ...official }, unofficial: { ...db.status.unofficial, ...unofficial }, safety: { ...db.status.safety, ...safety } };
     if (!equal(next, db.status)) { db.status = { ...next, updated: day }; edits++; }
+  }
+  if (candidate.gdk) {
+    demand(Object.keys(candidate.gdk).every((k) => kitFields.includes(k)), "field cannot be edited on the kit claim");
+    const next = { ...db.gdk, ...structuredClone(candidate.gdk) };
+    if (!equal(next, db.gdk)) { db.gdk = { ...next, updated: day }; edits++; }
   }
   accountable(old, db, added);
 

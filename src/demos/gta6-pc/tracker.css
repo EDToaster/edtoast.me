@@ -53,6 +53,20 @@
 .pcyet .route-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.6rem; }
 .pcyet .route-head .link { margin-left: auto; font-size: var(--text-sm); }
 
+.pcyet .kit .route-head { margin-bottom: var(--space-2); }
+.pcyet .kit h2 { margin-bottom: 0; }
+.pcyet .kit .lede { font-size: 1rem; }
+.pcyet .kit .tag[data-status="unconfirmed"], .pcyet .effects .tag[data-effect="none"] { background: none; box-shadow: inset 0 0 0 1px var(--border-strong); }
+.pcyet .kit .sub { margin: var(--space-4) 0 var(--space-2); }
+.pcyet .kit .cites.inline a { white-space: normal; }
+.pcyet .kit > .muted { margin-top: var(--space-3); max-width: 46rem; }
+.pcyet .effects { table-layout: fixed; }
+.pcyet .effects th:first-child { width: 17%; }
+.pcyet .effects th:last-child { width: 6.5rem; }
+.pcyet .effects td, .pcyet .effects tbody th { white-space: normal; min-width: 0; }
+.pcyet .effects tbody th { font-weight: 600; }
+.pcyet .effects td:last-child { padding-right: 0; }
+
 .pcyet .filters { display: flex; flex-wrap: wrap; align-items: end; gap: 0.6rem 1rem; margin-bottom: var(--space-2); }
 .pcyet .filters label { display: flex; flex-direction: column; gap: 0.2rem; font-size: var(--text-xs); color: var(--muted); }
 .pcyet .filters .check { flex-direction: row; align-items: center; gap: 0.4rem; font-size: var(--text-sm); color: var(--text); min-height: 2.2rem; }
@@ -121,6 +135,16 @@
   .pcyet .day { grid-template-columns: minmax(0, 1fr); }
   .pcyet .day h3 { margin-bottom: 0.5rem; }
   .pcyet .day article { grid-column: 1; }
+}
+@media (max-width: 760px) {
+  .pcyet .effects thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .pcyet .effects, .pcyet .effects tbody, .pcyet .effects th, .pcyet .effects td { display: block; width: auto; }
+  .pcyet .effects tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.35rem 0.75rem; padding: 0.8rem 0; border-top: 1px solid var(--border); }
+  .pcyet .effects th, .pcyet .effects td { border: 0; padding: 0; }
+  .pcyet .effects th:first-child, .pcyet .effects th:last-child { width: auto; }
+  .pcyet .effects td:last-child { grid-column: 2; grid-row: 1; }
+  .pcyet .effects td[data-label] { grid-column: 1 / -1; }
+  .pcyet .effects td[data-label]::before { content: attr(data-label); display: block; font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 }
 @media (max-width: 600px) {
   .pcyet .days thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }

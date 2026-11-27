@@ -450,5 +450,64 @@
     "label": "Bitdefender on fake port repositories",
     "kind": "press",
     "published": "2026-11-26"
+  },
+  "ms-gdk": {
+    "url": "https://github.com/microsoft/GDK",
+    "publisher": "Microsoft",
+    "label": "Microsoft’s GDK repository",
+    "kind": "repo"
+  },
+  "xbox-nda-directory": {
+    "url": "https://docs.xbox.com/nda/nda-topic-directory",
+    "publisher": "Microsoft",
+    "label": "Microsoft’s restricted document list",
+    "kind": "primary",
+    "published": "2026-11-11"
+  },
+  "wforum-gameos": {
+    "url": "https://windowsforum.com/news/alleged-gta-6-xbox-executable-leak-no-playable-windows-port-and-malware-risks.453778/",
+    "publisher": "WindowsForum",
+    "label": "WindowsForum on the restricted Game OS documents",
+    "kind": "press",
+    "published": "2026-11-23"
+  },
+  "pcgh-leonida": {
+    "url": "https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/GTA-6-for-PC-AI-project-Leonida-taken-offline-1560943/",
+    "publisher": "PC Games Hardware",
+    "label": "PC Games Hardware on Leonida’s loader",
+    "kind": "press",
+    "published": "2026-11-24"
+  },
+  "dmca-november": {
+    "url": "https://github.com/github/dmca/tree/master/2026/11",
+    "publisher": "GitHub DMCA repository",
+    "label": "GitHub’s November takedown notices",
+    "kind": "primary"
+  },
+  "windowscentral-subpoena": {
+    "url": "https://www.windowscentral.com/gaming/microsoft-has-been-served-a-court-subpoena-by-take-two-over-grand-theft-auto-6",
+    "publisher": "Windows Central",
+    "label": "Windows Central on Take-Two’s subpoena to Microsoft",
+    "kind": "press",
+    "published": "2026-08-21"
+  },
+  "betterxen-483": {
+    "url": "https://github.com/MacosPorters/betterxen/issues/483",
+    "publisher": "BetterXen",
+    "label": "BetterXen thread on console storage",
+    "kind": "primary",
+    "published": "2026-11-26"
+  },
+  "repo-openera": {
+    "url": "https://github.com/PlutonusDev/OpenEra",
+    "publisher": "GitHub",
+    "label": "OpenEra repository",
+    "kind": "repo"
+  },
+  "repo-betterxen": {
+    "url": "https://github.com/MacosPorters/betterxen",
+    "publisher": "GitHub",
+    "label": "BetterXen repository",
+    "kind": "repo"
   }
 }

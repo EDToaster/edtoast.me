@@ -34,7 +34,7 @@ test("replaying a run adds each entry and each day's snapshot once", () => {
 test("source failures keep the record and the last successful checkpoint", () => {
   const good = merge(initial, input());
   const bad = merge(good, { checkedAt: "2028-01-05T15:00:00Z", checks: checks(false) });
-  for (const k of ["events", "projects", "sources", "status", "routes"]) assert.deepEqual(bad[k], good[k]);
+  for (const k of ["events", "projects", "sources", "status", "routes", "gdk"]) assert.deepEqual(bad[k], good[k]);
   assert.equal(bad.health.lastSuccessful, now);
   assert.equal(bad.health.sources.press.lastOK, now);
   assert.equal(bad.health.outcome, "Sources could not be checked");
@@ -100,6 +100,23 @@ test("downloads, chat servers and em dashes are refused", () => {
   assert.throws(() => merge(initial, input({ events: [event("pasted", { summary: "Get it at https://example.com/build today." })] })), /link written into the text/);
   assert.throws(() => merge(initial, input({ events: [event("unsourced", { sources: [] })] })), /no source/);
   assert.throws(() => merge(initial, input({ events: [event("orphan", { projects: ["not-a-project"] })] })), /unknown project/);
+});
+
+test("the kit leak stays unconfirmed until press or a published notice says otherwise", () => {
+  const leak = event("kit-confirmed", { kind: "leak", sources: ["pcgamer-leak"] });
+  const claim = (confirmedBy, events = [leak]) => input({ gdk: { status: "confirmed", confirmedBy }, events });
+  assert.throws(() => merge(initial, claim([])), /confirmed kit leak needs a press report/);
+  assert.throws(() => merge(initial, claim(["portwatch"])), /confirmed kit leak needs a press report/);
+  assert.throws(() => merge(initial, claim(["pcgamer-leak"], [])), /kit claim changed status without a leak entry/);
+  assert.throws(() => merge(initial, claim(["pcgamer-leak"], [event("about-a-port")])), /kit claim changed status without a leak entry/);
+  const done = merge(initial, claim(["pcgamer-leak"]));
+  assert.equal(done.gdk.status, "confirmed");
+  assert.equal(done.gdk.updated, day);
+  assert.deepEqual(done.gdk.effects, initial.gdk.effects);
+  assert.equal(merge(initial, input()).gdk.updated, initial.gdk.updated);
+  assert.throws(() => merge(initial, input({ gdk: { updated: "2020-01-01" } })), /cannot be edited on the kit claim/);
+  assert.throws(() => merge(initial, input({ gdk: { summary: "The files are at https://example.com/kit today." } })), /link written into the text/);
+  assert.throws(() => merge(initial, input({ gdk: { risks: { text: ["A risk."], sources: [] } } })), /no source/);
 });
 
 test("the daily snapshot counts public code only for the frame rate", () => {

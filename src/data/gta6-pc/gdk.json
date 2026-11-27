@@ -1,0 +1,153 @@
+{
+  "status": "unconfirmed",
+  "confirmedBy": [],
+  "updated": "2026-11-27",
+  "summary": "A Reddit post on 27 November says Microsoft’s confidential Xbox development kit has leaked and will speed up the GTA VI ports. Nobody has confirmed a leak. If the kit is out, it would help the Xbox layers draw the game correctly with less guesswork, and it would do little for frame rates. The answer at the top of this page stays the same.",
+  "claim": {
+    "text": [
+      "The post went up on r/pcmasterrace at 22:09 UTC with a screenshot of a file list for the October 2026 kit and a chart rating what a leak would fix. Its author named no source beyond a chat server and told readers to look in DexNom’s fork of VIctory. Replies called the post unsourced and the chart machine-made. This page does not link to the post, because threads like it collect links to files.",
+      "No outlet has reported a leak and Microsoft has said nothing. Neither PortWatch VI nor GTA 6 PC Race mentions one. GitHub’s published takedown notices stop at 24 November, so a notice about kit files would not show there yet. DexNom’s public code holds no Microsoft headers, kit files or confidentiality notices, and the commit named in the replies publishes the fork’s own Radeon code."
+    ],
+    "sources": [
+      "dmca-november",
+      "portwatch",
+      "race-tracker",
+      "repo-dexnom"
+    ]
+  },
+  "kit": {
+    "text": [
+      "Microsoft gives away a public GDK that builds Windows games. Console work needs the GDK with Xbox Extensions, or GDKX, which goes only to licensed studios under a confidentiality agreement. Microsoft says the two share about 80% of their interfaces and differ mainly in how a game talks to the Xbox graphics driver and shader compiler.",
+      "The restricted documentation covers how the console’s Direct3D 12 differs from the PC’s, graphics memory on Series X|S, console ray tracing, the shader compiler and texture layouts. Microsoft lists those titles in public and keeps the pages behind the agreement, so the layers replace the kit’s runtime pieces with code written from watching the game. The kit covers Xbox only and leaves the PS5 routes untouched."
+    ],
+    "sources": [
+      "ms-gdk",
+      "xbox-nda-directory",
+      "wforum-gameos",
+      "pcgh-leonida"
+    ]
+  },
+  "effects": [
+    {
+      "area": "Console graphics calls",
+      "today": "Layers work out the console-only parts of Direct3D 12 from what the game does. PortWatch reports that SCARAB found the console library uses the same 28 interface IDs as the PC’s, so only the extensions need writing. Public documents leave gaps: BetterXen found function signatures for console storage in them and no interface IDs.",
+      "withKit": "Headers and the restricted differences guide would give exact layouts and behaviour, which means fewer wrong guesses and shorter bug hunts.",
+      "effect": "accuracy",
+      "sources": [
+        "portwatch",
+        "betterxen-483",
+        "xbox-nda-directory"
+      ]
+    },
+    {
+      "area": "GPU programs",
+      "today": "The game ships its shaders compiled for the console’s GPU, and each layer translates them with its own tool. VIctory handles all but about 300 of 24,387.",
+      "withKit": "The console shader compiler would let a team compile test programs and compare its translator’s output against the real thing. The game’s own programs would still go through the translator.",
+      "effect": "accuracy",
+      "sources": [
+        "repo-victory",
+        "ms-gdk",
+        "xbox-nda-directory"
+      ]
+    },
+    {
+      "area": "Ray tracing",
+      "today": "The fastest builds turn it off. XCL and DexNom RayTime run the game’s own ray-tracing builder by imitating the console GPU’s data format in shaders.",
+      "withKit": "The restricted ray-tracing documents would settle questions about that format. A PC card would still have to imitate it, which is where the time goes.",
+      "effect": "accuracy",
+      "sources": [
+        "repo-xcl",
+        "repo-dexnom",
+        "xbox-nda-directory"
+      ]
+    },
+    {
+      "area": "Texture layouts",
+      "today": "Layers reimplement how the console arranges texture memory.",
+      "withKit": "AnyXboxX tried this on 24 November with Microsoft’s own layout library, supplied by the user from a kit. Its maintainer measured 5.4 to 7.1 fps with it and 5.1 to 5.6 without on an RTX 4070 SUPER, and a day later the project’s own code gave the same answers.",
+      "effect": "small",
+      "sources": [
+        "race-tracker",
+        "repo-anyxboxx"
+      ]
+    },
+    {
+      "area": "One memory on console, two on PC",
+      "today": "The Xbox shares one pool of memory between its processor and GPU. A PC has RAM and video memory, and Kelvaroq measured about two thirds of a layer’s extra frame time going to keeping the two in step.",
+      "withKit": "Kelvaroq and XCL are engineering their way around the copying on the PC side. Documents about the console’s memory would not do that work for them.",
+      "effect": "none",
+      "sources": [
+        "repo-kelvaroq",
+        "repo-xcl"
+      ]
+    },
+    {
+      "area": "64-lane programs on GeForce",
+      "today": "Some of the game’s GPU programs expect 64 lanes at a time and GeForce cards run 32. XCL splits each into two halves, which is slower, and Vilocity drops the draws of 26 programs it cannot convert.",
+      "withKit": "A development kit does not change what the card can do.",
+      "effect": "none",
+      "sources": [
+        "repo-xcl",
+        "repo-vilocity"
+      ]
+    },
+    {
+      "area": "Processor time in the layer",
+      "today": "foxhound, the fastest open build, says one thread of the layer limits its frame rate in most scenes and needs 26 ms a frame in the lightest gameplay. A steady 30 fps allows 33 ms for everything.",
+      "withKit": "That thread is the layer’s own work of preparing each frame for a PC card. The kit has nothing that does it.",
+      "effect": "none",
+      "sources": [
+        "repo-foxhound"
+      ]
+    },
+    {
+      "area": "Game files",
+      "today": "Every build needs the leaked Xbox copy of the game, which Take-Two calls stolen.",
+      "withKit": "The kit contains no game data.",
+      "effect": "none",
+      "sources": [
+        "dmca-leonida",
+        "ms-gdk"
+      ]
+    }
+  ],
+  "stances": [
+    {
+      "name": "XCL",
+      "project": "xcl",
+      "text": "Its README says the repository holds no code, headers or binaries from the console SDK, and its contributing guide also bars copied documentation.",
+      "sources": [
+        "repo-xcl"
+      ]
+    },
+    {
+      "name": "OpenEra and BetterXen",
+      "project": null,
+      "text": "Two general Xbox layers that this page does not track. Both ban leaked SDKs, and BetterXen turns away anyone who has seen confidential Xbox material.",
+      "sources": [
+        "repo-openera",
+        "repo-betterxen"
+      ]
+    },
+    {
+      "name": "VIctory",
+      "project": "victory",
+      "text": "The project most forks build on states no rule about SDK material in its README.",
+      "sources": [
+        "repo-victory"
+      ]
+    }
+  ],
+  "risks": {
+    "text": [
+      "The kit is Microsoft’s confidential, licensed software. Take-Two has already had Leonida and 3,007 copies removed and has subpoenaed Microsoft for records that could identify the leaker. A project that copies from the kit hands Microsoft a claim of its own on top of Take-Two’s.",
+      "An archive offered as the leaked kit is the same bait as the fake launchers described below. This page will not link to the files or say where they are claimed to be."
+    ],
+    "sources": [
+      "ms-gdk",
+      "toms-takedown",
+      "windowscentral-subpoena",
+      "bitdefender-clickfix"
+    ]
+  }
+}

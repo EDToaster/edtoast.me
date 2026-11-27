@@ -11,13 +11,14 @@ This is the first rule and it has no exceptions. Fake GTA VI PC downloads carry 
 - Do not write such an address as plain text, break it up, shorten it, describe where to find it, or name the search that finds it. Do not quote a README's install steps.
 - The only links allowed are a project's repository front page, GitHub's published DMCA notices, project discussion threads, and articles from the press and from security vendors. If an article exists mainly to point readers at a download, do not cite it.
 - Never download, run, mirror or test a build or any game file yourself.
+- The same rule covers Microsoft's console development kit (the GDK with Xbox Extensions, or GDKX). Never open, download, link to or describe where to find files offered as the kit, the post that announced them, or any thread, server or repository said to hold them. Do not repeat file names, hashes or search terms for them.
 - If you are unsure whether a link counts, leave it out and describe the fact in words.
 
 The validator rejects release, archive, artifact and file links, file hosts, chat servers and addresses written into text. Passing it does not make a link safe. Read every new URL yourself before it goes in.
 
 ## Start clean
 
-Clone the repository with the connected account. Fetch `main` and note its SHA. Do not reuse a dirty checkout. Read `docs/gta6-pc/registry.json` (the seven things to check and how) and the seven files in `src/data/gta6-pc/`: `status`, `routes`, `projects`, `events`, `history`, `sources`, `health`. Read `health.json` first: `lastSuccessful` is where the search window starts.
+Clone the repository with the connected account. Fetch `main` and note its SHA. Do not reuse a dirty checkout. Read `docs/gta6-pc/registry.json` (the eight things to check and how) and the eight files in `src/data/gta6-pc/`: `status`, `routes`, `projects`, `events`, `history`, `sources`, `health`, `gdk`. Read `health.json` first: `lastSuccessful` is where the search window starts.
 
 Routine writes are limited to `src/data/gta6-pc/*.json`. The registry, this runbook, scripts, tests, page code, styles, dependencies and deployment are out of scope. Never create, edit or dispatch a workflow. The owner authorizes ordinary CI and the Pages deployment that follow a push. Never store credentials, cookies or fetched pages in the repository.
 
@@ -36,6 +37,7 @@ Routine writes are limited to `src/data/gta6-pc/*.json`. The registry, this runb
 - A repository that returns 404 or 451 becomes `offline`, with a note saying what is known. It becomes `shut-down` only when a published notice (the `github/dmca` repository) or the project's own statement says so, cited as a primary or press source. A project with no commits for 14 days becomes `quiet`. Never remove a project.
 - Every change to a project's route, state or stage needs a new event that names the project. Also write an event for a new project worth knowing about, a takedown, an official announcement, a leak that changes what is possible, a first result on a new route, or a new report of fakes. Give each event a stable ID, the UTC `date` it happened or was published, the UTC time you first saw it as `firstSeen` (an ISO instant such as `2026-11-27T13:00:00Z`, normally `checkedAt`), a `kind` (`port`, `takedown`, `official`, `leak`, `safety`), the `projects` involved and direct `sources`. Events are append-only. To correct one, add a new event.
 - The official fields change only on an announcement from Rockstar or Take-Two, or a store page they publish. `verdict` becomes `yes` only when the PC version is on sale, and `unofficial` only when a live project reaches stage 6. Reports and rumours go in `official.note` and `official.window` with their sources.
+- `gdk.json` is the section on the claim that Microsoft's console kit leaked. Its `status` is `unconfirmed`, `confirmed` or `debunked`. It becomes `confirmed` only when a named outlet reports the leak from its own checking, or Microsoft or GitHub publishes a notice about it. List those sources in `confirmedBy` and add a `leak` event. A forum post, a screenshot, a tracker or a README does not confirm it. It becomes `debunked` when press or the claim's own author shows it was false, again with a `leak` event. Each day, rewrite `claim.text` to say what was checked and what was found. Change a row in `effects` only when a project publishes a measurement or a statement that bears on it, and keep the rating (`accuracy`, `small`, `none`) tied to that evidence. Update `stances` when a tracked project changes its rule on SDK material. A confirmed leak does not by itself change the verdict, a stage or a frame rate.
 - When the picture changes, update `status.summary` (two sentences, the current answer), the affected route's `standing`, and `status.unofficial.eta`.
 
 ## Writing
@@ -56,6 +58,7 @@ Build an external candidate JSON, never inside the repository. Look at the commi
 - `projects.add`: full rows. `projects.update`: ID to a patch of editorial fields only (`name`, `repo`, `route`, `base`, `hosts`, `scope`, `visibility`, `state`, `stage`, `approach`, `fps`, `hardware`, `target`, `missing`, `eta`, `evidence`, `note`, `sources`).
 - `routes`: ID to `{ "standing": "..." }`.
 - `status`: a partial patch of `verdict`, `answer`, `summary`, `official`, `unofficial`, `safety`.
+- `gdk`: a partial patch of `status`, `confirmedBy`, `summary`, `claim`, `kit`, `effects`, `stances`, `risks`. Each field you send replaces the old one whole. Leave it out when nothing changed.
 - `note`: one or two sentences for today's row in the day-by-day table. Leave it out on a day with nothing to say.
 
 `apply` computes today's snapshot row from the project list. A second run on the same day replaces that day's row and nothing older.
@@ -79,4 +82,4 @@ Commit the data only, with a message such as `gta6-pc: daily check 2026-11-27`, 
 
 Confirm that the CI and Pages runs for the commit succeed, then fetch https://edtoast.me/gta6-pc/ and check that the served page shows the new check time. A pushed commit alone is not a deployment.
 
-Report in the thread only when something a reader would care about changed: a new furthest stage, a best frame rate that moved by 3 fps or more or reached 30, a project shut down or taken offline, a first result on a PS5 route, an official statement about PC, or a run that failed. Stay quiet on healthy days with no such change.
+Report in the thread only when something a reader would care about changed: a new furthest stage, a best frame rate that moved by 3 fps or more or reached 30, a project shut down or taken offline, a first result on a PS5 route, an official statement about PC, the kit leak claim being confirmed or debunked, or a run that failed. Stay quiet on healthy days with no such change.
