@@ -3,7 +3,7 @@ import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
 export const site = {
   name: "Howard Chen",
-  title: "Incoming Member of Technical Staff", // drop "Incoming" after Nov 2026
+  title: "Member of Technical Staff", // drop "Incoming" after Nov 2026
   employer: "Perplexity",
   description: "Howard Chen, software engineer. Work history, projects, and small browser games.",
   url: "https://edtoast.me",
@@ -13,7 +13,7 @@ export const site = {
 export const resume = {
   page: "/resume",
   pdf: "/resume.pdf",
-  filename: "Howard-Chen-Resume.pdf", // name the browser saves the PDF under
+  filename: "howard_chen_resume.pdf", // name the browser saves the PDF under
 };
 
 export type HeroLink = { label: string; href?: string; icon: IconDefinition };

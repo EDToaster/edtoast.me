@@ -5,7 +5,7 @@ import EntryList from "~/components/EntryList.astro";
 const demos = await getCollection("demos");
 ---
 
-<Base title="Demos" description="Experiments and prototypes by Howard Chen.">
+<Base title="Demos" description="Experiments and prototypes.">
   <h1 class="page-title">Demos</h1>
   <p class="page-intro">Experiments, prototypes and things I wanted to see working.</p>
   <EntryList entries={demos} empty="Nothing here yet." />
