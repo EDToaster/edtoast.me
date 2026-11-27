@@ -29,9 +29,9 @@
     "evidence": "press",
     "note": null,
     "http": 200,
-    "stars": 13286,
+    "stars": 13621,
     "pushed": "2026-11-25",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-victory",
@@ -53,8 +53,8 @@
     "stage": 4,
     "approach": "A fork of the 7900 XTX build tuned for AMD RDNA3 cards. It maps the game’s buffers in place and keeps large ones in video memory to cut the copying that slows other forks.",
     "fps": {
-      "value": 23,
-      "text": "23.1 fps median in gameplay, 19.1 in heavy scenes"
+      "value": 21,
+      "text": "20.8 fps median over a 24 minute run at 4K, 23.1 in a shorter one"
     },
     "hardware": "Radeon RX 7900 XT 20 GB, Series X profile at 4K output",
     "target": "A stable 30 fps or more without ray tracing",
@@ -67,10 +67,10 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 2,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 12,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-victory-rdna"
     ]
@@ -104,9 +104,9 @@
     "evidence": "press",
     "note": null,
     "http": 200,
-    "stars": 1833,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 1909,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-victory-7900xtx",
@@ -143,9 +143,9 @@
     "evidence": "tracker",
     "note": null,
     "http": 200,
-    "stars": 2580,
+    "stars": 3909,
     "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-belobug",
@@ -183,9 +183,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 96,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 266,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-vice-tay"
@@ -196,7 +196,7 @@
     "name": "VIctory on NVIDIA",
     "repo": "trustno1-coder/VIctory-NVIDIA",
     "route": "xbox-layer",
-    "base": "victory",
+    "base": "foxhound",
     "hosts": [
       "windows"
     ],
@@ -204,25 +204,26 @@
     "visibility": "open",
     "state": "active",
     "stage": 4,
-    "approach": "A fork of the 7900 XTX build that stops NVIDIA cards from skipping thousands of draws a frame. It runs the Series S profile at half scale.",
+    "approach": "A fork for NVIDIA cards that swaps the game’s upscaler for DLSS and adds frame generation. On 26 November it moved onto foxhound, which took the same rooms from 15 to 17 fps to 26 to 30 at a higher resolution.",
     "fps": {
-      "value": 21,
-      "text": "20 to 22 fps indoors in the prologue"
+      "value": 28,
+      "text": "26 to 30 fps in the opening rooms, 30 on the first boat ride"
     },
-    "hardware": "GeForce RTX 5070, half-scale Series S profile",
+    "hardware": "GeForce RTX 5070 12 GB, Ryzen 7 9800X3D, 64 GB RAM, Series X profile at 1440p with DLSS Quality",
     "target": null,
     "missing": [
-      "Ray tracing is mostly off: the game’s structure builder uses 64-lane programs that NVIDIA cards refuse",
-      "The quality preset costs about 7 fps"
+      "No ray tracing",
+      "Frame generation needs spare video memory",
+      "Stutter on a first run while shaders compile"
     ],
     "eta": null,
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 111,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 439,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-victory-nvidia"
     ]
@@ -232,7 +233,7 @@
     "name": "AnyXboxX",
     "repo": "LooperSalty/AnyXboxX",
     "route": "xbox-layer",
-    "base": "victory",
+    "base": "vice-tay",
     "hosts": [
       "windows"
     ],
@@ -240,25 +241,26 @@
     "visibility": "open",
     "state": "active",
     "stage": 4,
-    "approach": "Began as an emulator that interpreted the console runtime on Unicorn. Its GTA VI results now come from a copy of VIctory bundled in the repository.",
+    "approach": "Began as an emulator that interpreted the console runtime on Unicorn. Its GTA VI results now come from a bundled copy of VIctory that builds on Vice-Tay, and its launcher plays at 1080p by default.",
     "fps": {
-      "value": 16,
-      "text": "16 to 17 fps median in the open world"
+      "value": 24,
+      "text": "about 24 fps median in the world at 1080p over a 14 minute session, about 20 at 4K"
     },
     "hardware": "GeForce RTX 4070 SUPER, Core i7-13700KF, Series X mode",
     "target": null,
     "missing": [
-      "Limited by the CPU work of copying the console’s shared memory",
-      "12 GB cards run short of texture memory"
+      "Ray tracing is off, so interiors and shadows are dark",
+      "Some graphics are missing",
+      "Uses 20 to 25 GB of RAM"
     ],
     "eta": null,
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 416,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 479,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-anyxboxx",
       "videocardz-kickoff"
@@ -277,11 +279,11 @@
     "scope": "gta6",
     "visibility": "open",
     "state": "active",
-    "stage": 4,
+    "stage": 5,
     "approach": "Combines fixes from several VIctory forks into one tested build, with its own AMD stability work, water physics and optional FSR frame generation. It also proposes a shared way to measure frame rate.",
     "fps": {
-      "value": 14,
-      "text": "14.0 fps average over a 37 minute play session"
+      "value": 18,
+      "text": "18.5 fps average on the Series S profile with FSR 4, 16.9 over an hour on Series X"
     },
     "hardware": "Radeon RX 9070 XT 16 GB, Ryzen 7 9800X3D, 32 GB RAM, Series S profile with FSR 4",
     "target": null,
@@ -291,12 +293,12 @@
     ],
     "eta": null,
     "evidence": "self-reported",
-    "note": null,
+    "note": "An unreleased build averaged 21.8 fps over an hour with scripted input.",
     "http": 200,
-    "stars": 165,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 175,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-klbf-lab"
     ]
@@ -313,26 +315,28 @@
     "scope": "gta6",
     "visibility": "open",
     "state": "active",
-    "stage": 4,
+    "stage": 5,
     "approach": "A Brazilian fork aimed at 8 GB NVIDIA cards and a 1080p monitor. It skips the ray-tracing skinning pass and swaps bounce light for a constant ambient term.",
     "fps": {
-      "value": 14,
-      "text": "about 14 fps in the prison scene, 5.6 on the Series X profile"
+      "value": 28,
+      "text": "26.6 to 27.9 fps walking in the prison, 28.7 to 29.1 on the first boat ride"
     },
-    "hardware": "GeForce RTX 4060 Ti 8 GB, Series S profile",
-    "target": "15 fps or more with a sharp picture in cutscenes and the prison",
+    "hardware": "GeForce RTX 4060 Ti 8 GB, Core i7-13700K, 64 GB RAM, Series S profile at 1080p",
+    "target": "A steady 30 fps from the opening to the boat ride",
     "missing": [
-      "Its README says it is not playable yet",
+      "Heavy stretches of the prison and the opening fall to 18 to 24 fps",
+      "Night scenes are darker than on console, and walls vanish in an occasional frame",
+      "No run longer than 12 minutes has been measured",
       "No ray-traced lighting"
     ],
     "eta": null,
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 13,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 116,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-vi-br-port"
     ]
@@ -366,9 +370,9 @@
     "evidence": "tracker",
     "note": null,
     "http": 200,
-    "stars": 240,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 436,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-kelvaroq",
@@ -390,8 +394,8 @@
     "stage": 5,
     "approach": "hyphennn’s fork, formerly victory-gta6. It follows VIctory’s main branch and adds rendering and speed fixes, with autosaves and checkpoints working. Several other forks build on it.",
     "fps": {
-      "value": 9,
-      "text": "8 to 9.5 fps at the first boat mission, 10 to 14 in lighter views"
+      "value": 11,
+      "text": "about 11 fps at the first boat mission; 0.2 to 3 with ray-traced shadows on"
     },
     "hardware": "GeForce RTX 4070 12 GB, Core i7-14700KF, 32 GB RAM, Series X profile",
     "target": null,
@@ -404,10 +408,10 @@
     "evidence": "press",
     "note": null,
     "http": 200,
-    "stars": 3264,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 3325,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-victory-fork",
       "techradar-chapter1",
@@ -442,9 +446,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 62,
+    "stars": 79,
     "pushed": "2026-11-25",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-victory-nvidia-8gb"
@@ -479,9 +483,9 @@
     "evidence": "press",
     "note": null,
     "http": 200,
-    "stars": 225,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 233,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-vitoriabr",
@@ -516,9 +520,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 505,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 531,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-leonida-legacy"
@@ -537,25 +541,26 @@
     "visibility": "open",
     "state": "active",
     "stage": 4,
-    "approach": "A runtime forked from the VIctory line with its own launcher. Version 0.4.6 rebuilt the renderer for lit rooms and complete textures without ray tracing.",
+    "approach": "A runtime forked from the VIctory line with its own launcher. Version 0.4.6 rebuilt the renderer for lit rooms and complete textures without ray tracing, and 0.5 about doubled its frame rate.",
     "fps": {
-      "value": 3,
-      "text": "about 3 fps with the full picture"
+      "value": 7,
+      "text": "about 7 to 8 fps in the world on its own RTX 3060; a tester’s Radeon RX 9060 XT reports a 22 fps median"
     },
-    "hardware": "GeForce RTX 3060, Series S profile",
-    "target": null,
+    "hardware": "GeForce RTX 3060 12 GB, Ryzen 5 5600X, Series S profile",
+    "target": "A playable 30 fps",
     "missing": [
-      "Playable speed",
+      "Playable speed: most NVIDIA cards report under 10 fps",
+      "Haze indoors",
       "The ray-tracing structure builder makes stray writes"
     ],
     "eta": null,
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 530,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 977,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-scarlettport"
     ]
@@ -588,9 +593,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 222,
+    "stars": 226,
     "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-victory-amd"
@@ -625,9 +630,9 @@
     "evidence": "press",
     "note": null,
     "http": 200,
-    "stars": 1268,
+    "stars": 1349,
     "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-dexnom",
@@ -662,9 +667,9 @@
     "evidence": "press",
     "note": null,
     "http": 200,
-    "stars": 8586,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 8669,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-xcl",
@@ -699,9 +704,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 224,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 233,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-five-star-recomp"
@@ -735,9 +740,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 42,
+    "stars": 44,
     "pushed": "2026-11-25",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-percyscarlett"
@@ -771,9 +776,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 20,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 22,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-scarlight"
@@ -805,9 +810,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 228,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 268,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-victory-macos",
@@ -826,23 +831,28 @@
     "scope": "gta6",
     "visibility": "open",
     "state": "active",
-    "stage": 2,
+    "stage": 3,
     "approach": "Ports VIctory to macOS without Wine. The game’s code runs in the port’s own process and shaders go through Apple’s Metal Shader Converter. A contributor’s branch recompiles the game’s 440,000 functions to arm64.",
-    "fps": null,
-    "hardware": "Apple Silicon Mac, macOS 15",
-    "target": null,
+    "fps": {
+      "value": 2,
+      "text": "1 to 3 fps in the world, about 30 in menus"
+    },
+    "hardware": "M5 Pro, 48 GB",
+    "target": "30 fps in the world",
     "missing": [
-      "Crashes a few seconds into the prologue",
+      "Most of the world’s surfaces are missing and nothing is lit",
+      "A world run can still end in a GPU time-out or a crash",
+      "Macs with 16 to 24 GB run short of GPU memory",
       "The arm64 build is not on the main branch"
     ],
     "eta": null,
     "evidence": "self-reported",
-    "note": null,
+    "note": "The project rates itself about 55% done and says it cannot give a date.",
     "http": 200,
-    "stars": 93,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 114,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-native-victory-macos"
     ]
@@ -866,17 +876,17 @@
     "hardware": "GeForce RTX 4070 Ti SUPER",
     "target": null,
     "missing": [
-      "GTA VI reaches the story intro, and the first cutscene does not appear",
+      "GTA VI reaches the prologue cutscene on Linux and runs out of memory there",
       "No retail game is playable yet"
     ],
     "eta": null,
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 386,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 394,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-tuxbox"
     ]
@@ -905,9 +915,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 235,
+    "stars": 236,
     "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-xvalkyrie"
@@ -938,9 +948,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 1849,
+    "stars": 1853,
     "pushed": "2026-11-25",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-xbox-emulator",
@@ -973,7 +983,7 @@
     "http": 404,
     "stars": null,
     "pushed": null,
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-leonida",
@@ -1009,9 +1019,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 2522,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 2587,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-leonida-continued"
@@ -1042,9 +1052,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 26,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 28,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-leonida-ce"
@@ -1075,9 +1085,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 15,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 19,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-palmetto"
@@ -1108,9 +1118,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 67,
+    "stars": 107,
     "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-recity"
@@ -1142,9 +1152,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 1965,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "stars": 2022,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-xbox2windows",
@@ -1179,7 +1189,7 @@
     "http": 200,
     "stars": 267,
     "pushed": "2026-11-22",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-scarlettx",
@@ -1212,8 +1222,8 @@
     "note": null,
     "http": 200,
     "stars": 12,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-xsxemu"
@@ -1233,23 +1243,24 @@
     "scope": "general",
     "visibility": "open",
     "state": "active",
-    "stage": 0,
+    "stage": 2,
     "approach": "A translation layer for PS5 games on Windows and Linux, with experimental macOS support. It loads the game’s executable and maps PS5 system calls and graphics to the host. A community thread tracks the games it needs to run before GTA VI: GTA V is in game at about 56 fps on an RTX 5060 and Cyberpunk 2077 at about 14.",
     "fps": null,
-    "hardware": null,
+    "hardware": "Users’ PCs on Windows and Linux, from a Radeon RX 6600 to a GeForce RTX 5090",
     "target": null,
     "missing": [
-      "No GTA VI boot shown",
+      "Crashes as the world starts to load: one user traced it to the game’s own watchdog firing while very large compute shaders compile",
+      "No picture past the setup screens and start menu",
       "Asset streaming and performance for a game this size"
     ],
     "eta": null,
-    "evidence": "press",
-    "note": null,
+    "evidence": "self-reported",
+    "note": "The GTA VI results are users’ reports in the project’s issue tracker from 26 and 27 November. The maintainers have not posted one.",
     "http": 200,
-    "stars": 12826,
+    "stars": 12861,
     "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-kytyps5",
       "kyty-roadmap",
@@ -1269,22 +1280,24 @@
     "scope": "general",
     "visibility": "open",
     "state": "active",
-    "stage": 0,
+    "stage": 1,
     "approach": "Converts a PS5 executable into a native Windows or Linux program and links it against its own versions of the PS5 system libraries, with a shader recompiler that outputs SPIR-V. No emulator or separate runtime runs beside the game.",
     "fps": null,
-    "hardware": null,
+    "hardware": "A tester’s PC: Ryzen 9 9950X3D, GeForce RTX 3090",
     "target": null,
     "missing": [
-      "Has not shown GTA VI running"
+      "The screen stays black",
+      "Frames stop after about 100 seconds and the game’s own watchdog ends the run",
+      "No menus or gameplay"
     ],
     "eta": null,
-    "evidence": "press",
-    "note": null,
+    "evidence": "self-reported",
+    "note": "The GTA VI result comes from testers in the project’s discussions, using changes that are not merged. The maintainers have not posted one.",
     "http": 200,
-    "stars": 62170,
-    "pushed": "2026-11-26",
-    "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "stars": 62558,
+    "pushed": "2026-11-27",
+    "checked": "2026-11-27",
+    "updated": "2026-11-27",
     "sources": [
       "repo-anyps5",
       "videocardz-anyps5"
@@ -1315,9 +1328,9 @@
     "evidence": "self-reported",
     "note": null,
     "http": 200,
-    "stars": 74,
+    "stars": 78,
     "pushed": "2026-11-25",
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-gtavi-recomp"
@@ -1336,7 +1349,7 @@
     "visibility": "private",
     "state": "active",
     "stage": 5,
-    "approach": "A private build that combines VIctory and XCL. Its code was public briefly and went offline.",
+    "approach": "A private build that combines VIctory and XCL. Its code went public under the GPL on 26 November and was unreachable within two hours. Open forks such as foxhound carry copies of it on.",
     "fps": {
       "value": 25,
       "text": "25 fps average"
@@ -1344,8 +1357,9 @@
     "hardware": null,
     "target": null,
     "missing": [
-      "No public code",
-      "Figures come from PortWatch and the owner"
+      "No public code from its owner",
+      "The 25 fps figure is relayed by PortWatch with no card, scene or run length",
+      "Its own development journal showed 17 to 18 fps on an RTX 5090"
     ],
     "eta": null,
     "evidence": "tracker",
@@ -1354,9 +1368,11 @@
     "stars": null,
     "pushed": null,
     "checked": "2026-11-26",
-    "updated": "2026-11-26",
+    "updated": "2026-11-27",
     "sources": [
-      "portwatch"
+      "portwatch",
+      "mte-cgbj",
+      "techradar-30fps"
     ]
   },
   {
@@ -1565,7 +1581,7 @@
     "http": 404,
     "stars": null,
     "pushed": null,
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-zettrox",
@@ -1599,7 +1615,7 @@
     "http": 404,
     "stars": null,
     "pushed": null,
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-americas-recomp",
@@ -1632,11 +1648,88 @@
     "http": 404,
     "stars": null,
     "pushed": null,
-    "checked": "2026-11-26",
+    "checked": "2026-11-27",
     "updated": "2026-11-26",
     "sources": [
       "repo-keylime",
       "portwatch"
     ]
+  },
+  {
+    "http": 200,
+    "stars": 22,
+    "pushed": "2026-11-27",
+    "id": "foxhound",
+    "name": "foxhound",
+    "repo": "readmet3xt-lab/foxhound",
+    "route": "xbox-layer",
+    "base": "cgbj",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A VIctory fork tuned for GeForce RTX cards. It hands the game’s upscaling to DLSS, runs the Series X profile at 1440p and cuts stalls. It was taken from the code CGBJ published briefly, and VIctory-NVIDIA now builds on it.",
+    "fps": {
+      "value": 29,
+      "text": "about 29 fps over a 7 minute run of the opening, holding the game’s 30 fps cap on the first boat ride"
+    },
+    "hardware": "GeForce RTX 4070 SUPER 12 GB, Ryzen 7 7800X3D, 32 GB RAM, Series X profile at 1440p with DLSS Quality",
+    "target": "60 fps",
+    "missing": [
+      "Nothing after the first boat ride has been tested",
+      "No ray tracing: an estimate stands in for bounce light and reflections",
+      "Hitches while a new scene streams in",
+      "Testers with slower processors report 10 to 15 fps"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": "The figures come from one run on the author’s PC.",
+    "sources": [
+      "repo-foxhound"
+    ],
+    "checked": "2026-11-27",
+    "updated": "2026-11-27"
+  },
+  {
+    "http": 200,
+    "stars": 24,
+    "pushed": "2026-11-27",
+    "id": "vilocity",
+    "name": "Vilocity",
+    "repo": "voidopcode/vilocity",
+    "route": "xbox-layer",
+    "base": "victory",
+    "hosts": [
+      "windows"
+    ],
+    "scope": "gta6",
+    "visibility": "open",
+    "state": "active",
+    "stage": 4,
+    "approach": "A Rust layer for Xbox Series games on Windows with its own launcher. Its engine comes from the VIctory line by way of CGBJ’s code, with fixes ported from other forks.",
+    "fps": {
+      "value": 26,
+      "text": "26 to 27 fps in lighter scenes and 17 to 19 in the heaviest; one unattended 12 minute run of the opening had a 33 fps median"
+    },
+    "hardware": "GeForce RTX 5080, Ryzen 9 9950X3D, 62 GB RAM, Series S profile at 1080p",
+    "target": "30 fps everywhere",
+    "missing": [
+      "Its README says it is not playable yet",
+      "No mission has been played start to finish",
+      "A driver timeout about 7 minutes into some runs",
+      "Draws from 26 console programs are dropped on 32-lane cards",
+      "Shade is too dark in daylight"
+    ],
+    "eta": null,
+    "evidence": "self-reported",
+    "note": null,
+    "sources": [
+      "repo-vilocity"
+    ],
+    "checked": "2026-11-27",
+    "updated": "2026-11-27"
   }
 ]

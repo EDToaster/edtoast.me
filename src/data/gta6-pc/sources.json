@@ -410,5 +410,45 @@
     "publisher": "GitHub",
     "label": "keylime repository (offline)",
     "kind": "repo"
+  },
+  "repo-foxhound": {
+    "url": "https://github.com/readmet3xt-lab/foxhound",
+    "publisher": "GitHub",
+    "label": "foxhound repository",
+    "kind": "repo"
+  },
+  "repo-vilocity": {
+    "url": "https://github.com/voidopcode/vilocity",
+    "publisher": "GitHub",
+    "label": "Vilocity repository",
+    "kind": "repo"
+  },
+  "mte-cgbj": {
+    "url": "https://maketecheasier.com/cgbj-gta-6-pc-port-github-404/",
+    "publisher": "Make Tech Easier",
+    "label": "Make Tech Easier on CGBJ’s vanished repository",
+    "kind": "press",
+    "published": "2026-11-27"
+  },
+  "techradar-30fps": {
+    "url": "https://www.techradar.com/gaming/pc-gamers-could-see-an-unofficial-gta-6-port-sooner-rather-than-later-stable-30fps-gameplay-at-4k-has-reportedly-been-achieved",
+    "publisher": "TechRadar",
+    "label": "TechRadar on CGBJ’s boat mission clip",
+    "kind": "press",
+    "published": "2026-11-26"
+  },
+  "tweaktown-multiplayer": {
+    "url": "https://www.tweaktown.com/news/114929/gta-6-pc-port-now-has-multiplayer-running-at-30fps/index.html",
+    "publisher": "TweakTown",
+    "label": "TweakTown on a two-player session",
+    "kind": "press",
+    "published": "2026-11-27"
+  },
+  "bitdefender-clickfix": {
+    "url": "https://www.bitdefender.com/en-us/blog/hotforsecurity/gta-vi-pc-port-hype-is-a-gift-to-clickfix-attackers",
+    "publisher": "Bitdefender",
+    "label": "Bitdefender on fake port repositories",
+    "kind": "press",
+    "published": "2026-11-26"
   }
 }

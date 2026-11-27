@@ -295,5 +295,108 @@
       "repo-victory-macos",
       "repo-native-victory-macos"
     ]
+  },
+  {
+    "id": "cgbj-code-public",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "port",
+    "title": "CGBJ’s code goes public and is gone within two hours",
+    "summary": "Trackers logged the private build’s code in a public repository under the GPL at 06:35 UTC and found it unreachable by 08:01. GitHub has published no notice naming it. Other developers had already copied it, and those copies are what today’s fastest open forks build on.",
+    "projects": [
+      "cgbj"
+    ],
+    "sources": [
+      "mte-cgbj",
+      "techradar-30fps"
+    ]
+  },
+  {
+    "id": "clickfix-repos",
+    "date": "2026-11-26",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "safety",
+    "title": "Fake port pages tell visitors to paste a command",
+    "summary": "Bitdefender found two GitHub pages, one posing as a cracked copy and one as a community port, that told visitors to open an administrator terminal and paste a command that fetches and runs remote code, most likely a password stealer. GitHub removed both within minutes of the report.",
+    "projects": [],
+    "sources": [
+      "bitdefender-clickfix"
+    ]
+  },
+  {
+    "id": "open-builds-near-30",
+    "date": "2026-11-27",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "port",
+    "title": "Open forks close in on 30 fps in the opening",
+    "summary": "foxhound holds the game’s 30 fps cap on the first boat ride on an RTX 4070 SUPER, and VIctory-NVIDIA reports 26 to 30 in the opening rooms on an RTX 5070. VI-BR-PORT plays from the opening into the first open-world mission at 27 to 29 fps on an 8 GB RTX 4060 Ti. Each measured short runs on its own PC with ray tracing off.",
+    "projects": [
+      "foxhound",
+      "victory-nvidia",
+      "vi-br-port"
+    ],
+    "sources": [
+      "repo-foxhound",
+      "repo-victory-nvidia",
+      "repo-vi-br-port"
+    ]
+  },
+  {
+    "id": "ps5-first-boot",
+    "date": "2026-11-27",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "port",
+    "title": "GTA VI starts on both PS5 routes",
+    "summary": "KytyPS5 users report the PS5 version reaching its setup screens and start menu, then crashing as the world loads. A tester’s relinked AnyPS5 build presents frames at 30 fps with sound for about a minute on a black screen before the game’s own watchdog ends the run. The reports come from users, and neither project’s maintainers have posted a result.",
+    "projects": [
+      "kytyps5",
+      "anyps5"
+    ],
+    "sources": [
+      "repo-kytyps5",
+      "repo-anyps5"
+    ]
+  },
+  {
+    "id": "klbf-hour",
+    "date": "2026-11-27",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "port",
+    "title": "KLBF Lab runs for an hour without a crash",
+    "summary": "Its v12 build averaged 16.9 fps over a 60 minute benchmark on a Radeon RX 9070 XT, and 18.5 on the Series S profile with FSR 4. The README also records the prologue and the mission after it played to the end, which puts the project at the missions stage here.",
+    "projects": [
+      "klbf-lab"
+    ],
+    "sources": [
+      "repo-klbf-lab"
+    ]
+  },
+  {
+    "id": "native-mac-world",
+    "date": "2026-11-27",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "port",
+    "title": "The native Mac port gets into the prologue’s world",
+    "summary": "Native VIctory for macOS fixed its prologue crash and now runs into the game world on an M5 Pro at 1 to 3 fps, with most surfaces missing. The project rates itself about 55% done and says it cannot give a date.",
+    "projects": [
+      "native-victory-macos"
+    ],
+    "sources": [
+      "repo-native-victory-macos"
+    ]
+  },
+  {
+    "id": "cgbj-offshoot-multiplayer",
+    "date": "2026-11-27",
+    "firstSeen": "2026-11-27T13:21:05Z",
+    "kind": "port",
+    "title": "A private build shows two players in one session",
+    "summary": "TweakTown reports a clip of two players sharing a session at 25 to 30 fps on a private build split off from CGBJ. The report names no builders and points to no public code.",
+    "projects": [
+      "cgbj"
+    ],
+    "sources": [
+      "tweaktown-multiplayer"
+    ]
   }
 ]

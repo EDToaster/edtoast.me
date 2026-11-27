@@ -1,7 +1,7 @@
 {
   "verdict": "no",
   "answer": "Not yet",
-  "summary": "Rockstar has not announced a PC version of GTA VI. Unofficial builds made from a leaked Xbox copy run the opening missions at about 20 fps on high-end graphics cards, short of the 30 fps the consoles hold.",
+  "summary": "Rockstar has not announced a PC version of GTA VI. Unofficial builds made from a leaked Xbox copy now run the opening and the first boat ride at 26 to 30 fps on recent GeForce cards, by their own measurements with ray tracing off. Longer sessions run at 20 to 24 fps, and the consoles hold 30 throughout.",
   "official": {
     "announced": false,
     "released": false,
@@ -13,19 +13,22 @@
     ]
   },
   "unofficial": {
-    "eta": "No project gives a date. The leaker predicted more than 30 fps within a week of 19 November, and a tracker account on X guessed 30 fps around the weekend of 28 November. The best measured sessions are still in the low 20s.",
+    "eta": "No project gives a date. The leaker predicted more than 30 fps within a week of 19 November, and a tracker account on X guessed 30 fps around the weekend of 28 November. On 27 November several forks reported 26 to 30 fps in the opening scenes. Nobody has measured 30 fps over a long session.",
     "caveat": "Every unofficial build needs the game’s Xbox files, which so far exist outside a console only as the leaked copy. Take-Two treats the projects as copyright infringement and has had the largest one removed.",
     "sources": [
       "pcgamer-leak",
       "techradar-chapter1",
-      "dmca-leonida"
+      "dmca-leonida",
+      "repo-foxhound",
+      "repo-vi-br-port"
     ]
   },
   "safety": {
-    "note": "Nothing here is a download, and no installer for a PC version exists. Security researchers have traced more than 355 websites offering fake GTA VI launchers and found a ready-made malware kit sold to scammers. Fake “KytyPS5 GTA 6” installers and cloned repositories with a zip file in place of code use the real projects’ names.",
+    "note": "Nothing here is a download, and no installer for a PC version exists. Security researchers have traced more than 355 websites offering fake GTA VI launchers and found a ready-made malware kit sold to scammers. Fake “KytyPS5 GTA 6” installers and cloned repositories with a zip file in place of code use the real projects’ names. Bitdefender found two GitHub pages that told visitors to paste a command into an administrator terminal. Never run a command that a download page gives you.",
     "sources": [
       "techradar-malware",
-      "csn-fakes"
+      "csn-fakes",
+      "bitdefender-clickfix"
     ]
   },
   "console": {
@@ -36,5 +39,5 @@
       "Xbox Series X|S"
     ]
   },
-  "updated": "2026-11-26"
+  "updated": "2026-11-27"
 }

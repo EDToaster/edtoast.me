@@ -1,51 +1,51 @@
 {
   "coverageStart": "2026-10-07",
   "seededAt": "2026-11-26T22:08:00Z",
-  "lastAttempt": "2026-11-26T22:08:00Z",
-  "lastSuccessful": "2026-11-26T22:08:00Z",
-  "outcome": "Seeded",
+  "lastAttempt": "2026-11-27T13:21:05Z",
+  "lastSuccessful": "2026-11-27T13:21:05Z",
+  "outcome": "Updated",
   "sources": {
     "official": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "Rockstar's page lists PS5 and Xbox Series X|S with a 19 November 2026 date and does not mention PC."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "Rockstar’s page lists PS5 and Xbox Series X|S with a 19 November 2026 date and does not mention PC. Rockstar’s Newswire and Take-Two’s news page could not be read today; press on 27 November reports no announcement."
     },
     "repos": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "Read repository metadata and READMEs for every listed project through the GitHub API."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "Read repository metadata for every listed project through the GitHub API and the READMEs of the 24 that had new commits."
     },
     "discovery": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "Compared the project list with PortWatch VI and GTA 6 PC Race and checked each candidate repository directly."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "Compared the list with PortWatch VI and GTA 6 PC Race and searched GitHub. Added foxhound and Vilocity. Left out cool_fox copies and small forks that publish no measurement of their own."
     },
     "dmca": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "Read the five Take-Two notices published in November 2026. One concerns GTA VI."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "GitHub has published no Take-Two notice since 24 November. The newest notice in the November folder is unrelated."
     },
     "press": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "Read coverage from PC Gamer, The Verge, VideoCardz, Notebookcheck, TechRadar, Tom's Hardware, IGN, PCMag, XDA and GamesBeat through 26 November."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "Read TechRadar, TweakTown, Make Tech Easier, TechPowerUp, Tom’s Hardware and IGN from 26 and 27 November."
     },
     "ps5": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "No PS5 project reports GTA VI running. Read the KytyPS5 roadmap thread and AnyPS5's discussions."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "Read KytyPS5’s issue tracker and roadmap thread and AnyPS5’s discussions. Users of both report GTA VI starting, without a usable picture. shadPS4 has nothing for it."
     },
     "safety": {
       "ok": true,
-      "checked": "2026-11-26T22:08:00Z",
-      "lastOK": "2026-11-26T22:08:00Z",
-      "note": "Read the NordVPN kit report and the 355-domain report."
+      "checked": "2026-11-27T13:21:05Z",
+      "lastOK": "2026-11-27T13:21:05Z",
+      "note": "Read Bitdefender’s 26 November report on two fake repositories, plus the earlier NordVPN kit and 355-domain reports."
     }
   },
   "gaps": [

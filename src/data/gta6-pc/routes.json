@@ -6,7 +6,7 @@
     "platform": "Xbox Series",
     "method": "Translation",
     "how": "The Xbox Series CPU is x86-64, so the game’s code runs on a PC processor as it is. A layer loads the Xbox executable, answers its console system calls, turns the console’s Direct3D 12 into the PC’s and recompiles its GPU programs. Wine and Proton work the same way for Windows games.",
-    "standing": "The only route that plays the game. VIctory and its forks get through the prologue and early missions at up to about 23 fps on high-end cards, mostly with ray tracing off."
+    "standing": "The only route that plays the game. VIctory and its forks get through the prologue and early missions. The fastest report 26 to 30 fps in the opening and the first boat ride on recent GeForce cards, and 20 to 24 fps over longer sessions, mostly with ray tracing off."
   },
   {
     "id": "xbox-recomp",
@@ -33,7 +33,7 @@
     "platform": "PS5",
     "method": "Translation",
     "how": "A layer loads the PS5 executable and maps Sony’s system libraries and graphics calls to Windows, Linux or macOS. shadPS4 does this for PS4 games only.",
-    "standing": "A PS5 dump surfaced on 25 November. KytyPS5 runs GTA V and has shown nothing for GTA VI."
+    "standing": "A PS5 dump surfaced on 25 November. Since 26 November KytyPS5 users report GTA VI reaching its setup screens and start menu, then crashing as the world loads. The maintainers have not posted a result."
   },
   {
     "id": "ps5-relink",
@@ -42,6 +42,6 @@
     "platform": "PS5",
     "method": "Recompilation",
     "how": "A relinker converts the PS5 executable into a native Windows or Linux program and links it against rewritten system libraries, so no emulator runs beside the game.",
-    "standing": "AnyPS5 has not shown GTA VI running. The one GTA VI project built on it refuses leaked files and is waiting for a lawful way to study the game."
+    "standing": "A tester’s relinked AnyPS5 build of GTA VI presents frames with sound for about a minute on a black screen before the game’s own watchdog ends the run. The one GTA VI project built on AnyPS5 refuses leaked files and is waiting for a lawful way to study the game."
   }
 ]

@@ -68,5 +68,17 @@
     "offline": 4,
     "sources": [],
     "note": "First full check. Two forks report 23 fps on their own test PCs, and ZETTROX goes offline."
+  },
+  {
+    "date": "2026-11-27",
+    "stage": 5,
+    "fps": 29,
+    "fpsProject": "foxhound",
+    "privateFps": 25,
+    "tracked": 48,
+    "active": 44,
+    "offline": 4,
+    "sources": [],
+    "note": "Several forks report 26 to 30 fps in the opening scenes on their own PCs, up from the low 20s. GTA VI starts on both PS5 routes for the first time, without a usable picture."
   }
 ]
