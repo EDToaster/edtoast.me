@@ -1,69 +1,69 @@
 {
   "coverageStart": "2026-08-20",
-  "lastAttempt": "2026-11-26T12:10:57Z",
+  "lastAttempt": "2026-11-27T12:16:16Z",
   "lastSuccessful": "2026-11-25T12:12:42Z",
   "seededAt": "2026-11-21T19:47:29Z",
   "outcome": "Partial collection",
   "sources": {
     "gtfs": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "The current TransLink ZIP matches the November 20 archive. A fresh import of feed 26SEP_20261120 reproduced the station, line connection and track records for all five rail patterns."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "The current ZIP matches the November 20 archive (26SEP_20261120), valid September 7 to January 3. Importing the five rail patterns reproduced the existing station, connection and track data."
     },
     "translink": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Checked the newsroom, The Buzzer, the Mayors’ Council materials and active rail alerts. Read the November 25 winter release. The published elevator forecasts for Oakridge and 29th Avenue still differ across TransLink’s pages."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Read TransLink’s rail alerts, rail replacement program, elevator pages, winter release, The Buzzer and the November 19 Mayors’ Council agenda. Feed timestamps date the two downtown weekend alerts and the maintenance notices at Inlet Centre and Renfrew. The Oakridge and 29th Avenue forecasts still differ between sources."
     },
     "broadway": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Checked current work, archived notices and monthly reports. The Cambie–Yukon water-main and Broadway–City Hall sidewalk notices are already on the timeline. No dated city schedule for restoring Thornton Street surfaced."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Checked current work, the construction notice archive, monthly reports and local coverage. The November 17 water-main and November 20 sidewalk notices are already recorded. No dated city notice for restoring Thornton Street surfaced."
     },
     "langley": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Read the November 25 notices for Industrial Avenue, the Fleetwood Flyer and Highway 10, including the closure maps. Compared the revised work windows with the earlier notices."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Read the November 13 and 20 weekly PDFs and the November 25 Industrial Avenue, Highway 10 and Fleetwood Flyer notices. The November 26 local report covers the same Highway 10 work. No replacement date for Industrial Avenue appeared in current or archived notices."
     },
     "province": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Read the Premier’s November 24 release and Trevor Halford’s signed mandate letter. It directs the minister to advance the Surrey–Newton extension with three partners; it names no construction budget or date."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Checked B.C. government releases, the transportation ministry, the Premier’s office and the November 24 mandate letter. The direction to advance the Newton extension was already recorded; no new funding decision surfaced."
     },
     "surrey": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Checked the newsroom and November 23 council package. The enclosed November 9 minutes record council’s Newton priority under resolution R26-2304. No new construction authorization surfaced."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Checked Surrey’s newsroom and council records. The November 23 package includes the earlier vote to advance the King George Boulevard extension to Newton (R26-2304). No new construction authorization surfaced."
     },
     "poco": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Read the November 24 council and committee agendas and checked the city’s project reporting. Neither agenda lists a SkyTrain branch decision."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Read the November 24 committee and council agendas, the city news listings and annual report. Neither agenda lists a vote on financing or building a SkyTrain branch."
     },
     "ubc": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Checked UBC’s extension timeline, Vancouver planning material and local reporting. No new financing or construction decision for the UBC extension or Cambie infill stations surfaced."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Compared UBC’s timeline, Vancouver’s extension and Cambie Corridor plans, the November 17 council agenda and local reporting on the Board of Trade address. No new extension funding or infill station decision surfaced."
     },
     "north": {
       "ok": true,
-      "checked": "2026-11-26T12:10:57Z",
-      "lastOK": "2026-11-26T12:10:57Z",
-      "note": "Checked the city corridor material, the November 23 North Vancouver council package and reporting on Bowinn Ma’s statement. No new choice of technology or alignment surfaced."
+      "checked": "2026-11-27T12:16:16Z",
+      "lastOK": "2026-11-27T12:16:16Z",
+      "note": "Checked Vancouver and North Vancouver corridor pages, the November 23 North Vancouver council agenda and reporting on Bowinn Ma’s statement. No decision selecting SkyTrain or a crossing alignment surfaced."
     },
     "local": {
       "ok": false,
-      "checked": "2026-11-26T12:10:57Z",
+      "checked": "2026-11-27T12:16:16Z",
       "lastOK": "2026-11-25T12:12:42Z",
-      "note": "Daily Hive’s Mapped index returned HTTP 404. Read its Transportation index and relevant coverage, plus the North Delta Reporter on gantry removal and The Canadian Press on TransLink’s winter preparations."
+      "note": "Daily Hive’s Mapped index still returns HTTP 404. Both of its Transportation indexes loaded; the North Delta Reporter’s November 26 Langley Bypass article and The Canadian Press on winter preparations repeat notices already on the timeline."
     }
   },
   "gaps": [

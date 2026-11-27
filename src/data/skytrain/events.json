@@ -1354,5 +1354,81 @@
     "sources": [
       "tl-winter-2026"
     ]
+  },
+  {
+    "id": "downtown-expo-lim-rail-work-nov28",
+    "published": "2026-11-26",
+    "effective": "2026-11-28",
+    "firstSeen": "2026-11-27T12:11:36Z",
+    "title": "Platform 1 at Waterfront, Burrard and Granville during weekend rail work",
+    "summary": "Expo Line trains will use platform 1 at all three stations from the start of service to 10:15 a.m. on November 28 and 29, and again after 9:30 p.m. Sunday until the last train. Crews are replacing rail between Waterfront and Stadium–Chinatown. TransLink advises allowing 20 extra minutes for trips through downtown.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "waterfront",
+      "burrard",
+      "granville",
+      "stadium-chinatown",
+      "main-street-science-world",
+      "commercial-broadway"
+    ],
+    "segments": [
+      "expo:waterfront~burrard",
+      "expo:burrard~granville",
+      "expo:granville~stadium-chinatown"
+    ],
+    "sources": [
+      "tl-current-alerts",
+      "tl-expo-alert-mirror",
+      "tl-lim-rail-project"
+    ]
+  },
+  {
+    "id": "inlet-centre-east-elevator-nov26",
+    "published": "2026-11-25",
+    "effective": "2026-11-26",
+    "firstSeen": "2026-11-27T12:11:36Z",
+    "title": "East entrance elevator maintenance at Inlet Centre",
+    "summary": "The elevator from the east entrance to the VCC–Clark-bound platform was due to close for maintenance at 8 a.m. Thursday, November 26. TransLink scheduled the work through 4 p.m. Friday, November 27.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "inlet-centre"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-current-alerts",
+      "tl-millennium-alert-mirror"
+    ]
+  },
+  {
+    "id": "renfrew-westbound-escalator-nov24",
+    "published": "2026-11-23",
+    "effective": "2026-11-24",
+    "firstSeen": "2026-11-27T12:11:36Z",
+    "title": "Four days of escalator work at Renfrew",
+    "summary": "TransLink scheduled maintenance on the up escalator between the Compass ticket machines and the VCC–Clark-bound platform, from 8 a.m. November 24 to 4 p.m. November 27.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "renfrew"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-current-alerts",
+      "tl-millennium-alert-mirror"
+    ]
   }
 ]

@@ -544,5 +544,17 @@
     "publisher": "TransLink",
     "label": "SkyTrain winter equipment and operating plans",
     "authority": true
+  },
+  "tl-lim-rail-project": {
+    "url": "https://www.translink.ca/railreplacement",
+    "publisher": "TransLink",
+    "label": "Expo Line rail replacement between Waterfront and Stadium–Chinatown",
+    "authority": true
+  },
+  "tl-millennium-alert-mirror": {
+    "url": "https://mobility-bot.com/operators/o-c28-translink/r/TL/30052/",
+    "publisher": "Mobility Bot",
+    "label": "Timestamped Millennium Line alerts from TransLink’s feed",
+    "authority": false
   }
 }
