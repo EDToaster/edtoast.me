@@ -1430,5 +1430,351 @@
       "tl-current-alerts",
       "tl-millennium-alert-mirror"
     ]
+  },
+  {
+    "id": "broadway-all-trackwork-complete",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Track installation is complete from VCC–Clark to Arbutus",
+    "summary": "Crews finished laying all three types of rail on the 5.7 km Broadway Subway: the running rails, the power rail and the rail used by the trains’ linear induction motors.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [
+      "millennium:vcc-clark~great-northern-way-emily-carr",
+      "millennium:great-northern-way-emily-carr~mount-pleasant",
+      "millennium:mount-pleasant~broadway-city-hall",
+      "millennium:broadway-city-hall~oak-vgh",
+      "millennium:oak-vgh~south-granville",
+      "millennium:south-granville~arbutus"
+    ],
+    "sources": [
+      "bcrtc-nov26-expansions"
+    ]
+  },
+  {
+    "id": "broadway-mark-ii-dynamic-testing",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "A Mark II train joins Broadway Subway testing",
+    "summary": "Crews brought a Mark II train onto the extension for the next round of moving-train tests. They are checking how the trains, track, signals and communications work together.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-expansions"
+    ]
+  },
+  {
+    "id": "langley-precast-three-quarters",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Surrey plant casts more than three quarters of the guideway sections",
+    "summary": "The precast plant has produced more than 75% of the roughly 4,400 concrete sections needed for the Surrey–Langley extension. Crews lift the finished sections into place along Fraser Highway.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-expansions"
+    ]
+  },
+  {
+    "id": "occ2-stage-two-overnight-tests",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Weekend train tests begin from the new control centre",
+    "summary": "Operators finished switching control between the old and new centres in September. They are now running trains from the new centre after passenger service ends on Friday, Saturday and Sunday nights.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo",
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-fleet-control"
+    ]
+  },
+  {
+    "id": "expo-mark-v-fifteen-in-service",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Fifteen Mark V trains are carrying Expo Line passengers",
+    "summary": "The operator counted 18 Mark V trains at its Edmonds yard, with 15 in passenger service. TransLink’s October 30 count was 13 in service.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-fleet-control",
+      "tl-mark-v-fleet"
+    ]
+  },
+  {
+    "id": "rail-grinding-q3-2026",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Crews grind 51 km of rail to reduce train noise",
+    "summary": "Crews ground 51 km of rail from July through September. The next round focuses on the Millennium Line, including the Evergreen Extension.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo",
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-rail-lifts"
+    ]
+  },
+  {
+    "id": "king-george-platform-one-elevator-work-start",
+    "published": "2026-11-27",
+    "effective": "2026-10",
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Work begins on the Waterfront-bound elevator at King George",
+    "summary": "Crews began replacing the platform 1 elevator in October. TransLink expects it back in spring 2027 and advises riders who need the elevator to allow 10 extra minutes.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "king-george"
+    ],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-rail-lifts",
+      "tl-elevator-program"
+    ]
+  },
+  {
+    "id": "patterson-elevator-work-start",
+    "published": "2026-11-27",
+    "effective": "2026-11",
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Patterson elevator replacement is underway",
+    "summary": "The operator confirmed that replacement work began in November. TransLink expects the new elevator to open in spring 2027 and advises allowing up to 30 extra minutes for a step-free trip.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "patterson"
+    ],
+    "segments": [],
+    "sources": [
+      "bcrtc-nov26-rail-lifts",
+      "tl-elevator-program"
+    ]
+  },
+  {
+    "id": "draft-2027-millennium-four-car-trains",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "TransLink proposes four-car Millennium Line trains",
+    "summary": "The draft 2027 budget calls for four-car trains in place of two-car trains when the Broadway Subway opens. TransLink would adjust how often trains run to cover the longer route with the available fleet. The board is due to consider the budget on December 2.",
+    "projects": [
+      "broadway"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [],
+    "segments": [],
+    "sources": [
+      "tl-2027-proposed-rail-service"
+    ]
+  },
+  {
+    "id": "draft-2027-canada-extra-richmond-trip",
+    "published": "2026-11-27",
+    "effective": null,
+    "firstSeen": "2026-11-28T12:13:16Z",
+    "title": "Draft budget adds a Richmond-bound trip in each peak period",
+    "summary": "TransLink proposes one extra trip from Waterfront to Richmond–Brighouse in each peak period when the Broadway Subway opens. The December 2 board agenda lists the 2027 budget for approval.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "waterfront",
+      "richmond-brighouse"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-2027-proposed-rail-service"
+    ]
+  },
+  {
+    "id": "highway10-langley-launcher-revised-dec12",
+    "published": "2026-11-27",
+    "effective": "2026-11-28",
+    "firstSeen": "2026-11-28T12:12:54Z",
+    "title": "Highway 10 full closure moves to December 12",
+    "summary": "Overnight guideway work is scheduled from November 28 to December 12. Between Fraser Highway and 200 Street, Highway 10 will narrow to one lane each way from 9 p.m. to 5 a.m. on December 3 through 11. The full closure is now scheduled only for midnight to 4 a.m. on December 12.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:willowbrook~langley-city-centre"
+    ],
+    "sources": [
+      "sls-highway10-nov27"
+    ],
+    "corrects": "highway10-langley-launcher-overnight"
+  },
+  {
+    "id": "189-street-north-fraser-dec4",
+    "published": "2026-11-27",
+    "effective": "2026-12-04",
+    "firstSeen": "2026-11-28T12:12:54Z",
+    "title": "189 Street access at Fraser Highway to close December 4",
+    "summary": "The weekly construction notice schedules a closure on the north side of Fraser Highway at 189 Street from 7 a.m. to 5 p.m. Friday, December 4.",
+    "projects": [
+      "langley"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [],
+    "segments": [
+      "expo:hillcrest-184-street~clayton"
+    ],
+    "sources": [
+      "sls-week-nov30"
+    ]
+  },
+  {
+    "id": "richmond-branch-track-maintenance-nov29",
+    "published": "2026-11-27",
+    "effective": "2026-11-29",
+    "firstSeen": "2026-11-28T12:10:31Z",
+    "title": "Five nights of single-track service on the Richmond branch",
+    "summary": "From November 29 through December 3, trains will share one track between Bridgeport and Richmond–Brighouse from 11 p.m. until the end of service. Richmond branch trains will run every 20 minutes, with the last departures about five minutes later than usual.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "canada"
+    ],
+    "stations": [
+      "bridgeport",
+      "richmond-brighouse"
+    ],
+    "segments": [
+      "canada:bridgeport~capstan",
+      "canada:capstan~aberdeen",
+      "canada:aberdeen~lansdowne",
+      "canada:lansdowne~richmond-brighouse"
+    ],
+    "sources": [
+      "tl-current-alerts",
+      "tl-canada-alert-mirror"
+    ]
+  },
+  {
+    "id": "lougheed-platform-three-elevator-nov27",
+    "published": "2026-11-27",
+    "effective": "2026-11-27",
+    "firstSeen": "2026-11-28T12:10:31Z",
+    "title": "Platform 3 elevator out at Lougheed Town Centre",
+    "summary": "The elevator between the west mezzanine and the VCC–Clark-bound platform went out of service for repairs at 10:14 p.m. on November 27. TransLink gave no reopening time.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "lougheed-town-centre"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-current-alerts",
+      "tl-millennium-alert-mirror"
+    ]
+  },
+  {
+    "id": "lougheed-platform-three-escalator-nov30",
+    "published": "2026-11-27",
+    "effective": "2026-11-30",
+    "firstSeen": "2026-11-28T12:10:31Z",
+    "title": "Escalator work at Lougheed Town Centre’s mall entrance",
+    "summary": "TransLink scheduled maintenance on the up escalator from the west mezzanine to Millennium Line platform 3. The work is set for 8 a.m. November 30 to 4 p.m. December 1.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "millennium"
+    ],
+    "stations": [
+      "lougheed-town-centre"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-current-alerts",
+      "tl-millennium-alert-mirror"
+    ]
+  },
+  {
+    "id": "metrotown-mckay-down-escalator-nov30",
+    "published": "2026-11-27",
+    "effective": "2026-11-30",
+    "firstSeen": "2026-11-28T12:10:31Z",
+    "title": "Down escalator by McKay Avenue to close at Metrotown",
+    "summary": "TransLink scheduled work on the down escalator serving the McKay Avenue entrance from 8 a.m. November 30 to 4 p.m. December 1.",
+    "projects": [
+      "network"
+    ],
+    "lines": [
+      "expo"
+    ],
+    "stations": [
+      "metrotown"
+    ],
+    "segments": [],
+    "sources": [
+      "tl-current-alerts",
+      "tl-expo-alert-mirror"
+    ]
   }
 ]

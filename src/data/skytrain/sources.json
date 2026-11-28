@@ -556,5 +556,47 @@
     "publisher": "Mobility Bot",
     "label": "Timestamped Millennium Line alerts from TransLink’s feed",
     "authority": false
+  },
+  "bcrtc-nov26-expansions": {
+    "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2026/december/public_board_meeting_december_2.pdf#page=9",
+    "publisher": "BC Rapid Transit Company",
+    "label": "Broadway and Surrey–Langley construction report, p. 9",
+    "authority": true
+  },
+  "bcrtc-nov26-fleet-control": {
+    "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2026/december/public_board_meeting_december_2.pdf#page=8",
+    "publisher": "BC Rapid Transit Company",
+    "label": "New trains and control centre tests, p. 8",
+    "authority": true
+  },
+  "bcrtc-nov26-rail-lifts": {
+    "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2026/december/public_board_meeting_december_2.pdf#page=7",
+    "publisher": "BC Rapid Transit Company",
+    "label": "Track and station maintenance, p. 7",
+    "authority": true
+  },
+  "tl-2027-proposed-rail-service": {
+    "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2026/december/public_board_meeting_december_2.pdf#page=52",
+    "publisher": "TransLink",
+    "label": "Proposed 2027 SkyTrain service, p. 52",
+    "authority": true
+  },
+  "tl-mark-v-fleet": {
+    "url": "https://www.translink.ca/fleetexpansion",
+    "publisher": "TransLink",
+    "label": "Expo Line Mark V fleet count",
+    "authority": true
+  },
+  "sls-highway10-nov27": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261127-Traffic-Update-at-Fraser-Highway-and-Highway-10.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Revised Highway 10 hours, November 27",
+    "authority": true
+  },
+  "sls-week-nov30": {
+    "url": "https://surreylangleyskytrain.gov.bc.ca/app/uploads/sites/938/2026/11/SLS-20261127-Weekly_Traffic_Advisory.pdf",
+    "publisher": "Surrey Langley SkyTrain",
+    "label": "Weekly traffic advisory, November 30 to December 6",
+    "authority": true
   }
 }
